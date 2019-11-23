@@ -1,0 +1,110 @@
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+
+body > header{
+    padding: 0.5em;
+    color: white;
+    background-color: #606060;
+    width: 100%;
+    margin: 0em;
+}
+
+body > header h1{
+    font-family: serif;
+}
+
+body > header > nav >ul{
+    margin: 0;
+    padding: 0;
+}
+
+body > header > nav >ul > li{
+    display: inline;
+}
+
+#Search > img{
+    position: relative;
+    width: 100%;
+    z-index: -1;
+    padding: 0em;
+}
+
+#SearchText{
+   position: absolute;
+   top: 45%;
+   left: 45%;
+   transform: translate(-50%, -50%);
+}
+
+#SearchText li{
+    color: white;
+    padding: 0.5em;
+}
+
+#SearchText input{
+    width: 40em;
+    height: 2em;
+}
+
+
+#Search li{
+    display: inline;
+    background-color: #606060;
+    text-align: center;
+    padding: 0.5 em;
+}
+
+#SearchButton{
+
+    width: 1 em;
+    height: auto;
+}
+
+#Search {
+
+    text-align:  center;
+}
+
+#BestOffers h2{
+    text-align: center;
+}
+
+
+.Home img {
+    position: relative;
+    z-index: -1;
+}
+.Home header {
+    position: absolute;
+    color: white;
+    margin: 0;
+}
+
+/* Usar Isto de modo a por a primeira imagem maior que as outras */
+
+/*#Homes:not(:first-child) img {
+    position: relative;
+    z-index: -1;
+    max-width: 10em;
+}*/
+
+#Homes img{
+    max-height: 10em;
+}
+
+#BestOffers{
+    text-align: center;
+}
+
+body > footer{
+   
+    padding: 1em;
+    color: white;
+    background-color: #606060;
+    width: 100%;
+    margin: 0em;
+    display: ;
+}
