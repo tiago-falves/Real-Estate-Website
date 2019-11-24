@@ -1,3 +1,4 @@
+DROP TABLE IF EXISTS Image;
 DROP TABLE IF EXISTS User;
 DROP TABLE IF EXISTS Owner;
 DROP TABLE IF EXISTS Home;
@@ -8,10 +9,15 @@ DROP TABLE IF EXISTS Comment;
 DROP TABLE IF EXISTS Reply;
 DROP TABLE IF EXISTS Message;
 
+CREATE TABLE Image(
+    id INTEGER PRIMARY KEY,
+    path TEXT NOT NULL UNIQUE
+    );
+
 CREATE TABLE User(
     id INTEGER PRIMARY KEY,
     user_name TEXT NOT NULL UNIQUE,
-    image INTEGER AUTOINCREMENT,
+    image INTEGER REFERENCES Image,
     password_salt TEXT NOT NULL,
     password TEXT NOT NULL
     );
@@ -30,15 +36,16 @@ CREATE TABLE Home(
     bedrooms TEXT NOT NULL,
     address TEXT NOT NULL,
     location REFERENCES Location,
+    owner REFERENCES Owner,
     CONSTRAINT type_name CHECK (
         type = 'House'
         OR type = 'Apartment'
         ),
     CONSTRAINT bedrooms_type CHECK (
-        bedrooms = 'T1',
-        bedrooms = 'T2',
-        bedrooms = 'T3',
-        bedrooms = 'T4',
+        bedrooms = 'T1' OR
+        bedrooms = 'T2' OR
+        bedrooms = 'T3' OR
+        bedrooms = 'T4' OR
         bedrooms = 'T5+'
         )
     );
@@ -59,7 +66,7 @@ CREATE TABLE Reservation(
 CREATE TABLE Photo(
     id INTEGER PRIMARY KEY,
     approved BOOLEAN DEFAULT FALSE,
-    path TEXT,
+    image INTEGER REFERENCES Image,
     uploader REFERENCES User,
     home REFERENCES Home
     );
