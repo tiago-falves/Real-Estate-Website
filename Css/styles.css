@@ -90,14 +90,14 @@ body > header > nav >ul > li{
     padding: 0em;
 }
 
-/*#BiggerPhoto img{
+#BiggerPhoto img{
     width: 30em;
 }
 
 .Home img{
     width: 15em;
     z-index: -1;
-}*/
+}
 
 
 #BestOffers{

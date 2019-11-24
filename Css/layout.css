@@ -27,25 +27,25 @@ body > header > h1 {
 
 #Homes{
     display: grid;
-    grid-template-columns: [left] auto [middleleft] auto [middleright] auto [right];
-    grid-template-rows:[top] auto [middle] auto [end];
+    grid-template-columns: [left] 2fr [middleleft] 1fr [middleright] 1fr [right];
+    grid-template-rows:[top] 1fr [middle] 1fr [end];
 }
 
-#Homes:nth-child(1) img {
+#Homes:first-child  {
     grid-area: top / left / end / middleleft;
 
 }
-#Homes:nth-child(2) img{
+#Homes:nth-child(2) {
     grid-area: top / middleleft / middle / middleright;
 }
 
-#Homes:nth-child(3) img{
+#Homes:nth-child(3) {
     grid-area: top / middleright / middle / right;
 }
 
-#Homes:nth-child(4) img{
+#Homes:nth-child(4) {
     grid-area: middle / middleleft / end / middleright;
 }
-#Homes:nth-child(5) img{
+#Homes:nth-child(5) {
     grid-area: middle / middleright / end / right;
 }
