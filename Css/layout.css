@@ -1,0 +1,65 @@
+
+body > header {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    grid-template-rows: auto ;
+}
+
+
+body > header > nav {
+  
+    grid-column: 2;
+    grid-row: 1;
+}
+
+body > header > div {
+  
+    grid-column: 3;
+    grid-row: 1;
+}
+body > header > h1 {
+  
+    grid-column: 1;
+    grid-row: 1;
+}
+
+#Homes {
+
+    display: grid;
+    grid-template-rows: [start] auto [middle] auto [end];
+    grid-template-columns: [start] 2fr [Home1] 1fr [Home2] 1fr [end];
+    
+}
+
+
+
+#Homes::first-child {
+  
+    grid-column: start / Home1;
+    grid-row: start / end;
+}
+#Homes:nth-child(2) {
+  
+    grid-column: Home1 / Home2;
+    grid-row: start / middle;
+}
+
+#Homes:nth-child(3) {
+  
+    grid-column: Home2 / end;
+    grid-row: start / middle;
+}
+
+#Homes:nth-child(4) {
+  
+    grid-column: Home1 / Home2;
+    grid-row: middle / end;
+}
+
+#Homes:nth-child(5) {
+  
+    grid-column: Home2 / end;
+    grid-row: middle / end;
+}
+
+
