@@ -1,5 +1,5 @@
 <?php
-    TODO include database
+    include_once('database.php');
 
     function getUserFromId($id){
         $db = Database::instance()->db();
@@ -22,9 +22,24 @@
         return $statement->fetchAll();
     }
     
-    function getHomeFromId($id){
+    function getHomeFromTitle($title){
         $db = Database::instance()->db();
-        $statement = $db->prepare('SELECT * FROM Home WHERE id = ?');
+        $statement = $db->prepare('SELECT * FROM Home WHERE title = ?');
+        $statement->execute(array($title));
+        return $statement->fetchAll();
+    }
+
+    function getLocations(){
+        $db = Database::instance()->db();
+        $statement = $db->prepare('SELECT * FROM Location');
+        $statement->execute();
+        return $statement->fetchAll();
+    }
+
+    function getLocationFromId($id){
+        $db = Database::instance()->db();
+        $statement = $db->prepare('SELECT * FROM Location WHERE id = ?');
         $statement->execute(array($id));
         return $statement->fetchAll();
     }
+?>

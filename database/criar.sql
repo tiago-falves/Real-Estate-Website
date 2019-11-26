@@ -19,7 +19,7 @@ CREATE TABLE User(
     user_name TEXT NOT NULL UNIQUE,
     image INTEGER REFERENCES Image,
     password_salt TEXT NOT NULL,
-    password TEXT NOT NULL
+    password_hash TEXT NOT NULL
     );
 
 CREATE TABLE Owner(
