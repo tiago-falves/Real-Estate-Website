@@ -1,11 +1,18 @@
+
+body{
+    background-color: #ebebeb;
+}
+
 #profile{
     display: grid;
     grid-template-columns: [left] 1fr [middle] 3fr [right] ;
     grid-template-rows: [top] auto [name] auto [stars] auto [middle] auto [bottom];
     text-align: left;
-    width: 75%;
-    margin: auto;
-    border-style: solid;    
+    width: 90%;
+    
+    margin: 5em;
+    border-style: solid;   
+    background-color: white; 
 }
 
 #profile > *{
@@ -18,6 +25,7 @@
 #profile > img{
     width: 30em;
     margin: 1em;
+ 
   
     grid-area: top / left / middle / middle;
 }

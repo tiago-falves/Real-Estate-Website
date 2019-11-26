@@ -1,8 +1,9 @@
 
 body > header {
     display: grid;
-    grid-template-columns: auto auto auto auto;
+    grid-template-columns: [left] auto  [middle] auto [signup] auto [end];
     grid-template-rows: auto auto ;
+    width: 100%;
 }
 
 
@@ -19,6 +20,12 @@ body > header > div {
     padding: 1em;
     margin: 1em;
 }
+
+#SearchText{
+    display: flex;
+    flex-direction: column;
+}
+
 body > header > h1 {
   
     grid-column: 1;
