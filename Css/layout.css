@@ -1,8 +1,9 @@
 
 body > header {
     display: grid;
-    grid-template-columns: auto auto auto;
-    grid-template-rows: auto ;
+    grid-template-columns: [left] auto  [middle] auto [signup] auto [end];
+    grid-template-rows: auto auto ;
+    width: 100%;
 }
 
 
@@ -16,50 +17,42 @@ body > header > div {
   
     grid-column: 3;
     grid-row: 1;
+    padding: 1em;
+    margin: 1em;
 }
+
+#SearchText{
+    display: flex;
+    flex-direction: column;
+}
+
 body > header > h1 {
   
     grid-column: 1;
     grid-row: 1;
 }
 
-#Homes {
-
+#Homes{
     display: grid;
-    grid-template-rows: [start] auto [middle] auto [end];
-    grid-template-columns: [start] 2fr [Home1] 1fr [Home2] 1fr [end];
-    
+    grid-template-columns: [left] 2fr [middleleft] 1fr [middleright] 1fr [right];
+    grid-template-rows:[top] 1fr [middle] 1fr [end];
 }
 
+#Homes:first-child  {
+    grid-area: top / left / end / middleleft;
 
-
-#Homes::first-child {
-  
-    grid-column: start / Home1;
-    grid-row: start / end;
 }
 #Homes:nth-child(2) {
-  
-    grid-column: Home1 / Home2;
-    grid-row: start / middle;
+    grid-area: top / middleleft / middle / middleright;
 }
 
 #Homes:nth-child(3) {
-  
-    grid-column: Home2 / end;
-    grid-row: start / middle;
+    grid-area: top / middleright / middle / right;
 }
 
 #Homes:nth-child(4) {
-  
-    grid-column: Home1 / Home2;
-    grid-row: middle / end;
+    grid-area: middle / middleleft / end / middleright;
 }
-
 #Homes:nth-child(5) {
-  
-    grid-column: Home2 / end;
-    grid-row: middle / end;
+    grid-area: middle / middleright / end / right;
 }
-
-

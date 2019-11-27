@@ -1,0 +1,66 @@
+
+body{
+    background-color: #ebebeb;
+}
+
+#profile{
+    display: grid;
+    grid-template-columns: [left] 1fr [middle] 3fr [right] ;
+    grid-template-rows: [top] auto [name] auto [stars] auto [middle] auto [bottom];
+    text-align: left;
+    width: 90%;
+    
+    margin: 5em;
+    border-style: solid;   
+    background-color: white; 
+}
+
+#profile > *{
+    margin: 1em;
+}
+#profile > header{
+    grid-area: top / middle / name / right;
+}
+
+#profile > img{
+    width: 30em;
+    margin: 1em;
+ 
+  
+    grid-area: top / left / middle / middle;
+}
+
+#RecentVisits img{
+    width: 20em;
+}
+
+#profile > article {
+    grid-area: stars / middle / middle / end;
+}
+
+#rating {
+    grid-area: name / middle / stars / end;
+}
+
+#comments {
+    grid-area: middle / left / bottom / middle;
+    margin: 1em;
+}
+
+#RecentVisits{
+    grid-area: middle / middle / bottom / end;
+    
+
+}
+
+#RecentVisits > section{
+    display: grid;
+    grid-template-columns: [begin] 1fr [mid] 3fr [end] ;
+    grid-template-rows: [begin] auto [mid] auto [end] ;
+    position: relative;
+    
+}
+
+#RecentVisits > section >header{
+    position: absolute;
+}

@@ -5,7 +5,7 @@ a {
 
 
 body > header{
-    padding: 0.5em;
+    
     color: white;
     background-color: #606060;
     width: 100%;
@@ -14,15 +14,17 @@ body > header{
 
 body > header h1{
     font-family: serif;
+    padding-left: 1em;
 }
 
 body > header > nav >ul{
-    margin: 0;
-    padding: 0;
+    padding: 1em;
 }
 
 body > header > nav >ul > li{
-    display: inline;
+    display: inline-block;
+    text-align: justify;
+    padding-left: 5em;
 }
 
 #Search > img{
@@ -42,6 +44,7 @@ body > header > nav >ul > li{
 #SearchText li{
     color: white;
     padding: 0.5em;
+    margin: 0em;
 }
 
 #SearchText input{
@@ -57,10 +60,12 @@ body > header > nav >ul > li{
     padding: 0.5 em;
 }
 
-#SearchButton{
+#SearchButton img{
 
-    width: 1 em;
-    height: auto;
+    width: 2em;
+    height: 2em;
+    padding: 0em;
+    background-color: white;
 }
 
 #Search {
@@ -73,37 +78,48 @@ body > header > nav >ul > li{
 }
 
 
-.Home img {
+.Home  {
     position: relative;
-    z-index: -1;
 }
 .Home header {
     position: absolute;
-    color: white;
-    margin: 0;
+    color: black;
+    margin: 0em;
+    padding: 0em;
 }
 
-/* Usar Isto de modo a por a primeira imagem maior que as outras */
+#BiggerPhoto img{
+    width: 30em;
+}
 
-/*#Homes:not(:first-child) img {
-    position: relative;
+.Home img{
+    width: 15em;
     z-index: -1;
-    max-width: 10em;
-}*/
-
-#Homes img{
-    max-height: 10em;
 }
+
 
 #BestOffers{
     text-align: center;
 }
 
 body > footer{
-   
+    display: flex;
+    flex-direction: row;
+    
     padding: 1em;
     color: white;
     background-color: #606060;
     width: 100%;
     margin: 0em;
+    
 }
+
+body > footer nav{
+    display: flex;
+    width: 100%;;
+    margin: auto;
+    justify-content: space-around;
+    
+}
+
+
