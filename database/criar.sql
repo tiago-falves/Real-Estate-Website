@@ -18,8 +18,9 @@ CREATE TABLE User(
     id INTEGER PRIMARY KEY,
     user_name TEXT NOT NULL UNIQUE,
     image INTEGER REFERENCES Image,
-    password_salt TEXT NOT NULL,
-    password_hash TEXT NOT NULL
+    password_hash TEXT NOT NULL,
+    description TEXT,
+    rating INTEGER,
     );
 
 CREATE TABLE Owner(

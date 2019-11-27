@@ -13,4 +13,10 @@
         $statement->execute(array($name));
     }
 
+    function insertUser($username, $password) {
+        $db = Database::instance()->db();
+        
+        $satement = $db->prepare('INSERT INTO user VALUES(NULL, ?, NULL, ?)');
+        $satement->execute(array($username, password_hash($password, PASSWORD_DEFAULT, $options)));
+      }
 ?>
