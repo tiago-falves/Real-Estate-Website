@@ -22,7 +22,7 @@ CREATE TABLE User(
     title TEXT,
     location REFERENCES Location,
     description TEXT,
-    rating INTEGER,
+    rating INTEGER
     );
 
 CREATE TABLE Home(
