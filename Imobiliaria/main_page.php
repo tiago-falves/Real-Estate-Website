@@ -4,23 +4,23 @@
         <title>Invicta</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link href="../Css/styles.css" rel="stylesheet">
-        <link href="../Css/layout.css" rel="stylesheet">
-        <link href="../Css/forms.css" rel="stylesheet">
-        <link href="../Css/profile.css" rel="stylesheet">
+        <link href="../Css/styles.css" rel="stylesheet" type="text/css">
+        <link href="../Css/layout.css" rel="stylesheet" type="text/css">
+        <link href="../Css/forms.css" rel="stylesheet" type="text/css">
+        <link href="../Css/profile.css" rel="stylesheet" type="text/css">
     </head>
     <body>
         <header>
-            <h1> <a href="main_page.html">Invicta</a></h1>
+            <h1> <a href="main_page.php">Invicta</a></h1>
             <div id="signup">
-                <a href="register.html">Sign Up</a>
-                <a href="login.html">Login</a>
+                <a href="register.php">Sign Up</a>
+                <a href="login.php">Login</a>
             </div>
             <nav id="menu">
                 <ul>
-                    <li><a href="buy.html">Buy</a></li>
-                    <li><a href="rent.html">Rent</a></li>
-                    <li><a href="discover.html">Rent</a></li>
+                    <li><a href="buy.php">Buy</a></li>
+                    <li><a href="rent.php">Rent</a></li>
+                    <li><a href="discover.php">Rent</a></li>
                 </ul>
             </nav>       
         </header>
@@ -49,32 +49,32 @@
                         <h3>Price</h3>
                         <h4>City</h4>
                     </header>
-                    <a href="home.html"><img src="../Images/home.jpg" alt="Casa 1"></a>
+                    <a href="home.php"><img src="../Images/home.jpg" alt="Casa 1"></a>
                 </section>
                 <section class = "Home">
                     <header>
                         <h3>Price</h3>
                         <h4>City</h4>
                     </header>
-                <a href="home.html"><img src="../Images/home.jpg" alt="Casa 2"></a>                </section>
+                <a href="home.php"><img src="../Images/home.jpg" alt="Casa 2"></a>                </section>
                 <section class = "Home">
                     <header>
                         <h3>Price</h3>
                         <h4>City</h4>
                     </header>
-                <a href="home.html"><img src="../Images/home.jpg" alt="Casa 3"></a>                </section>
+                <a href="home.php"><img src="../Images/home.jpg" alt="Casa 3"></a>                </section>
                 <section class = "Home">
                     <header>
                         <h3>Price</h3>
                         <h4>City</h4>
                     </header>
-                    <a href="home.html"><img src="../Images/home.jpg" alt="Casa 4"></a>                </section>
+                    <a href="home.php"><img src="../Images/home.jpg" alt="Casa 4"></a>                </section>
                 <section class = "Home">
                     <header>
                         <h3>Price</h3>
                         <h4>City</h4>
                     </header>
-                    <a href="home.html"><img src="../Images/home.jpg" alt="Casa 5"></a>                
+                    <a href="home.php"><img src="../Images/home.jpg" alt="Casa 5"></a>                
                 </section>   
             </section>
             <button type="button">See All</button>         

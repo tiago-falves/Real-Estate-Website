@@ -4,30 +4,30 @@
     <title>Invicta</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="../CSS/home.css" rel="stylesheet">
-    <link href="../CSS/layouts.css" rel="stylesheet">
-    <link href="../CSS/responsive.css" rel="stylesheet">
-    <link href="../CSS/comments.css" rel="stylesheet">
-    <link href="../CSS/forms.css" rel="stylesheet">
+    <link href="../Css/home.css" rel="stylesheet" type="text/css">
+    <link href="../Css/layouts.css" rel="stylesheet" type="text/css">
+    <link href="../Css/responsive.css" rel="stylesheet" type="text/css">
+    <link href="../Css/comments.css" rel="stylesheet" type="text/css">
+    <link href="../Css/forms.css" rel="stylesheet" type="text/css">
   </head>
     <body>
       <header>
-          <h1> <a href="main_page.html">Invicta</a></h1>
+          <h1> <a href="main_page.php">Invicta</a></h1>
           <div id="signup">
-              <a href="register.html">Sign Up</a>
-              <a href="login.html">Login</a>
+              <a href="register.php">Sign Up</a>
+              <a href="login.php">Login</a>
           </div>
           <nav id="menu">
               <ul>
-                  <li><a href="buy.html">Buy</a></li>
-                  <li><a href="rent.html">Rent</a></li>
-                  <li><a href="discover.html">Rent</a></li>
+                  <li><a href="buy.php">Buy</a></li>
+                  <li><a href="rent.php">Rent</a></li>
+                  <li><a href="discover.php">Rent</a></li>
               </ul>
           </nav>       
       </header>
       <section id="photos">
         <header>
-          <h2><a href="item.html">The Dream House</a></h2>
+          <h2><a href="item.php">The Dream House</a></h2>
         </header>
         <section>
             <img src="../Images/manson.jpg" alt="House1">
