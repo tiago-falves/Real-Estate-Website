@@ -19,12 +19,10 @@ CREATE TABLE User(
     user_name TEXT NOT NULL UNIQUE,
     image INTEGER REFERENCES Image,
     password_hash TEXT NOT NULL,
+    title TEXT,
+    location REFERENCES Location,
     description TEXT,
     rating INTEGER,
-    );
-
-CREATE TABLE Owner(
-    id INTEGER REFERENCES User
     );
 
 CREATE TABLE Home(
@@ -36,8 +34,8 @@ CREATE TABLE Home(
     type TEXT NOT NULL,
     bedrooms TEXT NOT NULL,
     address TEXT NOT NULL,
-    location REFERENCES Location,
-    owner REFERENCES Owner,
+    location INTEGER REFERENCES Location,
+    owner INTEGER REFERENCES User,
     CONSTRAINT type_name CHECK (
         type = 'House'
         OR type = 'Apartment'

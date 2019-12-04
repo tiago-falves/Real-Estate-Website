@@ -16,7 +16,14 @@
     function insertUser($username, $password) {
         $db = Database::instance()->db();
         
-        $satement = $db->prepare('INSERT INTO user VALUES(NULL, ?, NULL, ?)');
-        $satement->execute(array($username, password_hash($password, PASSWORD_DEFAULT, $options)));
-      }
+        $statement = $db->prepare('INSERT INTO User VALUES(NULL, ?, NULL, ?)');
+        $statement->execute(array($username, password_hash($password, PASSWORD_DEFAULT)));
+    }
+
+    function updateUserProfile($id, $title, $location, $description){
+        $db = Database::instance()->db();
+
+        $statement = $db->prepare('UPDATE User SET title = ?, location = ?, description = ? WHERE id = ?');
+        $statement->execute(array($title, $location, $description, $id));
+    }
 ?>
