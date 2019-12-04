@@ -88,12 +88,18 @@ body > header > nav >ul > li{
     padding: 0em;
 }
 
-#BiggerPhoto img{
-    width: 30em;
+#BiggerPhoto  {
+    width: 50%;
 }
+#BiggerPhoto img {
+    width: 100%;
+}
+.SmallerPhotosCollumn  {
+    width: 25%;
 
-.Home img{
-    width: 15em;
+}
+.SmallerPhotosCollumn img  {
+    width: 100%;
     z-index: -1;
 }
 

@@ -32,7 +32,37 @@ body > header > h1 {
     grid-row: 1;
 }
 
-#Homes{
+#Homes {
+    display: flex;
+    flex-wrap: wrap;
+    width: 75%;
+
+    
+}
+
+#BiggerPhoto {
+    display: inline-block;
+    flex-wrap: wrap;
+    
+}
+
+.SmallerPhotosCollumn {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    /* flex-grow: 1 ; */
+
+}
+
+
+/* #Homes:first-child{
+    flex-grow: 5;
+}
+#Homes:nth-child(2),#Homes:nth-child(5),#Homes:nth-child(3),#Homes:nth-child(4){
+    flex-grow: 1;
+} */
+
+/* #Homes{
     display: grid;
     grid-template-columns: [left] 2fr [middleleft] 1fr [middleright] 1fr [right];
     grid-template-rows:[top] 1fr [middle] 1fr [end];
@@ -55,4 +85,4 @@ body > header > h1 {
 }
 #Homes:nth-child(5) {
     grid-area: middle / middleright / end / right;
-}
+} */
