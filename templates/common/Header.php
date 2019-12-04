@@ -1,12 +1,17 @@
+
 <!DOCTYPE html>
 <html lang="en-US">
     <head>
         <title>Invicta</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link href="../Css/style.css" rel="stylesheet">
+        <link href="../Css/styles.css" rel="stylesheet">
         <link href="../Css/layout.css" rel="stylesheet">
         <link href="../Css/forms.css" rel="stylesheet">
+        <link href="../Css/home.css" rel="stylesheet">
+        <link href="../Css/profile.css" rel="stylesheet">
+        <link href="../Css/comments.css" rel="stylesheet">
+
     </head>
     <body>
         <header>
