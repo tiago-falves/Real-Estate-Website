@@ -1,9 +1,22 @@
 
+body > header{
+    display: flex;
+    justify-content: space-around;
+}
+body > header > nav{
+    flex-grow: 2;
+}
+
+
+/* 
 body > header {
     display: grid;
     grid-template-columns: [left] auto  [middle] auto [signup] auto [end];
     grid-template-rows: auto auto ;
     width: 100%;
+}
+body{
+    margin: 1em;
 }
 
 
@@ -11,6 +24,7 @@ body > header > nav {
   
     grid-column: 2;
     grid-row: 1;
+ 
 }
 
 body > header > div {
@@ -19,11 +33,17 @@ body > header > div {
     grid-row: 1;
     padding: 1em;
     margin: 1em;
-}
+} */
 
 #SearchText{
     display: flex;
     flex-direction: column;
+    text-align: left;
+    margin: 0em;
+}
+#SearchBar{
+    display: flex;
+   
 }
 
 body > header > h1 {
@@ -35,14 +55,27 @@ body > header > h1 {
 #Homes {
     display: flex;
     flex-wrap: wrap;
-    width: 75%;
+    width: 100%;
+    margin: auto;
 
     
+}
+
+#BestOffers > header{
+    text-align: center;
+}
+
+#BestOffers > button{
+    text-align: center;
+    margin: auto;
+    width: 100%;
 }
 
 #BiggerPhoto {
     display: inline-block;
     flex-wrap: wrap;
+    
+    
     
 }
 
@@ -53,36 +86,3 @@ body > header > h1 {
     /* flex-grow: 1 ; */
 
 }
-
-
-/* #Homes:first-child{
-    flex-grow: 5;
-}
-#Homes:nth-child(2),#Homes:nth-child(5),#Homes:nth-child(3),#Homes:nth-child(4){
-    flex-grow: 1;
-} */
-
-/* #Homes{
-    display: grid;
-    grid-template-columns: [left] 2fr [middleleft] 1fr [middleright] 1fr [right];
-    grid-template-rows:[top] 1fr [middle] 1fr [end];
-}
-
-#Homes:first-child  {
-    grid-area: top / left / end / middleleft;
-
-}
-#Homes:nth-child(2) {
-    grid-area: top / middleleft / middle / middleright;
-}
-
-#Homes:nth-child(3) {
-    grid-area: top / middleright / middle / right;
-}
-
-#Homes:nth-child(4) {
-    grid-area: middle / middleleft / end / middleright;
-}
-#Homes:nth-child(5) {
-    grid-area: middle / middleright / end / right;
-} */

@@ -1,5 +1,5 @@
 
-#login{
+.loginRegister{
 
     margin: 2em auto;
     width: 30em;
@@ -10,7 +10,7 @@
 }
 
 
-#login header {
+.loginRegister header {
     color: white;
     padding: 2em 0;
     text-align: center;
@@ -19,7 +19,7 @@
 
   }
 
-input[type=text], input[type=password] {
+input[type=text], input[type=password] ,input[type=email] {
     box-sizing: border-box;
     padding: 0.5em;
     border: 0;
@@ -50,7 +50,7 @@ width: 20%;
 text-transform: uppercase;
 }
 
-#login footer p{
+.loginRegister footer p{
     margin: 0;
     padding-bottom: 2em;
     color: black;

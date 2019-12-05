@@ -1,7 +1,7 @@
 <?php
-  include('../templates/common/header.php');  
+  include('../templates/common/Header.php');  
 ?>
-<section id="login">
+<section class = "loginRegister">
   
   <header>
     <h2>Login</h2>
@@ -17,5 +17,5 @@
   </footer>
 </section>
 <?php
-  include('../templates/common/footer.php');  
+  include('../templates/common/Footer.php');  
 ?>

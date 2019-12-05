@@ -1,5 +1,5 @@
 <?php
-  include('../templates/common/header.php');  
+  include('../templates/common/Header.php');  
 ?>
         <section id="AdvancedSearch">
             <header>
@@ -107,5 +107,5 @@
             <a href="">See All</a>            
         </div>
         <?php
-  include('../templates/common/footer.php');  
+  include('../templates/common/Footer.php');  
 ?>

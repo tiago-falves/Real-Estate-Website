@@ -18,15 +18,12 @@ body{
 #profile > *{
     margin: 1em;
 }
-#profile > header{
-    grid-area: top / middle / name / right;
-}
+
 
 #profile > img{
     width: 30em;
     margin: 1em;
- 
-  
+   
     grid-area: top / left / middle / middle;
 }
 
@@ -47,6 +44,14 @@ body{
     margin: 1em;
 }
 
+.SmallerPhotosCollumn {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    /* flex-grow: 1 ; */
+
+}
+
 #RecentVisits{
     grid-area: middle / middle / bottom / end;
     
@@ -63,4 +68,8 @@ body{
 
 #RecentVisits > section >header{
     position: absolute;
+}
+
+#Homes{
+    width: 50%;
 }

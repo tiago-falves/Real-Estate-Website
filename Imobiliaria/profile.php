@@ -4,10 +4,10 @@
     <title>Invicta</title>
       <meta charset="UTF-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <link href="../CSS/profile.css" rel="stylesheet" type="text/css">
-      <link href="../CSS/comments.css" rel="stylesheet" type="text/css">
-      <link href="../CSS/styles.css" rel="stylesheet" type="text/css">
-      <link href="../CSS/layout.css" rel="stylesheet" type="text/css">
+      <link href="../Css/profile.css" rel="stylesheet" type="text/css">
+      <link href="../Css/comments.css" rel="stylesheet" type="text/css">
+      <link href="../Css/styles.css" rel="stylesheet" type="text/css">
+      <link href="../Css/layout.css" rel="stylesheet" type="text/css">
 
   </head>
   <body>
@@ -33,9 +33,9 @@
             <p>Harvard University</p>
       </header>
       <img src="../Images/restivo.jpg" alt="Ribeira">
-      <section id = "rating">
+      <!-- <section id = "rating">
         <h2>Rating Estrelinhas</h2>
-      </section>
+      </section> -->
       <article class = Description>
         <header>
           <h2>Description</h2>
@@ -49,10 +49,14 @@
             
             <h2>5 Comments</h2>
             <article class="comment">
-            <header><h3>Fantastic</h3></header>
-            <span class="user">updatespeak</span>
-            <span class="date">1m</span>
-            <p>Aliquam maximus commodo dui, ut viverra urna vulputate et. Donec posuere vitae sem sed vehicula. Sed in erat eu diam fringilla sodales. Aenean lacinia vulputate nisl, dignissim dignissim nisl. Nam at nibh mollis, facilisis nibh sit amet, mattis urna. Maecenas.</p>
+                <header>
+                    <h3>Fantastic</h3>
+                </header>
+                 <span class="user">
+                     updatespeak
+                </span>
+                <span class="date">1m</span>
+                <p>Aliquam maximus commodo dui, ut viverra urna vulputate et. Donec posuere vitae sem sed vehicula. Sed in erat eu diam fringilla sodales. Aenean lacinia vulputate nisl, dignissim dignissim nisl. Nam at nibh mollis, facilisis nibh sit amet, mattis urna. Maecenas.</p>
             </article>
             <article class="comment">
             <header><h3>Worst Experience of my life</h3></header>
@@ -66,18 +70,7 @@
             <span class="date">7m</span>
             <p>Phasellus at neque nec nunc scelerisque eleifend eu eu risus. Praesent in nibh viverra, posuere ligula condimentum, accumsan tellus. Vivamus varius sem a mauris finibus, ac iaculis risus scelerisque. Nullam fermentum leo dui, at fermentum tellus consequat id. Pellentesque eleifend.</p>
             </article>
-            <article class="comment">
-            <header><h3>Well Located and very cheap!</h3></header>
-            <span class="user">charityheinz</span>
-            <span class="date">9m</span>
-            <p>Nam at elit ut orci viverra viverra vitae dictum sapien. Morbi sed eleifend eros. Nunc fermentum, nulla id vehicula posuere, justo orci commodo urna, a blandit orci massa vitae urna. Sed commodo sollicitudin quam. Suspendisse molestie eget libero nec finibus.</p>
-            </article>
-            <article class="comment">
-            <header><h3>We robbed the television and it works great</h3></header>
-            <span class="user">plutoniumfogg</span>
-            <span class="date">11m</span>
-            <p>Aliquam dignissim finibus lectus non condimentum. Cras accumsan diam vitae nulla efficitur congue. Vivamus porta arcu sit amet dapibus ultricies. Donec ac sodales mauris. Nulla eget tortor urna. Donec a malesuada libero. Curabitur blandit erat ut diam rhoncus venenatis. Proin.</p>
-            </article>
+   
             <form>
             <h2>Add your voice...</h2>
             <label>Username 
@@ -96,35 +89,40 @@
             <header>
                 <h2>Houses of this user</h2>
             </header>
-            <section>
-                <section>
-                    <header>
-                        <h3>Price</h3>
-                        <h4>City</h4>
-                    </header>
-                    <a href="home.php"><img src="../Images/home.jpg" alt="Casa 1"></a>
-                </section>
-                <section>
-                    <header>
-                        <h3>Price</h3>
-                        <h4>City</h4>
-                        <a href="home.php"><img src="../Images/home.jpg" alt="Casa 2"></a>
-                    </header>
-                </section>
-                <section>
-                    <header>
-                        <h3>Price</h3>
-                        <h4>City</h4>
-                    </header>
-                <a href="home.php"><img src="../Images/home.jpg" alt="Casa 3"></a>
-                </section>
-                <section>
-                    <header>
-                        <h3>Price</h3>
-                        <h4>City</h4>
-                    </header>
-                        <a href="home.php"><img src="../Images/home.jpg" alt="Casa 4"></a>
-                </section>
+            <section id = "Homes">
+                 <div class = "SmallerPhotosCollumn">
+                    <section class = "Home">
+                        <header>
+                            <h3>Price</h3>
+                            <h4>City</h4>
+                        </header>
+                        <a href="home.html"><img src="../Images/home.jpg" alt="Casa 2"></a>
+                    </section>
+                    <section class = "Home">
+                        <header>
+                            <h3>Price</h3>
+                            <h4>City</h4>
+                        </header>
+                        <a href="home.html"><img src="../Images/home.jpg" alt="Casa 3"></a>                
+                    </section>
+                </div>
+                <div class = "SmallerPhotosCollumn">
+         
+                    <section class = "Home">
+                        <header>
+                            <h3>Price</h3>
+                            <h4>City</h4>
+                        </header>
+                        <a href="home.html"><img src="../Images/home.jpg" alt="Casa 3"></a>
+                    </section>
+                    <section class = "Home">
+                        <header>
+                            <h3>Price</h3>
+                            <h4>City</h4>
+                        </header>
+                        <a href="home.html"><img src="../Images/home.jpg" alt="Casa 4"></a>                
+                    </section>
+                </div>
             </section>
             
             <a href="">See All</a>            

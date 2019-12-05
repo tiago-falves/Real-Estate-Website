@@ -9,12 +9,22 @@ body > header{
     color: white;
     background-color: #606060;
     width: 100%;
-    margin: 0em;
+   
 }
 
 body > header h1{
     font-family: serif;
     padding-left: 1em;
+    
+}
+#signup{
+    padding: 1em;
+    margin: auto;
+}
+#signup a{
+    padding-left: 2em;
+    padding-right: 2em;
+   
 }
 
 body > header > nav >ul{
@@ -36,9 +46,10 @@ body > header > nav >ul > li{
 
 #SearchText{
    position: absolute;
-   top: 45%;
-   left: 45%;
+   top: 70%;
+   left: 40%;
    transform: translate(-50%, -50%);
+   
 }
 
 #SearchText li{
@@ -47,9 +58,9 @@ body > header > nav >ul > li{
     margin: 0em;
 }
 
-#SearchText input{
+#SearchBar input{
     width: 40em;
-    height: 2em;
+    height: 100%;
 }
 
 
@@ -60,22 +71,22 @@ body > header > nav >ul > li{
     padding: 0.5 em;
 }
 
-#SearchButton img{
+#SearchBar img{
 
     width: 2em;
-    height: 2em;
+    height: 100%;
     padding: 0em;
-    background-color: white;
+    background-color: #606060;
 }
+
+
 
 #Search {
 
     text-align:  center;
 }
 
-#BestOffers h2{
-    text-align: center;
-}
+
 
 
 .Home  {
@@ -90,6 +101,7 @@ body > header > nav >ul > li{
 
 #BiggerPhoto  {
     width: 50%;
+    
 }
 #BiggerPhoto img {
     width: 100%;
@@ -104,20 +116,14 @@ body > header > nav >ul > li{
 }
 
 
-#BestOffers{
-    text-align: center;
-}
+
 
 body > footer{
     display: flex;
-    flex-direction: row;
-    
-    padding: 1em;
     color: white;
     background-color: #606060;
     width: 100%;
     margin: 0em;
-    
 }
 
 body > footer nav{
