@@ -1,5 +1,5 @@
 <?php
-  include('../templates/common/header.php');  
+  include('../templates/common/Header.php');  
 ?>
 <div id="Search">
     <section id="SearchText">
@@ -57,5 +57,5 @@
     <button type="button">See All</button>         
 </div>
 <?php
-  include('../templates/common/header.php');  
+  include('../templates/common/Footer.php');  
 ?>
