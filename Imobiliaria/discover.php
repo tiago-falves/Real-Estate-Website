@@ -1,25 +1,6 @@
-<!DOCTYPE html>
-<html lang="en-US">
-    <head>
-        <title>Invicta</title>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    </head>
-    <body>
-        <header>
-            <h1> <a href="main_page.html">Invicta</a></h1>
-            <div id="signup">
-                <a href="register.html">Sign Up</a>
-                <a href="login.html">Login</a>
-            </div>
-            <nav id="menu">
-                <ul>
-                    <li><a href="buy.html">Buy</a></li>
-                    <li><a href="rent.html">Rent</a></li>
-                    <li><a href="discover.html">Rent</a></li>
-                </ul>
-            </nav>       
-        </header>
+<?php
+  include('../templates/common/header.php');  
+?>
         <section id="AdvancedSearch">
             <header>
                 <h2>Advanced Search</h2>
@@ -125,13 +106,6 @@
             </section>
             <a href="">See All</a>            
         </div>
-        <footer>
-            <h3>Invicta</h3>
-            <nav id="FooterLinks">
-                <a href="">About us</a>
-                <a href="">Help Center</a>
-                <a href="">Contact us</a>
-            </nav>
-        </footer>
-    </body>
-</html>
+        <?php
+  include('../templates/common/footer.php');  
+?>
