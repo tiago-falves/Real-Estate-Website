@@ -47,7 +47,6 @@
             </section>
         </div>
         <div class = "SmallerPhotosCollumn">
-    
             <section class = "Home">
                 <header>
                     <h3>Price</h3>
