@@ -1,5 +1,5 @@
 DROP TABLE IF EXISTS Image;
-DROP TABLE IF EXISTS User;
+DROP TABLE IF EXISTS Person;
 DROP TABLE IF EXISTS Owner;
 DROP TABLE IF EXISTS Home;
 DROP TABLE IF EXISTS Location;
@@ -14,14 +14,14 @@ CREATE TABLE Image(
     path TEXT NOT NULL UNIQUE
     );
 
-CREATE TABLE User(
+CREATE TABLE Person(
     id INTEGER PRIMARY KEY,
-    user_name TEXT NOT NULL UNIQUE,
-    image INTEGER REFERENCES Image,
+    userName TEXT NOT NULL UNIQUE,
+    profilePicture INTEGER REFERENCES Image,
     password_hash TEXT NOT NULL,
     title TEXT,
-    location REFERENCES Location,
-    description TEXT,
+    userLocation Integer REFERENCES Location,
+    userDescription TEXT,
     rating INTEGER
     );
 
@@ -35,7 +35,7 @@ CREATE TABLE Home(
     bedrooms TEXT NOT NULL,
     address TEXT NOT NULL,
     location INTEGER REFERENCES Location,
-    owner INTEGER REFERENCES User,
+    owner INTEGER REFERENCES Person,
     CONSTRAINT type_name CHECK (
         type = 'House'
         OR type = 'Apartment'
@@ -58,16 +58,16 @@ CREATE TABLE Reservation(
     id INTEGER PRIMARY KEY,
     start_date DATE NOT NULL,
     end_date DATE NOT NULL,
-    user REFERENCES User,
-    home REFERENCES Home
+    userID INTEGER REFERENCES Person(id),
+    home INTEGER REFERENCES Home(id)
     );
 
 CREATE TABLE Photo(
     id INTEGER PRIMARY KEY,
     approved BOOLEAN DEFAULT FALSE,
     image INTEGER REFERENCES Image,
-    uploader REFERENCES User,
-    home REFERENCES Home
+    uploader_id  INTEGER REFERENCES Person(id),
+    home INTEGER REFERENCES Home(id)
     );
 
 CREATE TABLE Comment(
@@ -75,8 +75,8 @@ CREATE TABLE Comment(
     date DATE NOT NULL,
     hour TIME NOT NULL,
     content TEXT NOT NULL,
-    commenter REFERENCES User,
-    home REFERENCES Home
+    commenter_id INTEGER REFERENCES Person(id),
+    home_id INTEGER REFERENCES Home(id)
     );
 
 CREATE TABLE Reply(
@@ -84,8 +84,8 @@ CREATE TABLE Reply(
     date DATE NOT NULL,
     hour TIME NOT NULL,
     content TEXT NOT NULL,
-    comment REFERENCES comment,
-    user REFERENCES User
+    comment INTEGER REFERENCES comment(id),
+    userID INTEGER REFERENCES Person
     );
 
 CREATE TABLE Message(
@@ -93,6 +93,13 @@ CREATE TABLE Message(
     date DATE NOT NULL,
     hour TIME NOT NULL,
     content TEXT NOT NULL,
-    sender REFERENCES User,
-    receiver REFERENCES User
+    senderID INTEGER REFERENCES Person(id),
+    receiverID INTEGER REFERENCES Person(id)
     );
+
+
+
+
+INSERT INTO Person (id, username, profilePicture, password_hash, title, userLocation,userDescription,rating) VALUES (1, 'JoaoRocha',1, 'password1', 'Presidente', 1, 'Etiam massa magna, condimentum eu facilisis sit amet, dictum ac purus. Curabitur semper nisl vel libero pulvinar ultricies. Proin dignissim dolor nec scelerisque bibendum. Maecenas a sem euismod, iaculis erat id, convallis arcu. Ut mollis, justo vitae suscipit imperdiet, eros dui laoreet enim, fermentum posuere felis arcu vel urna. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia',4);
+INSERT INTO Person (id, username, profilePicture, password_hash, title, userLocation,userDescription,rating) VALUES (2, 'TiagoAlves',2, '123456789', 'Presidente', 2, 'Etiam massa magna, condimentum eu facilisis sit amet, dictum ac purus. Curabitur semper nisl vel libero pulvinar ultricies. Proin dignissim dolor nec scelerisque bibendum. Maecenas a sem euismod, iaculis erat id, convallis arcu. Ut mollis, justo vitae suscipit imperdiet, eros dui laoreet enim, fermentum posuere felis arcu vel urna. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia',4);
+
