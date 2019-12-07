@@ -73,7 +73,7 @@ CREATE TABLE Photo(
 CREATE TABLE Comment(
     id INTEGER PRIMARY KEY,
     date DATE NOT NULL,
-    hour TIME NOT NULL,
+    hour INTEGER NOT NULL,
     content TEXT NOT NULL,
     commenter_id INTEGER REFERENCES Person(id),
     home_id INTEGER REFERENCES Home(id)
@@ -82,7 +82,7 @@ CREATE TABLE Comment(
 CREATE TABLE Reply(
     id INTEGER PRIMARY KEY,
     date DATE NOT NULL,
-    hour TIME NOT NULL,
+    hour INTEGER NOT NULL,
     content TEXT NOT NULL,
     comment INTEGER REFERENCES comment(id),
     userID INTEGER REFERENCES Person
@@ -91,7 +91,7 @@ CREATE TABLE Reply(
 CREATE TABLE Message(
     id INTEGER PRIMARY KEY,
     date DATE NOT NULL,
-    hour TIME NOT NULL,
+    hour INTEGER NOT NULL,
     content TEXT NOT NULL,
     senderID INTEGER REFERENCES Person(id),
     receiverID INTEGER REFERENCES Person(id)
@@ -100,6 +100,22 @@ CREATE TABLE Message(
 
 
 
-INSERT INTO Person (id, username, profilePicture, password_hash, title, userLocation,userDescription,rating) VALUES (1, 'JoaoRocha',1, 'password1', 'Presidente', 1, 'Etiam massa magna, condimentum eu facilisis sit amet, dictum ac purus. Curabitur semper nisl vel libero pulvinar ultricies. Proin dignissim dolor nec scelerisque bibendum. Maecenas a sem euismod, iaculis erat id, convallis arcu. Ut mollis, justo vitae suscipit imperdiet, eros dui laoreet enim, fermentum posuere felis arcu vel urna. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia',4);
-INSERT INTO Person (id, username, profilePicture, password_hash, title, userLocation,userDescription,rating) VALUES (2, 'TiagoAlves',2, '123456789', 'Presidente', 2, 'Etiam massa magna, condimentum eu facilisis sit amet, dictum ac purus. Curabitur semper nisl vel libero pulvinar ultricies. Proin dignissim dolor nec scelerisque bibendum. Maecenas a sem euismod, iaculis erat id, convallis arcu. Ut mollis, justo vitae suscipit imperdiet, eros dui laoreet enim, fermentum posuere felis arcu vel urna. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia',4);
+INSERT INTO Location (id,name) VALUES (1,'zaaaaaas');
+INSERT INTO Person (id, userName, profilePicture, password_hash, title, userLocation,userDescription,rating) VALUES (1, 'Joao Rocha',1, 'password1', 'Presidente', 1, 'Etiam massa magna, condimentum eu facilisis sit amet, dictum ac purus. Curabitur semper nisl vel libero pulvinar ultricies. Proin dignissim dolor nec scelerisque bibendum. Maecenas a sem euismod, iaculis erat id, convallis arcu. Ut mollis, justo vitae suscipit imperdiet, eros dui laoreet enim, fermentum posuere felis arcu vel urna. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Etiam massa magna, condimentum eu facilisis sit amet, dictum ac purus. Curabitur semper nisl vel libero pulvinar ultricies. Proin dignissim dolor nec scelerisque bibendum. Maecenas a sem euismod, iaculis erat id, convallis arcu. Ut mollis, justo vitae suscipit imperdiet, eros dui laoreet enim, fermentum posuere felis arcu vel urna. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia',4);
+INSERT INTO Person (id, userName, profilePicture, password_hash, title, userLocation,userDescription,rating) VALUES (2, 'Tiago Alves',2, '123456789', 'Presidente', 2, 'Etiam massa magna, condimentum eu facilisis sit amet, dictum ac purus. Curabitur semper nisl vel libero pulvinar ultricies. Proin dignissim dolor nec scelerisque bibendum. Maecenas a sem euismod, iaculis erat id, convallis arcu. Ut mollis, justo vitae suscipit imperdiet, eros dui laoreet enim, fermentum posuere felis arcu vel urna. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia',4);
+INSERT INTO HOME (id,title,price,description,rating,type,bedrooms,address,location,owner) VALUES (1,'Casa do Restivo',1.0,'Alta Mansão',5.0,'House','T1','Hogwartz',1,1);
+INSERT INTO Reservation(id,start_date,end_date,userID,home) VALUES (1,20190423,20190424,1,1);
+INSERT INTO Photo(id,approved,image,uploader_id,home) VALUES (1,1,1,1,1);
+INSERT INTO Photo(id,approved,image,uploader_id,home) VALUES (2,0,1,1,1);
+INSERT INTO Comment(id,date,hour,content,commenter_id,home_id) VALUES (1,20190423,1200,'Gosto de sopa',1,1);
+INSERT INTO Reply(id,date,hour,content,comment,userID) VALUES (1,20190423,1200,'Gosto de sopa',1,1);
+INSERT INTO Message(id,date,hour,content,senderID,receiverID) VALUES (1,20190423,1200,'Gosto de sopa',1,2);
+INSERT INTO Image(id,path) VALUES (1,'../Images/restivo.jpg');
+INSERT INTO Image(id,path) VALUES (2,'../Images/casa.jpeg');
+
+
+
+
+
+
 

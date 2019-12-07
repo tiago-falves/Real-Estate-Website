@@ -1,48 +1,29 @@
-<!DOCTYPE html>
-<html lang="en-US">
-  <head>
-    <title>Invicta</title>
-      <meta charset="UTF-8">
-      <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <link href="../Css/profile.css" rel="stylesheet" type="text/css">
-      <link href="../Css/comments.css" rel="stylesheet" type="text/css">
-      <link href="../Css/styles.css" rel="stylesheet" type="text/css">
-      <link href="../Css/layout.css" rel="stylesheet" type="text/css">
+<?php
+  include('../templates/profileHeader.php');  
+  include('../database/queries.php');
 
-  </head>
-  <body>
-    <header>
-      <h1> <a href="main_page.php">Invicta</a></h1>
-      <div id="signup">
-         <a href="register.php">Sign Up</a>
-         <a href="login.php">Login</a>
-      </div>
-      <nav id="menu">
-        <ul>
-          <li><a href="buy.php">Buy</a></li>
-          <li><a href="rent.php">Rent</a></li>
-          <li><a href="discover.php">Rent</a></li>
-         </ul>
-      </nav>       
-    </header>
+ $idUser = 1; //TEMPORARIO
 
+  $profile = getUserFromId($idUser);
+  $profilePicture = getPhotoFromUser($idUser);
+ 
+?>
     <div id = "profile">
       <header>
-            <h2>Andre Restivo</h2>
-            <p class="title">CEO & Founder of Facebook, Example</p>
-            <p>Harvard University</p>
+            <h2><?php echo $profile['userName'] ?></h2>
+            <p class="title"><?php echo $profile['title'] ?></p>
+            <!-- <p>Harvard University</p> -->
       </header>
-      <img src="../Images/restivo.jpg" alt="Ribeira">
-      <!-- <section id = "rating">
-        <h2>Rating Estrelinhas</h2>
-      </section> -->
+      <img src= '../Images/restivo.jpg' alt="Ribeira"> <?php //echo $profilePicture; ?>
+      <section id = "rating">
+        <h2><?php echo $profile['rating'] ?> stars</h2>
+      </section>
       <article class = Description>
         <header>
           <h2>Description</h2>
         </header>
-        <p>Etiam massa magna, condimentum eu facilisis sit amet, dictum ac purus. Curabitur semper nisl vel libero pulvinar ultricies. Proin dignissim dolor nec scelerisque bibendum. Maecenas a sem euismod, iaculis erat id, convallis arcu. Ut mollis, justo vitae suscipit imperdiet, eros dui laoreet enim, fermentum posuere felis arcu vel urna. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Proin blandit ex sit amet suscipit commodo. Duis molestie ligula eu urna tincidunt tincidunt. Mauris posuere aliquet pellentesque. Fusce molestie libero arcu, ut porta massa iaculis sit amet. Fusce varius nisl vitae fermentum fringilla. Pellentesque a cursus lectus.</p>
-        <p>Duis condimentum metus et ex tincidunt, faucibus aliquet ligula porttitor. In vitae posuere massa. Donec fermentum magna sit amet suscipit pulvinar. Cras in elit sapien. Vivamus nunc sem, finibus ac suscipit ullamcorper, hendrerit vitae urna. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Quisque eget tincidunt orci. Mauris congue ipsum non purus tristique, at venenatis elit pellentesque. Etiam congue euismod molestie. Mauris ex orci, lobortis a faucibus sed, sagittis eget neque.</p>
-        <p>Mauris tincidunt orci congue turpis viverra pulvinar. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Quisque rhoncus lorem eget.</p>
+        <p><?php echo $profile['userDescription'] ?></p>
+
       </article>
        
         <section id="comments">
