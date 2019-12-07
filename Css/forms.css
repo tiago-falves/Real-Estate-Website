@@ -19,6 +19,14 @@
 
   }
 
+.error{
+  background-color: red;
+}
+.success{
+  background-color: green;
+}
+
+
 input[type=text], input[type=password] ,input[type=email] {
     box-sizing: border-box;
     padding: 0.5em;
