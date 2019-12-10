@@ -4,7 +4,7 @@ a {
 }
 body{
     font-family: "Open Sans", sans-serif;
-   
+    margin: 0%;
 }
 
 
@@ -13,8 +13,8 @@ body > header{
     color: white;
     background-color: #606060;
     width: 100%;
-    padding-top: 2em;
-    padding-bottom: 2em ;
+    padding-top: 0.2em;
+    padding-bottom: 0.2em ;
     max-height: 90vh;
    
 }
@@ -22,8 +22,17 @@ body > header{
 body > header h1{
     font-family: serif;
     padding-left: 1em;
+    padding-right: 2em;
     
-    
+}
+
+body > header > nav > ul> *:hover{
+    background-color: #ddd;
+    color: black;
+}
+#signup a:hover {
+    background-color: #ddd;
+    color: black;
 }
 #signup{
     padding: 1em;
@@ -45,8 +54,11 @@ body > header > nav >ul{
 
 body > header > nav >ul > li{
     display: inline-block;
-    text-align: justify;
-    padding-left: 5em;
+    text-align: left;
+    padding-left: 2em;
+    padding-right: 2em;
+    padding-top: 0.5em;
+    padding-bottom: 0.5em,
 }
 #Search {
     position: relative;
@@ -64,7 +76,7 @@ body > header > nav >ul > li{
     left: 10%;
     top: 35%;
     width: 80%;
-
+    height: 80%;
     margin: auto;
     
     
@@ -78,7 +90,7 @@ body > header > nav >ul > li{
     background-color: #606060;
     color: white;
     padding: 1em;
-    font-size: larger;
+    font-size: 100%;
 }
 
 #SearchText ul{
@@ -112,12 +124,6 @@ body > header > nav >ul > li{
 }
 
 
-
-#Homes{
-    width: 50em
-    
-}
-
 .Home  {
     position: relative;
 }
@@ -128,14 +134,12 @@ body > header > nav >ul > li{
     padding: 0em;
 }
 
-#Homes{
-    width: 100%;
-}
+.Home h3{
+    width: 80%;
+} 
 
 #BiggerPhoto  {
-    width: 50%;
- 
-    
+    width: 50%;  
 }
 #BiggerPhoto img {
     width: 100%;
@@ -148,9 +152,6 @@ body > header > nav >ul > li{
     width: 100%;
     z-index: -1;
 }
-
-
-
 
 body > footer{
     display: flex;
