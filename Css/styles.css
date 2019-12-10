@@ -11,10 +11,10 @@ body{
 body > header{
     
     color: white;
-    background-color: #606060;
+    background-color: rgba(68, 68, 68, 0.8);
     width: 100%;
-    padding-top: 0.2em;
-    padding-bottom: 0.2em ;
+    padding-top: 0.1em;
+    padding-bottom: 1em ;
     max-height: 90vh;
    
 }
@@ -95,8 +95,7 @@ body > header > nav >ul > li{
 
 #SearchText ul{
     text-align: left;
-    
-    
+    padding: 0%;
 }
 #SearchBar input{
     /* width: 40em; */
@@ -105,8 +104,6 @@ body > header > nav >ul > li{
     padding: 1em;
     font-size: larger;
 }
-
-
 
 #SearchBar img{
 
@@ -131,7 +128,8 @@ body > header > nav >ul > li{
     position: absolute;
     color: black;
     margin: 0em;
-    padding: 0em;
+    width: 50%;
+    line-height: 10%;
 }
 
 .Home h3{
@@ -156,12 +154,12 @@ body > header > nav >ul > li{
 body > footer{
     display: flex;
     color: white;
-    background-color: #606060;
-    padding-top: 1em;
-    padding-bottom: 1em ;
+    background-color: rgba(96, 96, 96, 1);
+    padding-top: 0.5em;
+    padding-bottom: 0.5em ;
     max-height: 90vh;
     width: 100%;
-    margin: 1em;
+    margin-top: 1em;
 }
 
 body > footer nav{
