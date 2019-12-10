@@ -17,6 +17,15 @@ body > header h1{
     padding-left: 1em;
     
 }
+
+body > header > nav > ul> *:hover{
+    background-color: #ddd;
+    color: black;
+}
+#signup a:hover {
+    background-color: #ddd;
+    color: black;
+}
 #signup{
     padding: 1em;
     margin: auto;
@@ -33,7 +42,7 @@ body > header > nav >ul{
 
 body > header > nav >ul > li{
     display: inline-block;
-    text-align: justify;
+    text-align: left;
     padding-left: 5em;
 }
 

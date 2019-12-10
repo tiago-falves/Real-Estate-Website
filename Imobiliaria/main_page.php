@@ -1,6 +1,8 @@
 <?php
   include('../templates/common/Header.php');  
 ?>
+
+
 <div id="Search">
     <img src="../Images/ribeirah.jpg" alt="Ribeira">
     <section id="SearchText">
