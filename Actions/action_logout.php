@@ -5,6 +5,6 @@
     session_start();
     
     $_SESSION['messages'][] = array('type' => 'success', 'content' => 'Logged out');
-
-    //header('Location: foo');
+    
+    header('Location: ' . $_SERVER['HTTP_REFERER']);
 ?>

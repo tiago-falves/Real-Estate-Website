@@ -23,6 +23,7 @@
                     <li><a href="profile.php">Profile</a></li>
                     <li><a href="editProfile.php">Edit Profile</a></li>
                     <li><a href="discover.php">Discover?</a></li>
+                    <li><a href="../Actions/action_logout.php">Logout?</a></li>
                 </ul>
             </nav>       
             <div id="signup">
