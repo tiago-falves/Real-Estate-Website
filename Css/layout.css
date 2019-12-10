@@ -4,6 +4,8 @@ body > header{
     height: 10%;  
     display: flex;
     justify-content: space-around;
+    z-index: -1;
+    position:relative;
 }
 body > header > nav{
     flex-grow: 2;
@@ -13,7 +15,6 @@ body > header > nav{
 #SearchText{
     display: flex;
     flex-direction: column;
-    position: relative; 
     text-align: left;
     margin: 0em;
 }

@@ -8,7 +8,6 @@
     body > header{
         float: none;
         text-align: left;
-        position: fixed;
     }
     body > header > h1{ 
         float: left;

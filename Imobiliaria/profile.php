@@ -70,7 +70,7 @@
             <header>
                 <h2>Houses of this user</h2>
             </header>
-            <section id = "Homes">
+            <section id = "HomesProfile">
                  <div class = "SmallerPhotosCollumn">
                     <section class = "Home">
                         <header>
