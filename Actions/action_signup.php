@@ -1,23 +1,4 @@
 <?php
-<<<<<<< HEAD
- include_once('../session/session.php');
- include_once('../database/database.php');
-
-
- $username = $_POST['username'];
- $password = $_POST['password'];
-
-
- function insertUser($username, $password) {
-    $db = Database::instance()->db();
-    $stmt = $db->prepare('INSERT INTO Person  VALUES (NULL, ?, 1, ?, "", 1, "", 0)');
-    $stmt->execute(array($username, password_hash($password, PASSWORD_DEFAULT)));
-
-  } 
-
-
-
-=======
   include_once('../session/session.php');
   include_once('../database/database.php');
   include_once('../database/inserts.php');
@@ -26,7 +7,6 @@
   $password = $_POST['password'];
   $confirmed_password = $_POST['confirm_password'];
   
->>>>>>> 7e2723ac54bc1696ca114a96071ee3db9d6bf668
   if ( !preg_match ("/^[a-zA-Z0-9]+$/", $username)) {
     $_SESSION['error_messages'][] = 'Username can only contain letters and numbers!';
     die(header('Location: ../Imobiliaria/register.php'));
