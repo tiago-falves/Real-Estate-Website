@@ -14,8 +14,6 @@
         return $statement->fetch();
     }
 
-    
-    
     function getUserFromUserName($user_name){
         $db = Database::instance()->db();
         $statement = $db->prepare('SELECT * FROM Person WHERE userName = ?');
