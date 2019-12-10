@@ -1,16 +1,22 @@
 <?php
     include_once('database.php');
-
+    
     function getUserFromId($id){
         $db = Database::instance()->db();
-        $statement = $db->prepare('SELECT * FROM User WHERE id = ?');
+        $statement = $db->prepare('SELECT * FROM Person WHERE id = ?');
         $statement->execute(array($id));
-        return $statement->fetchAll();
+        return $statement->fetch();
     }
-    
+    function getPhotoFromUser($id){
+        $db = Database::instance()->db();
+        $statement = $db->prepare('SELECT path FROM Person,Image WHERE Person.id = ? AND Person.profilePicture = Image.id');
+        $statement->execute(array($id));
+        return $statement->fetch();
+    }
+
     function getUserFromUserName($user_name){
         $db = Database::instance()->db();
-        $statement = $db->prepare('SELECT * FROM User WHERE user_name = ?');
+        $statement = $db->prepare('SELECT * FROM Person WHERE userName = ?');
         $statement->execute(array($user_name));
         return $statement->fetchAll();
     }
@@ -19,7 +25,25 @@
         $db = Database::instance()->db();
         $statement = $db->prepare('SELECT * FROM Home WHERE id = ?');
         $statement->execute(array($id));
-        return $statement->fetchAll();
+        return $statement->fetch();
+    }
+
+    function getHouseCharacteristics($id){
+        $db = Database::instance()->db();
+        $statement = $db->prepare('SELECT characteristics FROM Home WHERE id = ?');
+        $statement->execute(array($id));
+        $char =  $statement->fetch();
+        $characteristics = reset($char);
+        return explode(',',$characteristics);
+
+
+    }
+
+    function getAllHouses(){
+        $db = Database::instance()->db();
+        $statement = $db->prepare('SELECT * FROM Home');
+        $statement->execute();
+        return $statement->fetch();
     }
     
     function getHomeFromTitle($title){

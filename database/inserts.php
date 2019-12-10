@@ -1,6 +1,12 @@
 <?php
     include_once('database.php');
 
+    function insertUser($username, $password) {
+        $db = Database::instance()->db();
+        $stmt = $db->prepare('INSERT INTO Person  VALUES (NULL, ?, 1, ?, "", 1, "", 0)');
+        $stmt->execute(array($username, password_hash($password, PASSWORD_DEFAULT)));
+    } 
+
     function insertHome($title, $price, $description, $type, $bedrooms, $address, $location_id, $owner_id){
         $db = Database::instance()->db();
         $statement = $db->prepare('INSERT INTO Home Values(NULL, ?, ?, ?, 0, ?, ?, ?, ?, ?)');
@@ -11,13 +17,6 @@
         $db = Database::instance()->db();
         $statement = $db->prepare('INSERT INTO Location Values(NULL,?)');
         $statement->execute(array($name));
-    }
-
-    function insertUser($username, $password) {
-        $db = Database::instance()->db();
-        
-        $statement = $db->prepare('INSERT INTO User VALUES(NULL, ?, NULL, ?)');
-        $statement->execute(array($username, password_hash($password, PASSWORD_DEFAULT)));
     }
 
     function updateUserProfile($id, $title, $location, $description){

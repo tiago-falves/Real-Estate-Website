@@ -8,6 +8,8 @@ body > header > nav {
     grid-row: 1;
 }
 
+
+
 #Informations{
     display: grid;
     grid-template-columns: [left] auto [middle] auto [right] ;
@@ -33,9 +35,31 @@ body > header > nav {
     margin: 1em;
 }
 
+#photos{
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    width: 100%;
+}
 
 
-#photos section{
+
+#BigPhoto{
+    width: 100%;
+}
+
+#SmallerPhotos{
+    display: flex;
+    flex-direction: row;
+}
+#SmallerPhotos img{
+    width: 25%;
+  
+}
+
+
+/* #photos section{
 
     display: grid;
     grid-template-columns: [left] auto [first] auto [second] auto [third] auto [fourth] auto [right];
@@ -48,4 +72,4 @@ body > header > nav {
 
 #photos section:nth-child(2){
     grid-area: middle / left / end / first;
-}
+} */

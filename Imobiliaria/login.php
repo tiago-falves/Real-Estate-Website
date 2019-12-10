@@ -1,21 +1,13 @@
 <?php
-  include('../templates/common/header.php');  
-?>
-<section id="login">
+  include_once('../session/session.php');
   
-  <header>
-    <h2>Login</h2>
-  </header>
-  
-  <form method="post" action="action_login.php">
-    <input type="text" name="username" placeholder="username" required>
-    <input type="password" name="password" placeholder="password" required>
-    <input type="submit" value="Login">
-  </form>
-  <footer>
-    <p>Don't have an account? <a href="signup.php">Signup!</a></p>
-  </footer>
-</section>
-<?php
-  include('../templates/common/footer.php');  
+  if(isset($_SESSION['username'])){
+    die(header('Location: main_page.php'));
+  }
+
+  include_once('../templates/common/Header.php');  
+  include_once('../templates/user/login.php');
+  include_once('../templates/common/Footer.php');  
 ?>
+
+

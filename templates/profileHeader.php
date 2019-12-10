@@ -1,19 +1,14 @@
-
 <!DOCTYPE html>
 <html lang="en-US">
-    <head>
-        <title>Invicta</title>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link href="../Css/styles.css" rel="stylesheet">
-        <link href="../Css/layout.css" rel="stylesheet">
-        <link href="../Css/responsive.css" rel="stylesheet">
-        <link href="../Css/forms.css" rel="stylesheet">
-        <link href="../Css/home.css" rel="stylesheet">
-        <link href="../Css/profile.css" rel="stylesheet">
-        <link href="../Css/comments.css" rel="stylesheet">
-
-    </head>
+  <head>
+    <title>Invicta</title>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <link href="../Css/profile.css" rel="stylesheet" type="text/css">
+      <link href="../Css/comments.css" rel="stylesheet" type="text/css">
+      <link href="../Css/styles.css" rel="stylesheet" type="text/css">
+      <link href="../Css/layout.css" rel="stylesheet" type="text/css">
+  </head>
     <body>
         <header>
             <h1> <a href="main_page.php">Invicta</a></h1>

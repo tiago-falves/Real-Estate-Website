@@ -1,58 +1,43 @@
-<!DOCTYPE html>
-<html lang="en-US">
-  <head>
-    <title>Invicta</title>
-      <meta charset="UTF-8">
-      <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <link href="../CSS/profile.css" rel="stylesheet" type="text/css">
-      <link href="../CSS/comments.css" rel="stylesheet" type="text/css">
-      <link href="../CSS/styles.css" rel="stylesheet" type="text/css">
-      <link href="../CSS/layout.css" rel="stylesheet" type="text/css">
+<?php
+  include('../templates/profileHeader.php');  
+  include('../database/queries.php');
 
-  </head>
-  <body>
-    <header>
-      <h1> <a href="main_page.php">Invicta</a></h1>
-      <div id="signup">
-         <a href="register.php">Sign Up</a>
-         <a href="login.php">Login</a>
-      </div>
-      <nav id="menu">
-        <ul>
-          <li><a href="buy.php">Buy</a></li>
-          <li><a href="rent.php">Rent</a></li>
-          <li><a href="discover.php">Rent</a></li>
-         </ul>
-      </nav>       
-    </header>
+ $idUser = 1; //TEMPORARIO
 
+  $profile = getUserFromId($idUser);
+  $profilePicture = getPhotoFromUser($idUser);
+ 
+?>
     <div id = "profile">
       <header>
-            <h2>Andre Restivo</h2>
-            <p class="title">CEO & Founder of Facebook, Example</p>
-            <p>Harvard University</p>
+            <h2><?php echo $profile['userName'] ?></h2>
+            <p class="title"><?php echo $profile['title'] ?></p>
+            <!-- <p>Harvard University</p> -->
       </header>
-      <img src="../Images/restivo.jpg" alt="Ribeira">
+      <img src= '../Images/restivo.jpg' alt="Ribeira"> <?php //echo $profilePicture; ?>
       <section id = "rating">
-        <h2>Rating Estrelinhas</h2>
+        <h2><?php echo $profile['rating'] ?> stars</h2>
       </section>
       <article class = Description>
         <header>
           <h2>Description</h2>
         </header>
-        <p>Etiam massa magna, condimentum eu facilisis sit amet, dictum ac purus. Curabitur semper nisl vel libero pulvinar ultricies. Proin dignissim dolor nec scelerisque bibendum. Maecenas a sem euismod, iaculis erat id, convallis arcu. Ut mollis, justo vitae suscipit imperdiet, eros dui laoreet enim, fermentum posuere felis arcu vel urna. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Proin blandit ex sit amet suscipit commodo. Duis molestie ligula eu urna tincidunt tincidunt. Mauris posuere aliquet pellentesque. Fusce molestie libero arcu, ut porta massa iaculis sit amet. Fusce varius nisl vitae fermentum fringilla. Pellentesque a cursus lectus.</p>
-        <p>Duis condimentum metus et ex tincidunt, faucibus aliquet ligula porttitor. In vitae posuere massa. Donec fermentum magna sit amet suscipit pulvinar. Cras in elit sapien. Vivamus nunc sem, finibus ac suscipit ullamcorper, hendrerit vitae urna. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Quisque eget tincidunt orci. Mauris congue ipsum non purus tristique, at venenatis elit pellentesque. Etiam congue euismod molestie. Mauris ex orci, lobortis a faucibus sed, sagittis eget neque.</p>
-        <p>Mauris tincidunt orci congue turpis viverra pulvinar. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Quisque rhoncus lorem eget.</p>
+        <p><?php echo $profile['userDescription'] ?></p>
+
       </article>
        
         <section id="comments">
             
             <h2>5 Comments</h2>
             <article class="comment">
-            <header><h3>Fantastic</h3></header>
-            <span class="user">updatespeak</span>
-            <span class="date">1m</span>
-            <p>Aliquam maximus commodo dui, ut viverra urna vulputate et. Donec posuere vitae sem sed vehicula. Sed in erat eu diam fringilla sodales. Aenean lacinia vulputate nisl, dignissim dignissim nisl. Nam at nibh mollis, facilisis nibh sit amet, mattis urna. Maecenas.</p>
+                <header>
+                    <h3>Fantastic</h3>
+                </header>
+                 <span class="user">
+                     updatespeak
+                </span>
+                <span class="date">1m</span>
+                <p>Aliquam maximus commodo dui, ut viverra urna vulputate et. Donec posuere vitae sem sed vehicula. Sed in erat eu diam fringilla sodales. Aenean lacinia vulputate nisl, dignissim dignissim nisl. Nam at nibh mollis, facilisis nibh sit amet, mattis urna. Maecenas.</p>
             </article>
             <article class="comment">
             <header><h3>Worst Experience of my life</h3></header>
@@ -66,18 +51,7 @@
             <span class="date">7m</span>
             <p>Phasellus at neque nec nunc scelerisque eleifend eu eu risus. Praesent in nibh viverra, posuere ligula condimentum, accumsan tellus. Vivamus varius sem a mauris finibus, ac iaculis risus scelerisque. Nullam fermentum leo dui, at fermentum tellus consequat id. Pellentesque eleifend.</p>
             </article>
-            <article class="comment">
-            <header><h3>Well Located and very cheap!</h3></header>
-            <span class="user">charityheinz</span>
-            <span class="date">9m</span>
-            <p>Nam at elit ut orci viverra viverra vitae dictum sapien. Morbi sed eleifend eros. Nunc fermentum, nulla id vehicula posuere, justo orci commodo urna, a blandit orci massa vitae urna. Sed commodo sollicitudin quam. Suspendisse molestie eget libero nec finibus.</p>
-            </article>
-            <article class="comment">
-            <header><h3>We robbed the television and it works great</h3></header>
-            <span class="user">plutoniumfogg</span>
-            <span class="date">11m</span>
-            <p>Aliquam dignissim finibus lectus non condimentum. Cras accumsan diam vitae nulla efficitur congue. Vivamus porta arcu sit amet dapibus ultricies. Donec ac sodales mauris. Nulla eget tortor urna. Donec a malesuada libero. Curabitur blandit erat ut diam rhoncus venenatis. Proin.</p>
-            </article>
+   
             <form>
             <h2>Add your voice...</h2>
             <label>Username 
@@ -96,35 +70,40 @@
             <header>
                 <h2>Houses of this user</h2>
             </header>
-            <section>
-                <section>
-                    <header>
-                        <h3>Price</h3>
-                        <h4>City</h4>
-                    </header>
-                    <a href="home.php"><img src="../Images/home.jpg" alt="Casa 1"></a>
-                </section>
-                <section>
-                    <header>
-                        <h3>Price</h3>
-                        <h4>City</h4>
-                        <a href="home.php"><img src="../Images/home.jpg" alt="Casa 2"></a>
-                    </header>
-                </section>
-                <section>
-                    <header>
-                        <h3>Price</h3>
-                        <h4>City</h4>
-                    </header>
-                <a href="home.php"><img src="../Images/home.jpg" alt="Casa 3"></a>
-                </section>
-                <section>
-                    <header>
-                        <h3>Price</h3>
-                        <h4>City</h4>
-                    </header>
-                        <a href="home.php"><img src="../Images/home.jpg" alt="Casa 4"></a>
-                </section>
+            <section id = "Homes">
+                 <div class = "SmallerPhotosCollumn">
+                    <section class = "Home">
+                        <header>
+                            <h3>Price</h3>
+                            <h4>City</h4>
+                        </header>
+                        <a href="home.html"><img src="../Images/home.jpg" alt="Casa 2"></a>
+                    </section>
+                    <section class = "Home">
+                        <header>
+                            <h3>Price</h3>
+                            <h4>City</h4>
+                        </header>
+                        <a href="home.html"><img src="../Images/home.jpg" alt="Casa 3"></a>                
+                    </section>
+                </div>
+                <div class = "SmallerPhotosCollumn">
+         
+                    <section class = "Home">
+                        <header>
+                            <h3>Price</h3>
+                            <h4>City</h4>
+                        </header>
+                        <a href="home.html"><img src="../Images/home.jpg" alt="Casa 3"></a>
+                    </section>
+                    <section class = "Home">
+                        <header>
+                            <h3>Price</h3>
+                            <h4>City</h4>
+                        </header>
+                        <a href="home.html"><img src="../Images/home.jpg" alt="Casa 4"></a>                
+                    </section>
+                </div>
             </section>
             
             <a href="">See All</a>            
