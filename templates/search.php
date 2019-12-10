@@ -11,7 +11,7 @@
         </ul>
         <section id = "SearchBar">
             <input type="search" name="searchHouses" value="Search...">
-            <a href= "SearchResults.php"><img src="../Images/search.png" alt="Search Logo"></a>  
+            <a href= "discover.php"><img src="../Images/search.png" alt="Search Logo"></a>  
             
         </section>
     </section>

@@ -2,14 +2,13 @@
   include('../templates/common/Header.php');  
 ?>
         <section id="AdvancedSearch">
-            <header>
+            <!-- <header>
                 <h2>Advanced Search</h2>
-            </header>
-            <img src="../Images/ribeira.jpg" alt="Ribeira">
-            <nav id="Allcities">
+            </header> -->
+            <!-- <nav id="Allcities">
                 <header>Todas as cidades</header>
                 <!-- just for the hamburguer menu in responsive layout -->
-                <input type="checkbox" id="citiesCheckbox"> 
+                <!-- <input type="checkbox" id="citiesCheckbox"> 
                 <label class="hamburger" for="citiesCheckbox"></label>
                 <ul>
                     <li><a href="index.html">Porto</a></li>
@@ -22,7 +21,6 @@
             </nav>
             <nav id="HouseTypeMenu">
                 <header>House type</header>
-                <!-- just for the hamburguer menu in responsive layout -->
                 <input type="checkbox" id="houseType"> 
                 <label class="hamburger" for="houseType"></label>
                 <ul>
@@ -39,7 +37,7 @@
         </section>
         <nav id = "OrderSearch">
             <header>Custom Search</header>
-            <!-- just for the hamburguer menu in responsive layout -->
+
             <input type="checkbox" id="hamburger"> 
             <label class="hamburger" for="hamburger"></label>
             <ul>
@@ -48,8 +46,8 @@
                 <li><a href="index.html">Newer First</a></li>
                 <li><a href="index.html">Older first</a></li>
             </ul>
-        </nav>
-
+        </nav>  -->
+        </section>
         <div id="ListHouses">
             <h2>Best Matches</h2>
             <section class = House>
