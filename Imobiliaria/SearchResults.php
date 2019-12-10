@@ -1,6 +1,5 @@
 <?php
   include('../templates/common/Header.php');  
-  include('../templates/search.php');
 ?>
 
 <div id = "BestOffers">
@@ -8,7 +7,7 @@
         <h2>Best Offers</h2>
     </header>
     <?php include('../templates/Homes/homes.php'); ?>
-    <button  type="button">See All</button>         
+    <button type="button">See All</button>         
 </div>
 
 
