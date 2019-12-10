@@ -2,7 +2,7 @@
   include('../templates/common/Header.php');  
 ?>
 <div id="Search">
-    <img src="../Images/ribeirah.jpg" alt="Ribeira">
+    <img src="../Images/porto.jpg" alt="Ribeira">
     <section id="SearchText">
         <ul id="Filters">
             <li><a href="">For Sale</a></li>
