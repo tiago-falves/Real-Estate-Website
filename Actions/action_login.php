@@ -1,23 +1,14 @@
 <?php
  include_once('../session/session.php');
  include_once('../database/database.php');
+ include_once('../database/queries.php');
 
-  function setCurrentUser($username) {
+  $username = $_POST['username'];
+  $password = $_POST['password'];
+
+  if (checkUserCredentials($_POST['username'], $_POST['password'])) {
     $_SESSION['username'] = $username;
-  }
-
-
-  function isLoginCorrect($username, $password) {
-
-    $db = Database::instance()->db();
-    $stmt = $db->prepare('SELECT * FROM Person WHERE userName = ? AND password_hash = ?');
-    $stmt->execute(array($username, password_hash($password, PASSWORD_DEFAULT))); //sha1($password) Para Dar Hash a password
-    return $stmt->fetch() !== false;
-  }
-
-  if (isLoginCorrect($_POST['username'], $_POST['password'])) {
-    setCurrentUser($_POST['username']);
-    $_SESSION['success_messages'][] = "Login Successful!";
+    $_SESSION['success_messages'][] = "Login Successful!".$username.$password;
   } else {
       echo("Para de tentar entrar no site oh boi");
       $_SESSION['error_messages'][] = "Login Failed!";
