@@ -3,3 +3,44 @@
         background-color: black;
     }
 }
+
+@media (max-width: 30em){
+    body > header{
+        float: none;
+        text-align: left;
+    }
+    body > header > h1{ 
+        float: left;
+        font-size: 20px;
+        text-align: center;
+    }
+    body > header > nav {
+        float: left;
+        overflow: hidden;
+        font-size: 11px;
+    }
+    body > header > div {
+        float: left;
+        overflow: hidden;
+        font-size: 11px;
+    }
+    #BestOffers {
+        display: flex;
+        flex-wrap: wrap;
+        width: 90%;
+        margin: auto;
+    }
+    #Homes {
+        display: grid;
+    }
+        
+    #BiggerPhoto {
+        width: 100%; 
+    }
+
+    .SmallerPhotosCollumn {
+        width: 100%;
+    }
+
+    
+}
