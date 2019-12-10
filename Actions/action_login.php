@@ -11,7 +11,7 @@
 
     $db = Database::instance()->db();
     $stmt = $db->prepare('SELECT * FROM Person WHERE userName = ? AND password_hash = ?');
-    $stmt->execute(array($username, $password)); //sha1($password) Para Dar Hash a password
+    $stmt->execute(array($username, password_hash($password, PASSWORD_DEFAULT))); //sha1($password) Para Dar Hash a password
     return $stmt->fetch() !== false;
   }
 

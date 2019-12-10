@@ -10,12 +10,14 @@
  function insertUser($username, $password) {
     $db = Database::instance()->db();
 
-    $options = ['cost' => 12]; //Porque isto?
+    
 
-    $stmt = $db->prepare('INSERT INTO Person  VALUES (5, ?, 1, ?, "", 1, "", 0');
-    $stmt->execute(array($username, password_hash($password, PASSWORD_DEFAULT, $options)));
+  
+    $stmt = $db->prepare('INSERT INTO Person  VALUES (NULL, ?, 1, ?, "", 1, "", 0)');
+    $stmt->execute(array($username, password_hash($password, PASSWORD_DEFAULT)));
 
   } 
+
 
 
   if ( !preg_match ("/^[a-zA-Z0-9]+$/", $username)) {
@@ -23,10 +25,14 @@
     die(header('Location: ../Imobiliaria/register.php'));
   }
 
+
   try {
 
-    //ERROR no insert user, se calhar estou a passar algum parametro mal?
+    
+
     insertUser($username, $password);
+    echo("ZAAAAAAAAAAAAAAAS");
+    
     $_SESSION['username'] = $username;
     $_SESSION['messages'][] = array('type' => 'success', 'content' => 'Signed up and logged in!');
     header('Location: ../Imobiliaria/main_page.php');
