@@ -9,10 +9,6 @@
 
  function insertUser($username, $password) {
     $db = Database::instance()->db();
-
-    
-
-  
     $stmt = $db->prepare('INSERT INTO Person  VALUES (NULL, ?, 1, ?, "", 1, "", 0)');
     $stmt->execute(array($username, password_hash($password, PASSWORD_DEFAULT)));
 
