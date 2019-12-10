@@ -2,6 +2,10 @@ a {
     text-decoration: none;
     color: inherit;
 }
+body{
+    font-family: "Open Sans", sans-serif;
+   
+}
 
 
 body > header{
@@ -9,12 +13,16 @@ body > header{
     color: white;
     background-color: #606060;
     width: 100%;
+    padding-top: 2em;
+    padding-bottom: 2em ;
+    max-height: 90vh;
    
 }
 
 body > header h1{
     font-family: serif;
     padding-left: 1em;
+    
     
 }
 
@@ -36,6 +44,10 @@ body > header > nav > ul> *:hover{
    
 }
 
+body > header a{
+    font-size: larger;
+}
+
 body > header > nav >ul{
     padding: 1em;
 }
@@ -45,44 +57,57 @@ body > header > nav >ul > li{
     text-align: left;
     padding-left: 5em;
 }
-
-#Search > img{
+#Search {
     position: relative;
+}
+#Search > video{
+    /* position: relative; */
     width: 100%;
+    /* max-height: 90vh; */
     z-index: -1;
     padding: 0em;
 }
 
 #SearchText{
-   position: absolute;
-   top: 70%;
-   left: 40%;
-   transform: translate(-50%, -50%);
+    
+    left: 10%;
+    top: 35%;
+    width: 80%;
+
+    margin: auto;
+    
+    
+    position: absolute;
+    
    
 }
 
 #SearchText li{
-    color: white;
-    padding: 0.5em;
-    margin: 0em;
-}
-
-#SearchBar input{
-    width: 40em;
-    height: 100%;
-}
-
-
-#Search li{
     display: inline;
     background-color: #606060;
-    text-align: center;
-    padding: 0.5 em;
+    color: white;
+    padding: 1em;
+    font-size: larger;
 }
+
+#SearchText ul{
+    text-align: left;
+    
+    
+}
+#SearchBar input{
+    /* width: 40em; */
+    width: 100%;
+
+    padding: 1em;
+    font-size: larger;
+}
+
+
 
 #SearchBar img{
 
-    width: 2em;
+    width: 20%;
     height: 100%;
     padding: 0em;
     background-color: #606060;
@@ -97,6 +122,10 @@ body > header > nav >ul > li{
 
 
 
+#Homes{
+    width: 50em
+    
+}
 
 .Home  {
     position: relative;
@@ -108,8 +137,13 @@ body > header > nav >ul > li{
     padding: 0em;
 }
 
+#Homes{
+    width: 100%;
+}
+
 #BiggerPhoto  {
     width: 50%;
+ 
     
 }
 #BiggerPhoto img {
@@ -131,8 +165,11 @@ body > footer{
     display: flex;
     color: white;
     background-color: #606060;
+    padding-top: 1em;
+    padding-bottom: 1em ;
+    max-height: 90vh;
     width: 100%;
-    margin: 0em;
+    margin: 1em;
 }
 
 body > footer nav{
@@ -140,7 +177,14 @@ body > footer nav{
     width: 100%;;
     margin: auto;
     justify-content: space-around;
+    font-size: 1.5em;
     
+}
+
+body > footer h3{
+    padding-left: 2em;
+    font-size: 2em;
+    font-family: serif;
 }
 
 

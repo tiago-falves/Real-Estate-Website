@@ -1,6 +1,8 @@
 
 body{
     background-color: #ebebeb;
+  
+
 }
 
 #profile{
@@ -8,9 +10,12 @@ body{
     grid-template-columns: [left] 1fr [middle] 3fr [right] ;
     grid-template-rows: [top] auto [name] auto [stars] auto [middle] auto [bottom];
     text-align: left;
-    width: 90%;
+   
     
-    margin: 5em;
+
+    margin: 10em;
+
+   
     border-style: solid;   
     background-color: white; 
 }
@@ -37,6 +42,17 @@ body{
 
 #rating {
     grid-area: name / middle / stars / end;
+}
+
+#profile > form{
+    grid-area: name / middle / stars / end;
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+}
+#profile > form input , #profile > form textarea{
+    margin-bottom: 2em;
+    padding: 1em;
 }
 
 #comments {
