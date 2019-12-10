@@ -17,7 +17,6 @@
 
   if (isLoginCorrect($_POST['username'], $_POST['password'])) {
     setCurrentUser($_POST['username']);
-    echo("ZAAAAAAAAAAAS");
     $_SESSION['success_messages'][] = "Login Successful!";
   } else {
       echo("Para de tentar entrar no site oh boi");
