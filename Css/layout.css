@@ -4,8 +4,8 @@ body > header{
     height: 10%;  
     display: flex;
     justify-content: space-around;
-    z-index: -1;
-    position:relative;
+    z-index: 1048;
+    position: fixed;
 }
 body > header > nav{
     flex-grow: 2;
@@ -32,9 +32,21 @@ body > header > h1 {
 #Homes {
     display: flex;
     flex-wrap: wrap;
-    width: 100%;
+    width: 95%;
     margin: auto;
-    
+}
+#Homes header {
+    padding: 0%;
+    background:rgba(68, 68, 68, 0.8);
+    color: white;
+}
+
+#Homes h3 {
+    font-size: 2vw; 
+}
+
+#Homes h4 {
+    font-size: 1.5vw; 
 }
 
 #BestOffers {
@@ -49,16 +61,13 @@ body > header > h1 {
 #BestOffers > button{
     text-align: center;
     margin: auto;
-    padding: 1em;
+    padding: 0.5em;
     width: 10%;
 }
 
 #BiggerPhoto {
     display: inline-block;
-    flex-wrap: wrap;
-    
-    
-    
+    flex-wrap: wrap; 
 }
 
 .SmallerPhotosCollumn {
@@ -71,7 +80,7 @@ body > header > h1 {
 
 footer {
     width: 100%;
-    height: 10%;  
+    height: 5%;  
     position: relative; 
     bottom: 0px; 
     left: 0px; 
