@@ -18,7 +18,7 @@
         $db = Database::instance()->db();
         $statement = $db->prepare('SELECT * FROM Person WHERE userName = ?');
         $statement->execute(array($user_name));
-        return $statement->fetchAll();
+        return $statement->fetch();
     }
 
     function getPathsFromPerson($id){

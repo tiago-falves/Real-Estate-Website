@@ -7,6 +7,28 @@
         $stmt->execute(array($username, password_hash($password, PASSWORD_DEFAULT)));
     } 
 
+    function insertUserHomePhoto($id,$image,$home){
+        $db = Database::instance()->db();
+        $stmt = $db->prepare('INSERT INTO Image  VALUES (NULL, ?)');
+        $stmt->execute(array($image));
+        $stmt = $db->prepare('SELECT id FROM IMAGE WHERE path = ?');
+        $stmt->execute(array($image));
+        $imageId = $stmt->fetch();
+
+        $stmt = $db->prepare('INSERT INTO Photo  VALUES (?, 1,?,?,?)');
+        $stmt->execute(array(NULL,$imageId,$id,$home));
+    }
+    function insertUserPhoto($id, $image) {
+        $db = Database::instance()->db();
+        $stmt = $db->prepare('INSERT INTO Image  VALUES (NULL, ?, 1, ?, "", 1, "", 0)');
+        $stmt->execute(array($image));
+        $stmt = $db->prepare('SELECT id FROM IMAGE WHERE path = ?');
+        $stmt->execute(array($image));
+        $imageId = $stmt->fetch();
+        $statement = $db->prepare('UPDATE User SET profilePicture = ? WHERE id = ?');
+        $statement->execute(array($imageId,$id));
+    } 
+
     function insertHome($title, $price, $description, $type, $bedrooms, $address, $location_id, $owner_id){
         $db = Database::instance()->db();
         $statement = $db->prepare('INSERT INTO Home Values(NULL, ?, ?, ?, 0, ?, ?, ?, ?, ?)');

@@ -1,40 +1,46 @@
 <?php
   include_once('../session/session.php');
-
   include('../templates/profileHeader.php');  
   include('../database/queries.php');
 
 
+
+
   if(!isset($_SESSION['username'])){
-    die(header('Location: main_page.php'));
+    die(header('Location: login.php'));
   }
 
-  // $profile =  getUserFromUserName($_SESSION['username']);
-  // var_dump($profile);
-  
-     
-  
-
-  $idUser = 1;
-  $profile = getUserFromId($idUser);   
-
-  //$profile = getUserFromUserName($_SESSION['username']);
-  var_dump($profile);
-
+  $profile =  getUserFromUserName($_SESSION['username']);
 
   $profilePicture = getPathsFromPerson($profile['id']); 
+  if($profilePicture == false){
+    $profilePicture = array("path" =>"noProfile.png");
+  }
 
+
+  
 ?>
     <div id = "profile">
       <header>
             <h1>Edit Profile</h1>
             <h2><?php echo $_SESSION['username']; ?></h2>
+            <h3><?php echo $profile['title'] ?></p></h3>
       </header>
       <img src= '../Images/<?php echo $profilePicture['path'];?>' alt="Ribeira"> <?php //echo $//profilePicture; ?>
-      <!-- <h2><?php echo $profile['userName'] ?></h2>
-            <p class="title"><?php echo $profile['title'] ?></p> -->
+      <section>
+        <form action="../templates/user/upload.php" method="post" enctype="multipart/form-data">
+          Select image to upload:
+          <input type="hidden" name="username" value="<?php ?>">
+          <input type="file" name="fileToUpload" id="fileToUpload">
+          <input type="submit" value="Upload Image" name="submit">
+        </form>
+      </section>
+      
+      
 
       <form method="post" action="../Actions/action_change_profile.php">
+        <input type="text" name="location" placeholder="Location">
+        <input type="text" name="title" placeholder="Occupation">
         <input type="password" name="password" placeholder="Password" >
         <input type="password" name="newPassword" placeholder="New Password" >
         <input type="password" name="confirmPassword" placeholder="Confirm Passowrd" >

@@ -12,9 +12,7 @@ if(isset($_GET['id'])){
     $profile = getUserFromId($idUser);   
 }
 else{
-    //$profile = getUserFromUserName($_SESSION['username']);
-    $idUser = 1; //TEMPORARIO FAZER COM QUE ELE FUNCIONE USANDO A SESSION
-    $profile = getUserFromId($idUser);
+    $profile = getUserFromUserName($_SESSION['username']);
 }
     
 $profilePicture = getPathsFromPerson($profile['id']);
