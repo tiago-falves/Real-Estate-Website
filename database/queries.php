@@ -21,6 +21,13 @@
         return $statement->fetchAll();
     }
 
+    function getPathsFromPerson($id){
+        $db = Database::instance()->db();
+        $statement = $db->prepare('SELECT PATH FROM Person,PHOTO,IMAGE WHERE Person.ID = ? AND PHOTO.uploader_id = Person.ID AND PHOTO.IMAGE = IMAGE.ID;');
+        $statement->execute(array($id));
+        return $statement->fetch();
+    }
+
     function getHomeFromId($id){
         $db = Database::instance()->db();
         $statement = $db->prepare('SELECT * FROM Home WHERE id = ?');
@@ -121,6 +128,7 @@
         $statement->execute(array($id));
         return $statement->fetchAll();
     }
+
 
     function getUsernameFromOwner($house){
         $db = Database::instance()->db();

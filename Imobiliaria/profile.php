@@ -1,11 +1,23 @@
 <?php
+  include('../session/session.php');  
   include('../templates/profileHeader.php');  
   include('../database/queries.php');
 
- $idUser = 1; //TEMPORARIO
 
-  $profile = getUserFromId($idUser);
-  $profilePicture = getPhotoFromUser($idUser);
+
+  //$profile = getUserFromId($idUser);
+  
+if(isset($_GET['id'])){
+    $idUser = $_GET['id']; //TEMPORARIO SUBSTITUIR POR VERSAO ACIMA
+    $profile = getUserFromId($idUser);   
+}
+else{
+    //$profile = getUserFromUserName($_SESSION['username']);
+    $idUser = 1; //TEMPORARIO FAZER COM QUE ELE FUNCIONE USANDO A SESSION
+    $profile = getUserFromId($idUser);
+}
+    
+$profilePicture = getPathsFromPerson($profile['id']);
  
 ?>
     <div id = "profile">
@@ -14,7 +26,7 @@
             <p class="title"><?php echo $profile['title'] ?></p>
             <!-- <p>Harvard University</p> -->
       </header>
-      <img src= '../Images/restivo.jpg' alt="Ribeira"> <?php //echo $profilePicture; ?>
+      <img src= '../Images/<?php echo $profilePicture['path']; ?>' alt="Ribeira"> 
       <section id = "rating">
         <h2><?php echo $profile['rating'] ?> stars</h2>
       </section>

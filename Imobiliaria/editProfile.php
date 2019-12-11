@@ -4,17 +4,33 @@
   include('../templates/profileHeader.php');  
   include('../database/queries.php');
 
- $idUser = 1; //TEMPORARIO
 
-  $profile = getUserFromId($idUser);
-  $profilePicture = getPhotoFromUser($idUser);
- 
+  if(!isset($_SESSION['username'])){
+    die(header('Location: main_page.php'));
+  }
+
+  // $profile =  getUserFromUserName($_SESSION['username']);
+  // var_dump($profile);
+  
+     
+  
+
+  $idUser = 1;
+  $profile = getUserFromId($idUser);   
+
+  //$profile = getUserFromUserName($_SESSION['username']);
+  var_dump($profile);
+
+
+  $profilePicture = getPathsFromPerson($profile['id']); 
+
 ?>
     <div id = "profile">
       <header>
             <h1>Edit Profile</h1>
+            <h2><?php echo $_SESSION['username']; ?></h2>
       </header>
-      <img src= '../Images/restivo.jpg' alt="Ribeira"> <?php //echo $profilePicture; ?>
+      <img src= '../Images/<?php echo $profilePicture['path'];?>' alt="Ribeira"> <?php //echo $//profilePicture; ?>
       <!-- <h2><?php echo $profile['userName'] ?></h2>
             <p class="title"><?php echo $profile['title'] ?></p> -->
 

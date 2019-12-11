@@ -15,7 +15,8 @@
   $id = $home['id'];  
   $paths = getPathsFromHouse($id);
   $firstPath = $paths[0];
-  $owner = getUsernameFromOwner($home)
+  $owner = getUsernameFromOwner($home);
+ 
 ?>
   <section class = House>
     <header>
@@ -25,7 +26,7 @@
     <p>Bedrooms: <?php echo $home['bedrooms']?></p>
     <p>Rating: <?php echo $home['rating'] //Adicionar umas estrelinhas giras?></p>
     <footer>
-      <span class="Owner"><?php echo $owner['userName'] /*Vai ter que ter aqui uma funçao get owner by id*/?></span>
+      <span  class="Owner"> <a href="profile.php?id=<?php echo $home['owner'];?>"> <?php echo $owner['userName']?></a></span>
       <button onclick="myFunction()" id="seeMore2">More Info</button>
     </footer>
     <a href="home.php?id=<?php echo $id; ?>"><img src="../Images/<?=$firstPath['path'] ?>" alt="Casa 1"></a>

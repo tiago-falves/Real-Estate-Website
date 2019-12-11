@@ -112,7 +112,7 @@ INSERT INTO Person (id, userName, profilePicture, password_hash, title, userLoca
 --                                         ,5.0,'House','T1','Hogwartz',1,1, 'Bathroom,Cinema,Garage,Air conditioning, Basement to put corpses');
 INSERT INTO Reservation(id,start_date,end_date,userID,home) VALUES (1,20190423,20190424,1,1);
 INSERT INTO Photo(id,approved,image,uploader_id,home) VALUES (1,1,1,1,1);
-INSERT INTO Photo(id,approved,image,uploader_id,home) VALUES (2,1,2,1,1);
+INSERT INTO Photo(id,approved,image,uploader_id,home) VALUES (2,1,2,2,1);
 INSERT INTO Photo(id,approved,image,uploader_id,home) VALUES (3,1,2,1,2);
 INSERT INTO Photo(id,approved,image,uploader_id,home) VALUES (4,1,2,1,3);
 INSERT INTO Photo(id,approved,image,uploader_id,home) VALUES (5,1,2,1,4);
