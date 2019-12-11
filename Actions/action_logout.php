@@ -1,5 +1,5 @@
 <?php
-    include_once("sessions.php");
+    include_once("../session/session.php");
 
     session_destroy();
     session_start();
