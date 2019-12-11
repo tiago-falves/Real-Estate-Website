@@ -124,6 +124,13 @@
         return $statement->fetchAll();
     }
 
+    function getUsernameFromOwner($house){
+        $db = Database::instance()->db();
+        $statement = $db->prepare('SELECT userName FROM PERSON,HOME WHERE HOME.ID = ? AND HOME.OWNER = PERSON.ID');
+        $statement->execute(array($house['id']));
+        return $statement->fetch();
+    }
+
     
 
     

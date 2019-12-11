@@ -126,7 +126,7 @@ INSERT INTO Image(id,path) VALUES (1,'restivo.jpg');
 INSERT INTO Image(id,path) VALUES (2,'casa.jpeg');
 
 
-INSERT INTO HOME (id,title,price,description,rating,type,bedrooms,address,location,owner,characteristics) VALUES (NULL,"House tiles",2000,"xxx",4.8,"House","T2","Rua zas",1,2,"Bathroom,Cinema");
+INSERT INTO HOME (id,title,price,description,rating,type,bedrooms,address,location,owner,characteristics) VALUES (NULL,"House tiles",2000,"xxx",4.8,"House","T2","Rua zas",1,1,"Bathroom,Cinema");
 INSERT INTO HOME (id,title,price,description,rating,type,bedrooms,address,location,owner,characteristics) VALUES (NULL,"Apartment",2000,"xxx",4.8,"Apartment","T2","Rua zas",1,2,"Bathroom,Cinema");
 INSERT INTO HOME (id,title,price,description,rating,type,bedrooms,address,location,owner,characteristics) VALUES (NULL,"Low Punctuation",2000,"xxx",4.3,"House","T2","Rua zas",2,2,"Bathroom,Cinema");
 INSERT INTO HOME (id,title,price,description,rating,type,bedrooms,address,location,owner,characteristics) VALUES (NULL,"Porto",2000,"xxx",4.8,"House","T2",1,2,"Rua zas","Bathroom,Cinema");
