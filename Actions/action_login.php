@@ -8,7 +8,7 @@
 
   if (checkUserCredentials($_POST['username'], $_POST['password'])) {
     $_SESSION['username'] = $username;
-    $_SESSION['success_messages'][] = "Login Successful!".$username.$password;
+    $_SESSION['success_messages'][] = "Login Successful!";
   } else {
       echo("Para de tentar entrar no site oh boi");
       $_SESSION['error_messages'][] = "Login Failed!";

@@ -1,5 +1,5 @@
 <?php
-    include_once('database.php');
+    include_once('../database/database.php');
     
     function getUserFromId($id){
         $db = Database::instance()->db();
@@ -128,8 +128,6 @@
         $statement->execute(array($house['id']));
         return $statement->fetch();
     }
-
-    
 
     
 
