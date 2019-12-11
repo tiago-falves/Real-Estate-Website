@@ -1,4 +1,5 @@
 <?php function draw_homes($homes) {?>
+  
   <div id="ListHouses">
     <h2>Homes</h2>
     <?php 
