@@ -17,6 +17,11 @@
 
 
 <?php function draw_home($home) {
+$id = $home['id'];  
+$paths = getPathsFromHouse($id);
+$firstPath = $paths[0];
+
+
   
 //Porque que ele nao esta a desenhar todos os parametros???>
   <section class = House>
@@ -29,7 +34,7 @@
     <footer>
         <span class="author"><? echo $home['owner'] /*Vai ter que ter aqui uma funçao get owner by id*/?></span>
     </footer>
-    <a href="home.html"><img src="../Images/home.jpg" alt="Casa 1"></a>
+    <a href="home.html"><img src="../Images/<?=$firstPath['path'] ?>" alt="Casa 1"></a>
   </section>   
 <?php } ?>
 
