@@ -10,14 +10,13 @@ body{
     grid-template-columns: [left] 1fr [middle] 3fr [right] ;
     grid-template-rows: [top] auto [name] auto [stars] auto [middle] auto [bottom];
     text-align: left;
-   
-    
-
-    margin: 10em;
-
-   
     border-style: solid;   
     background-color: white; 
+    margin-right: 5em;
+    margin-left: 5em;
+    outline: royalblue;
+    outline-style: dashed;
+	outline-width: thick;
 }
 
 #profile > *{

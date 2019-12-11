@@ -13,9 +13,8 @@ body > header{
     color: white;
     background-color: rgba(68, 68, 68, 0.8);
     width: 100%;
-    padding-top: 0.1em;
-    padding-bottom: 1em ;
     max-height: 90vh;
+    min-height: 10vh;
    
 }
 
@@ -113,13 +112,10 @@ body > header > nav >ul > li{
     background-color: #606060;
 }
 
-
-
 #Search {
 
     text-align:  center;
 }
-
 
 .Home  {
     position: relative;
@@ -136,21 +132,42 @@ body > header > nav >ul > li{
     width: 80%;
 } 
 
-#BiggerPhoto  {
-    width: 50%;  
+#BiggerPhoto {
+    width: 50%;
+    overflow: hidden;
 }
+
+#BiggerPhoto img {
+    width: 100%;
+}
+
 #BiggerPhoto img {
     width: 100%;
 }
 .SmallerPhotosCollumn  {
     width: 25%;
-
+    overflow: hidden;
 }
 .SmallerPhotosCollumn img  {
     width: 100%;
     z-index: -1;
 }
-
+.SmallerPhotosCollumn > section{
+    width: 100%;
+    overflow: hidden;
+}
+.Home > a img {
+	-webkit-transform: scale(1);
+	transform: scale(1);
+	-webkit-transition: .3s ease-in-out;
+    transition: .3s ease-in-out;
+    size: 5em;
+}
+.Home > a:hover img {
+	-webkit-transform: scale(1.3);
+    transform: scale(1.3);
+    size: 70em;
+}
 body > footer{
     display: flex;
     color: white;

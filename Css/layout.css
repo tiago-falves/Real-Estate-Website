@@ -1,7 +1,7 @@
 
 body > header{
     width: 100%;
-    height: 10%;  
+    height: 12.5%;  
     display: flex;
     justify-content: space-around;
     z-index: 1048;
@@ -11,6 +11,10 @@ body > header > nav{
     flex-grow: 2;
 }
 
+
+body > div:first-of-type {
+    padding-top: 12.5vh;
+}
 
 #SearchText{
     display: flex;
@@ -39,6 +43,7 @@ body > header > h1 {
     padding: 0%;
     background:rgba(68, 68, 68, 0.8);
     color: white;
+    z-index: 1000;
 }
 
 #Homes h3 {
@@ -75,7 +80,6 @@ body > header > h1 {
     flex-wrap: wrap;
     flex-direction: column;
     /* flex-grow: 1 ; */
-
 }
 
 footer {
