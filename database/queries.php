@@ -1,5 +1,5 @@
 <?php
-    include_once('database.php');
+    include_once('../database/database.php');
     
     function getUserFromId($id){
         $db = Database::instance()->db();
@@ -73,8 +73,6 @@
         $statement->execute(array($id));
         return $statement->fetchAll();
     }
-
-    
 
     function checkUserCredentials($user_name, $password){
         $user = getUserFromUserName($user_name);

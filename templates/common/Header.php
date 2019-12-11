@@ -1,4 +1,4 @@
-
+<?php include_once('../session/session.php'); ?>
 <!DOCTYPE html>
 <html lang="en-US">
     <head>
@@ -20,13 +20,24 @@
             <nav id="menu">
                 <ul>
                     <li><a href="buy.php">Buy</a></li>
-                    <li><a href="rent.php">Rent</a></li>
-                    <li><a href="profile.php">Profile</a></li>
-                    <li><a href="editProfile.php">Edit Profile</a></li>
+                    <li><a href="rent.php">Rent</a></li>    
+                    <?php
+                        if(isset($_SESSION['username'])){     
+                            echo ('<li><a href="profile.php">Profile</a></li>');
+                            echo ('<li><a href="editProfile.php">Edit Profile</a></li>');
+                        }
+                    ?>
                 </ul>
             </nav>       
             <div id="signup">
-                <a href="register.php">Sign Up</a>
-                <a href="login.php">Login</a>
+                <?php
+                    if(isset($_SESSION['username'])){
+                        echo ('<li><a href="../Actions/action_logout.php">Log out</a></li>');
+                    }
+                    else{
+                        echo ('<a href="register.php">Sign Up</a>');
+                        echo ('<a href="login.php">Login</a>');
+                    }
+                ?>
             </div>
         </header>

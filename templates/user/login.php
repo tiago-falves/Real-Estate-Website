@@ -10,7 +10,7 @@
     <input type="submit" value="Login">
   </form>
   <footer>
-    <p>Don't have an account? <a href="signup.php">Signup!</a></p>
+    <p>Don't have an account? <a href="register.php">Signup!</a></p>
     <section id="messages">
       <?php $errors = getErrorMessages();foreach ($errors as $error) { ?>
       <article class="error">

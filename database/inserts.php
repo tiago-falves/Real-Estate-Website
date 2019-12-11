@@ -1,5 +1,5 @@
 <?php
-    include_once('database.php');
+    include_once('../database/database.php');
 
     function insertUser($username, $password) {
         $db = Database::instance()->db();

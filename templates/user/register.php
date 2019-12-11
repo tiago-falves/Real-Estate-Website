@@ -4,7 +4,7 @@
     <h2>Register</h2>
   </header>
   
-  <form method="post" action="/Actions/action_signup.php">
+  <form method="post" action="../Actions/action_signup.php">
     <input type="email" name="emailaddress" placeholder="E-mail Adress" required>
     <input type="text" name="username" placeholder="username" required>
     <input type="password" name="password" placeholder="password" required>
