@@ -67,7 +67,8 @@
         </div> -->
 
 
-        <!--<section id="AdvancedSearch">
+        <!--Esta Parte Nao esta no codigo, e so para se formos impelmentar uma barra de Pesquisa avançada
+            <section id="AdvancedSearch">
             <header>
                 <h2>Advanced Search</h2>
             </header> -->

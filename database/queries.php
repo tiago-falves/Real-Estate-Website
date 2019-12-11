@@ -35,34 +35,32 @@
         $char =  $statement->fetch();
         $characteristics = reset($char);
         return explode(',',$characteristics);
-
-
     }
 
     function getAllHouses(){
         $db = Database::instance()->db();
-        $statement = $db->prepare('SELECT * FROM Home ORDER BY rating');
+        $statement = $db->prepare('SELECT * FROM Home ORDER BY rating DESC');
         $statement->execute();
         return $statement->fetchAll();
     }
 
     function getPremiumHouse($rating){
         $db = Database::instance()->db();
-        $statement = $db->prepare('SELECT * FROM Home Where rating > ? ORDER BY rating');
+        $statement = $db->prepare('SELECT * FROM Home Where rating > ? ORDER BY rating DESC');
         $statement->execute(array($rating));
         return $statement->fetch();
     }
 
     function getHouseBetweenPrices($smallerPrice,$higherPrice){
         $db = Database::instance()->db();
-        $statement = $db->prepare('SELECT * FROM Home Where price > ? AND price < ? ORDER BY rating');
+        $statement = $db->prepare('SELECT * FROM Home Where price > ? AND price < ? ORDER BY rating DESC');
         $statement->execute(array($smallerPrice,$higherPrice));
         return $statement->fetch();
     }
 
     function getHouseByLocation($location){
         $db = Database::instance()->db();
-        $statement = $db->prepare('SELECT * from  Home, Location where Location.id = Home.location AND Location.name = ?');
+        $statement = $db->prepare('SELECT * from  Home, Location where Location.id = Home.location AND Location.name = ? ORDER BY rating DESC');
         $statement->execute(array($location));
         return $statement->fetch();
     }
@@ -70,7 +68,7 @@
 
     function getHouseByType($type){
         $db = Database::instance()->db();
-        $statement = $db->prepare('SELECT * FROM Home Where type = ? ORDER BY rating');
+        $statement = $db->prepare('SELECT * FROM Home Where type = ? ORDER BY rating DESC');
         $statement->execute(array($type));
         return $statement->fetch();
     }
@@ -79,14 +77,14 @@
     
     function getHomeFromTitle($title){
         $db = Database::instance()->db();
-        $statement = $db->prepare('SELECT * FROM Home WHERE title = ?');
+        $statement = $db->prepare('SELECT * FROM Home WHERE title = ? ORDER BY rating DESC');
         $statement->execute(array($title));
         return $statement->fetchAll();
     }
 
-    function getHomeFromOwner($userId){
+    function getHomesFromOwner($userId){
         $db = Database::instance()->db();
-        $statement = $db->prepare('SELECT * FROM Home WHERE owner = ?');
+        $statement = $db->prepare('SELECT * FROM Home WHERE owner = ? ORDER BY rating DESC');
         $statement->execute(array($userId));
         return $statement->fetchAll();
     }
