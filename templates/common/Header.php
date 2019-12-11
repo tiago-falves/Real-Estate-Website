@@ -17,14 +17,16 @@
         <header>
             <h1> <a href="main_page.php">Invicta</a></h1>
             <nav id="menu">
-                <ul>
-                    <li><a href="buy.php">Buy</a></li>
+            <div class="wrapper-dropdown">
+                <span>Actions</span>
+                <ul class="dropdown">
                     <li><a href="rent.php">Rent</a></li>
                     <li><a href="profile.php">Profile</a></li>
                     <li><a href="editProfile.php">Edit Profile</a></li>
                     <li><a href="discover.php">Discover?</a></li>
                     <li><a href="../Actions/action_logout.php">Logout?</a></li>
                 </ul>
+            </div>
             </nav>       
             <div id="signup">
                 <a href="register.php">Sign Up</a>

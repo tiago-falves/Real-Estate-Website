@@ -2,7 +2,6 @@
   include('../templates/common/Header.php');  
   include('../templates/search.php');
 ?>
-
 <div id = "BestOffers">
     <header>
         <h2>Best Offers</h2>
