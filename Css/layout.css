@@ -24,7 +24,8 @@ body > div:first-of-type {
 }
 #SearchBar{
     display: flex;
-    
+    height: 10%;
+    width: 100%;
 }
 
 body > header > h1 {

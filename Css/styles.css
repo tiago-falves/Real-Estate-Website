@@ -144,9 +144,8 @@ body > header > nav >ul > li{
 #BiggerPhoto img {
     width: 100%;
 }
-.SmallerPhotosCollumn  {
+.SmallerPhotosCollumn{
     width: 25%;
-    overflow: hidden;
 }
 .SmallerPhotosCollumn img  {
     width: 100%;

@@ -10,13 +10,6 @@ body{
     grid-template-columns: [left] 1fr [middle] 3fr [right] ;
     grid-template-rows: [top] auto [name] auto [stars] auto [middle] auto [bottom];
     text-align: left;
-    border-style: solid;   
-    background-color: white; 
-    margin-right: 5em;
-    margin-left: 5em;
-    outline: royalblue;
-    outline-style: dashed;
-	outline-width: thick;
 }
 
 #profile > *{
@@ -27,12 +20,23 @@ body{
 #profile > img{
     width: 30em;
     margin: 1em;
-   
+
+    border-radius: 50%;
+
     grid-area: top / left / middle / middle;
 }
 
+
 #RecentVisits img{
     width: 20em;
+}
+
+#HomesProfile > div:nth-child(1){
+    width: 100%;
+}
+
+#HomesProfile > div:nth-child(2){
+    width: 100%;
 }
 
 #profile > article {
