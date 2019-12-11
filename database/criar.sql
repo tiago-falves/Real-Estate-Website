@@ -112,12 +112,19 @@ INSERT INTO Person (id, userName, profilePicture, password_hash, title, userLoca
 --                                         ,5.0,'House','T1','Hogwartz',1,1, 'Bathroom,Cinema,Garage,Air conditioning, Basement to put corpses');
 INSERT INTO Reservation(id,start_date,end_date,userID,home) VALUES (1,20190423,20190424,1,1);
 INSERT INTO Photo(id,approved,image,uploader_id,home) VALUES (1,1,1,1,1);
-INSERT INTO Photo(id,approved,image,uploader_id,home) VALUES (2,0,1,1,1);
+INSERT INTO Photo(id,approved,image,uploader_id,home) VALUES (2,1,2,1,1);
+INSERT INTO Photo(id,approved,image,uploader_id,home) VALUES (3,1,2,1,2);
+INSERT INTO Photo(id,approved,image,uploader_id,home) VALUES (4,1,2,1,3);
+INSERT INTO Photo(id,approved,image,uploader_id,home) VALUES (5,1,2,1,4);
+INSERT INTO Photo(id,approved,image,uploader_id,home) VALUES (6,1,2,1,5);
+INSERT INTO Photo(id,approved,image,uploader_id,home) VALUES (6,1,2,1,6);
+
 INSERT INTO Comment(id,date,hour,content,commenter_id,home_id) VALUES (1,20190423,1200,'Gosto de sopa',1,1);
 INSERT INTO Reply(id,date,hour,content,comment,userID) VALUES (1,20190423,1200,'Gosto de sopa',1,1);
 INSERT INTO Message(id,date,hour,content,senderID,receiverID) VALUES (1,20190423,1200,'Gosto de sopa',1,2);
 INSERT INTO Image(id,path) VALUES (1,'../Images/restivo.jpg');
 INSERT INTO Image(id,path) VALUES (2,'../Images/casa.jpeg');
+
 
 INSERT INTO HOME (id,title,price,description,rating,type,bedrooms,address,location,owner,characteristics) VALUES (NULL,"House tiles",2000,"xxx",4.8,"House","T2","Rua zas",1,2,"Bathroom,Cinema");
 INSERT INTO HOME (id,title,price,description,rating,type,bedrooms,address,location,owner,characteristics) VALUES (NULL,"Apartment",2000,"xxx",4.8,"Apartment","T2","Rua zas",1,2,"Bathroom,Cinema");

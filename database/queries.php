@@ -43,7 +43,7 @@
         $db = Database::instance()->db();
         $statement = $db->prepare('SELECT * FROM Home ORDER BY rating');
         $statement->execute();
-        return $statement->fetch();
+        return $statement->fetchAll();
     }
 
     function getPremiumHouse($rating){
@@ -104,6 +104,27 @@
         $statement->execute(array($id));
         return $statement->fetchAll();
     }
+    function getPhotosFromHouse($id){
+        $db = Database::instance()->db();
+        $statement = $db->prepare('SELECT PHOTO.ID FROM PHOTO,HOME WHERE PHOTO.HOME = HOME.ID AND HOME.ID = ?');
+        $statement->execute(array($id));
+        return $statement->fetchAll();
+    }
+    function getPathFromPhoto($id){
+        $db = Database::instance()->db();
+        $statement = $db->prepare('SELECT PHOTO.ID FROM PHOTO,HOME WHERE PHOTO.HOME = HOME.ID AND HOME.ID = ?');
+        $statement->execute(array($id));
+        return $statement->fetchAll();
+    }
+
+    function getPathsFromHouse($id){
+        $db = Database::instance()->db();
+        $statement = $db->prepare('SELECT PATH FROM HOME,PHOTO,IMAGE WHERE HOME.ID = ? AND PHOTO.HOME = HOME.ID AND PHOTO.IMAGE = IMAGE.ID;');
+        $statement->execute(array($id));
+        return $statement->fetchAll();
+    }
+
+    
 
     
 

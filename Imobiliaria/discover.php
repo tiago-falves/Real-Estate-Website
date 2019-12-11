@@ -2,7 +2,7 @@
   include_once('../session/session.php');
   include_once('../templates/Homes/homeFunctions.php');
   include_once('../database/queries.php');
-  include('../templates/common/Header.php');  
+  include_once('../templates/common/Header.php');  
 
   $homes = getAllHouses();
   draw_homes($homes);
