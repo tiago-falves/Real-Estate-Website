@@ -14,8 +14,6 @@
         return $statement->fetch();
     }
 
-    
-    
     function getUserFromUserName($user_name){
         $db = Database::instance()->db();
         $statement = $db->prepare('SELECT * FROM Person WHERE userName = ?');
@@ -43,10 +41,41 @@
 
     function getAllHouses(){
         $db = Database::instance()->db();
-        $statement = $db->prepare('SELECT * FROM Home');
+        $statement = $db->prepare('SELECT * FROM Home ORDER BY rating');
         $statement->execute();
+        return $statement->fetchAll();
+    }
+
+    function getPremiumHouse($rating){
+        $db = Database::instance()->db();
+        $statement = $db->prepare('SELECT * FROM Home Where rating > ? ORDER BY rating');
+        $statement->execute(array($rating));
         return $statement->fetch();
     }
+
+    function getHouseBetweenPrices($smallerPrice,$higherPrice){
+        $db = Database::instance()->db();
+        $statement = $db->prepare('SELECT * FROM Home Where price > ? AND price < ? ORDER BY rating');
+        $statement->execute(array($smallerPrice,$higherPrice));
+        return $statement->fetch();
+    }
+
+    function getHouseByLocation($location){
+        $db = Database::instance()->db();
+        $statement = $db->prepare('SELECT * from  Home, Location where Location.id = Home.location AND Location.name = ?');
+        $statement->execute(array($location));
+        return $statement->fetch();
+    }
+   
+
+    function getHouseByType($type){
+        $db = Database::instance()->db();
+        $statement = $db->prepare('SELECT * FROM Home Where type = ? ORDER BY rating');
+        $statement->execute(array($type));
+        return $statement->fetch();
+    }
+
+
     
     function getHomeFromTitle($title){
         $db = Database::instance()->db();
@@ -75,6 +104,27 @@
         $statement->execute(array($id));
         return $statement->fetchAll();
     }
+    function getPhotosFromHouse($id){
+        $db = Database::instance()->db();
+        $statement = $db->prepare('SELECT PHOTO.ID FROM PHOTO,HOME WHERE PHOTO.HOME = HOME.ID AND HOME.ID = ?');
+        $statement->execute(array($id));
+        return $statement->fetchAll();
+    }
+    function getPathFromPhoto($id){
+        $db = Database::instance()->db();
+        $statement = $db->prepare('SELECT PHOTO.ID FROM PHOTO,HOME WHERE PHOTO.HOME = HOME.ID AND HOME.ID = ?');
+        $statement->execute(array($id));
+        return $statement->fetchAll();
+    }
+
+    function getPathsFromHouse($id){
+        $db = Database::instance()->db();
+        $statement = $db->prepare('SELECT PATH FROM HOME,PHOTO,IMAGE WHERE HOME.ID = ? AND PHOTO.HOME = HOME.ID AND PHOTO.IMAGE = IMAGE.ID;');
+        $statement->execute(array($id));
+        return $statement->fetchAll();
+    }
+
+    
 
     
 

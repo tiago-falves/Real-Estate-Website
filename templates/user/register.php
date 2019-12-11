@@ -5,10 +5,10 @@
   </header>
   
   <form method="post" action="../Actions/action_signup.php">
-    <input type="email" name="emailaddress" placeholder="E-mail Adress">
+    <input type="email" name="emailaddress" placeholder="E-mail Adress" required>
     <input type="text" name="username" placeholder="username" required>
     <input type="password" name="password" placeholder="password" required>
-    <input type="password" name="confirm password" placeholder="confirm password" required>
+    <input type="password" name="confirm_password" placeholder="confirm password" required>
     <input type="submit" value="Register">
   </form>
   <footer>

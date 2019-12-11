@@ -1,4 +1,6 @@
 <?php
+  include_once('../session/session.php');
+
   include('../templates/profileHeader.php');  
   include('../database/queries.php');
 
@@ -16,13 +18,26 @@
       <!-- <h2><?php echo $profile['userName'] ?></h2>
             <p class="title"><?php echo $profile['title'] ?></p> -->
 
-      <form method="post" action="">
-        <input type="text" name="username" placeholder="Username" >
+      <form method="post" action="../Actions/action_change_profile.php">
         <input type="password" name="password" placeholder="Password" >
-        <textarea name="Description" rows="8" placeholder="Description"></textarea>
+        <input type="password" name="newPassword" placeholder="New Password" >
+        <input type="password" name="confirmPassword" placeholder="Confirm Passowrd" >
+        <textarea name="description" rows="8" placeholder="Description"></textarea>
         <!-- <input type="textarea"  name="Description" placeholder="Description" > -->
         <input type="submit" value="Submit">
     </form>
+    <section id="messages">
+      <?php $errors = getErrorMessages();foreach ($errors as $error) { ?>
+      <article class="error">
+        <p><?=$error?></p>
+      </article>
+      <?php } ?>
+      <?php $successes = getSuccessMessages();foreach ($successes as $success) { ?>
+      <article class="success">
+        <p><?=$success?></p>
+      </article>
+      <?php } clearMessages(); ?>
+  </section>
     </div>
 <?php include('../templates/common/Footer.php');?>
 

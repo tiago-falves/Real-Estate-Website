@@ -10,7 +10,6 @@
         <link href="../Css/responsive.css" rel="stylesheet">
         <link href="../Css/forms.css" rel="stylesheet">
         <link href="../Css/home.css" rel="stylesheet">
-        <link href="../Css/profile.css" rel="stylesheet">
         <link href="../Css/comments.css" rel="stylesheet">
 
     </head>
@@ -23,6 +22,8 @@
                     <li><a href="rent.php">Rent</a></li>
                     <li><a href="profile.php">Profile</a></li>
                     <li><a href="editProfile.php">Edit Profile</a></li>
+                    <li><a href="discover.php">Discover?</a></li>
+                    <li><a href="../Actions/action_logout.php">Logout?</a></li>
                 </ul>
             </nav>       
             <div id="signup">

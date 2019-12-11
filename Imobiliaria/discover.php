@@ -1,57 +1,16 @@
 <?php
-  include('../templates/common/Header.php');  
-?>
-        <section id="AdvancedSearch">
-            <header>
-                <h2>Advanced Search</h2>
-            </header>
-            <img src="../Images/ribeira.jpg" alt="Ribeira">
-            <nav id="Allcities">
-                <header>Todas as cidades</header>
-                <!-- just for the hamburguer menu in responsive layout -->
-                <input type="checkbox" id="citiesCheckbox"> 
-                <label class="hamburger" for="citiesCheckbox"></label>
-                <ul>
-                    <li><a href="index.html">Porto</a></li>
-                    <li><a href="index.html">Lisboa</a></li>
-                    <li><a href="index.html">Braga</a></li>
-                    <li><a href="index.html">Sinfães</a></li>
-                    <li><a href="index.html">Narnia</a></li>
-                    <li><a href="index.html">Shire</a></li>
-                </ul>
-            </nav>
-            <nav id="HouseTypeMenu">
-                <header>House type</header>
-                <!-- just for the hamburguer menu in responsive layout -->
-                <input type="checkbox" id="houseType"> 
-                <label class="hamburger" for="houseType"></label>
-                <ul>
-                    <li><a href="index.html">Apartement</a></li>
-                    <li><a href="index.html">Mansion</a></li>
-                    <li><a href="index.html">Condominium</a></li>
-                </ul>
-            </nav>
-            <input type="search" name="idHouse" value="House ID">
-            <input type="search" name="Area" value="Area (m2)">
-            <input type="search" name="lowerPrice" value="Price: More than...">
-            <input type="search" name="higherPrice" value="Price: Less than...">
-            <a href="searchResults.txt"><img src="../Images/search.png" alt="Search Logo"></a>  
-        </section>
-        <nav id = "OrderSearch">
-            <header>Custom Search</header>
-            <!-- just for the hamburguer menu in responsive layout -->
-            <input type="checkbox" id="hamburger"> 
-            <label class="hamburger" for="hamburger"></label>
-            <ul>
-                <li><a href="index.html">Higher to Lower Price</a></li>
-                <li><a href="index.html">Lower to higher price</a></li>
-                <li><a href="index.html">Newer First</a></li>
-                <li><a href="index.html">Older first</a></li>
-            </ul>
-        </nav>
+  include_once('../session/session.php');
+  include_once('../templates/Homes/homeFunctions.php');
+  include_once('../database/queries.php');
+  include_once('../templates/common/Header.php');  
 
-        <div id="ListHouses">
-            <h2>Best Matches</h2>
+  $homes = getAllHouses();
+  draw_homes($homes);
+
+?>
+        
+        <!-- <div id="ListHouses">
+            <h2>Homes</h2>
             <section class = House>
                 <header>
                     <h3>Old Tiles downtown</h3>
@@ -105,7 +64,56 @@
                 <a href="home.html"><img src="../Images/home.jpg" alt="Casa 1"></a>
             </section>
             <a href="">See All</a>            
-        </div>
+        </div> -->
+
+
+        <!--<section id="AdvancedSearch">
+            <header>
+                <h2>Advanced Search</h2>
+            </header> -->
+            <!-- <nav id="Allcities">
+                <header>Todas as cidades</header>
+                <!-- just for the hamburguer menu in responsive layout -->
+                <!-- <input type="checkbox" id="citiesCheckbox"> 
+                <label class="hamburger" for="citiesCheckbox"></label>
+                <ul>
+                    <li><a href="index.html">Porto</a></li>
+                    <li><a href="index.html">Lisboa</a></li>
+                    <li><a href="index.html">Braga</a></li>
+                    <li><a href="index.html">Sinfães</a></li>
+                    <li><a href="index.html">Narnia</a></li>
+                    <li><a href="index.html">Shire</a></li>
+                </ul>
+            </nav>
+            <nav id="HouseTypeMenu">
+                <header>House type</header>
+                <input type="checkbox" id="houseType"> 
+                <label class="hamburger" for="houseType"></label>
+                <ul>
+                    <li><a href="index.html">Apartement</a></li>
+                    <li><a href="index.html">Mansion</a></li>
+                    <li><a href="index.html">Condominium</a></li>
+                </ul>
+            </nav>
+            <input type="search" name="idHouse" value="House ID">
+            <input type="search" name="Area" value="Area (m2)">
+            <input type="search" name="lowerPrice" value="Price: More than...">
+            <input type="search" name="higherPrice" value="Price: Less than...">
+            <a href="searchResults.txt"><img src="../Images/search.png" alt="Search Logo"></a>  
+        </section>
+        <nav id = "OrderSearch">
+            <header>Custom Search</header>
+
+            <input type="checkbox" id="hamburger"> 
+            <label class="hamburger" for="hamburger"></label>
+            <ul>
+                <li><a href="index.html">Higher to Lower Price</a></li>
+                <li><a href="index.html">Lower to higher price</a></li>
+                <li><a href="index.html">Newer First</a></li>
+                <li><a href="index.html">Older first</a></li>
+            </ul>
+        </nav>  
+        </section>-->
         <?php
   include('../templates/common/Footer.php');  
 ?>
