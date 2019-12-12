@@ -12,7 +12,7 @@
 
   $profile =  getUserFromUserName($_SESSION['username']);
 
-  $profilePicture = getPathsFromPerson($profile['id']); 
+  $profilePicture = getProfilePic($profile['id']); 
   if($profilePicture == false){
     $profilePicture = array("path" =>"noProfile.png");
   }

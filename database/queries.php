@@ -21,9 +21,18 @@
         return $statement->fetch();
     }
 
-    function getPathsFromPerson($id){
+    //O que e que este fazia mesmo?
+    function getProfilePic($id){
         $db = Database::instance()->db();
-        $statement = $db->prepare('SELECT PATH FROM Person,PHOTO,IMAGE WHERE Person.ID = ? AND PHOTO.uploader_id = Person.ID AND PHOTO.IMAGE = IMAGE.ID;');
+        //$statement = $db->prepare('SELECT PATH FROM Person,PHOTO,IMAGE WHERE Person.ID = ? AND PHOTO.uploader_id = Person.ID AND PHOTO.IMAGE = IMAGE.ID;');
+        $statement = $db->prepare('SELECT PATH FROM Person,IMAGE WHERE Person.ID = ? AND IMAGE.id = Person.profilePicture');
+        $statement->execute(array($id));
+        return $statement->fetch();
+    }
+    function getUsernameFromId($id){
+        $db = Database::instance()->db();
+        //$statement = $db->prepare('SELECT PATH FROM Person,PHOTO,IMAGE WHERE Person.ID = ? AND PHOTO.uploader_id = Person.ID AND PHOTO.IMAGE = IMAGE.ID;');
+        $statement = $db->prepare('SELECT userName FROM Person WHERE Person.ID = ?');
         $statement->execute(array($id));
         return $statement->fetch();
     }
@@ -137,8 +146,14 @@
         return $statement->fetch();
     }
 
-    
+    function getReservationsFromPerson($id){
+        $db = Database::instance()->db();
+        $statement = $db->prepare('SELECT *  FROM Person, Reservation,Home WHERE Person.id = ? AND Home.owner = Person.id AND Reservation.home = home.id');
+        $statement->execute(array($id));
+        return $statement->fetchAll();
+    }
 
+    
     function checkUserCredentials($user_name, $password){
         $user = getUserFromUserName($user_name);
         return $user !== false && password_verify($password, $user['password']);

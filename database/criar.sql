@@ -110,7 +110,14 @@ INSERT INTO Person (id, userName, profilePicture, password_hash, title, userLoca
 --                                         Duis condimentum metus et ex tincidunt, faucibus aliquet ligula porttitor. In vitae posuere massa. Donec fermentum magna sit amet suscipit pulvinar. Cras in elit sapien. Vivamus nunc sem, finibus ac suscipit ullamcorper, hendrerit vitae urna. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Quisque eget tincidunt orci. Mauris congue ipsum non purus tristique, at venenatis elit pellentesque. Etiam congue euismod molestie. Mauris ex orci, lobortis a faucibus sed, sagittis eget neque.
 --                                         Mauris tincidunt orci congue turpis viverra pulvinar. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Quisque rhoncus lorem eget.'
 --                                         ,5.0,'House','T1','Hogwartz',1,1, 'Bathroom,Cinema,Garage,Air conditioning, Basement to put corpses');
-INSERT INTO Reservation(id,start_date,end_date,userID,home) VALUES (1,20190423,20190424,1,1);
+INSERT INTO Reservation(id,start_date,end_date,userID,home) VALUES (NULL,20190423,20190424,1,1);
+INSERT INTO Reservation(id,start_date,end_date,userID,home) VALUES (NULL,20190425,20190426,1,1);
+INSERT INTO Reservation(id,start_date,end_date,userID,home) VALUES (NULL,20190427,20190428,1,1);
+INSERT INTO Reservation(id,start_date,end_date,userID,home) VALUES (NULL,20190429,20190430,1,3);
+INSERT INTO Reservation(id,start_date,end_date,userID,home) VALUES (NULL,20190429,20190430,2,2);
+INSERT INTO Reservation(id,start_date,end_date,userID,home) VALUES (NULL,20190429,20190430,1,4);
+INSERT INTO Reservation(id,start_date,end_date,userID,home) VALUES (NULL,20190429,20190430,1,5);
+
 INSERT INTO Photo(id,approved,image,uploader_id,home) VALUES (1,1,1,1,1);
 INSERT INTO Photo(id,approved,image,uploader_id,home) VALUES (2,1,2,2,1);
 INSERT INTO Photo(id,approved,image,uploader_id,home) VALUES (3,1,2,1,2);
