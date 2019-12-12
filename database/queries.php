@@ -107,7 +107,7 @@
         $db = Database::instance()->db();
         $statement = $db->prepare('SELECT * FROM Location WHERE id = ?');
         $statement->execute(array($id));
-        return $statement->fetchAll();
+        return $statement->fetch();
     }
     function getPhotosFromHouse($id){
         $db = Database::instance()->db();

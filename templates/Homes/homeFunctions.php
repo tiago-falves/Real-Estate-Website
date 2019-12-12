@@ -58,4 +58,19 @@ function drawCharacteristics($characetristics){?>
       <input type="checkbox"  value="Remember me"><?php echo $char ?><br>
     <?php } ?>
   </section>
+<?php } 
+
+
+function draw_main_home($homes,$id){ ?>
+  <section class = "Home">
+    <?php $home = $homes[$id];
+    $location = getLocationFromId($home['location']);
+    $images = getPathsFromHouse($home['id']);?>
+    <header>
+        <!-- <h3><?php echo $home['title']; ?></h3> -->
+        <h3><?php echo $home['price']; ?></h3>
+        <h4><?php echo $location['name']; ?></h4>
+    </header>
+    <a href="home.php"><img src="../Images/<?php echo $images[0]['path'];?>" alt="Casa"></a>
+</section>
 <?php } ?>
