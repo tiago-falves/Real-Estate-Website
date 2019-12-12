@@ -22,7 +22,15 @@
   </article>
   <?php drawCharacteristics($characetristics)?>
   <img src="../Images/location.JPG" alt="Location">
-  <button>Rent Now!</button>
+  
+   <!-- To do: Passar mais argumentos! -->
+  <form action="../Actions/action_rent_house.php?id=<?php echo $idHouse; ?>">
+    <input type="date" id="initialDate" value="2020-01-01">
+    <input type="date" id="endDate" value="2020-01-01">
+    <input type="submit" value="Rent Now!" name="submit">
+
+  </form>
+
 </section>
 
 <?php

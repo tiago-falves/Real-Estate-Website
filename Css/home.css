@@ -30,7 +30,7 @@ body > header > nav {
     grid-area: middle / middle /end /right;
 }
 
-#Informations > button{
+#Informations > form{
     grid-area: top / middle /middle /right;
     margin: 1em;
 }
