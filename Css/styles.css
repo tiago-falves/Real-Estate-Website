@@ -7,7 +7,6 @@ body{
     margin: 0%;
 }
 
-
 body > header{
     
     color: white;
@@ -26,6 +25,7 @@ body > header h1{
     margin: 0;
 }
 
+
 body > header > nav > ul> *:hover{
     background-color: #ddd;
     color: black;
@@ -41,25 +41,16 @@ body > header > nav > ul> *:hover{
 #signup a{
     padding-left: 2em;
     padding-right: 2em;
+    border-radius: 1vh;
    
 }
 
-body > header > nav >ul{
-    padding: 1em;
-}
-
-body > header > nav >ul > li{
-    display: inline-block;
-    text-align: left;
-    font-size: 1.5vw;
-    padding-left: 2em;
-    padding-right: 2em;
-    padding-top: 0.5em;
-    padding-bottom: 0.5em,
-}
 .wrapper-dropdown {
     position: relative;
     display: inline-block;
+    padding-left: 2em;
+    padding-right: 2em;
+    border-radius: 1vh;
 }
   
 .dropdown {
@@ -110,7 +101,7 @@ body > header > nav >ul > li{
 
 #SearchText li{
     display: inline;
-    background-color: #606060;
+    background-color: #696969;
     color: white;
     padding: 1em;
     font-size: 100%;
@@ -124,13 +115,17 @@ body > header > nav >ul > li{
     font-size: 2vh;
 }
 
+#SearchText ul li:hover{
+    background-color: white;
+}
+
 #SearchBar input{
-    height: 5vh;
+    height: 5.5vh;
     width: 40%;
     font-size: larger;
     border-right: none;
     padding: 0.5vh;
-    border-radius: 5px 0 0 5px;
+    border-radius: 2vh 0 0 2vh;
     outline: none;
     color: #606060;
 }
@@ -139,12 +134,19 @@ body > header > nav >ul > li{
     width: 5vh;
     height: 5vh;
     padding: 0em;
+    border: #757575;
+    border-style: solid;
+    border-radius: 0.1vh;
     background-color: #606060;
-    border-radius: 0 5px 5px 0;
+    border-radius: 0 2vh 2vh 0;
 }
 
 #Search {
     text-align:  center;
+}
+
+#BestOffers{
+    background-color: lightblue;
 }
 
 .Home  {
@@ -163,8 +165,9 @@ body > header > nav >ul > li{
 } 
 
 #BiggerPhoto {
-    width: 50%;
+    width: 100%;
     overflow: hidden;
+    size: 10vh;
 }
 
 #BiggerPhoto img {
@@ -175,7 +178,8 @@ body > header > nav >ul > li{
     width: 100%;
 }
 .SmallerPhotosCollumn{
-    width: 25%;
+    width: 50%;
+    size: 10vh;
 }
 .SmallerPhotosCollumn img  {
     width: 100%;
@@ -197,15 +201,23 @@ body > header > nav >ul > li{
     transform: scale(1.3);
     size: 70em;
 }
+
+#BestOffers > button {
+    background-color: #696969;
+    color: white;
+    font-weight: bold   ;
+
+}
 body > footer{
     display: flex;
     color: white;
     background-color: rgba(96, 96, 96, 1);
     padding-top: 0.5em;
     padding-bottom: 0.5em ;
-    max-height: 90vh;
+    max-height: 7.5vh;
     width: 100%;
     margin-top: 1em;
+    overflow: hidden;
 }
 
 body > footer nav{
@@ -213,13 +225,14 @@ body > footer nav{
     width: 100%;;
     margin: auto;
     justify-content: space-around;
-    font-size: 1.5em;
+    font-size: 2.5vh;
     
 }
 
 body > footer h3{
-    padding-left: 2em;
-    font-size: 2em;
+    padding-left: 2vw;
+    font-size: 5vh;
+    margin: 0;
     font-family: serif;
 }
 

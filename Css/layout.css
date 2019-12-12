@@ -58,17 +58,35 @@ body > div:first-of-type {
 #BestOffers {
     text-align: center;
 }
+#BestOffers {
+    display: grid;
+    grid-template-columns: 20px 1fr 20px;
+}
+#BestOffers > * {
+    grid-column: 2 / -2;
+}
+#BestOffers > #Homes {
+    grid-column: 1 / -1;
+}
+
+#ScrolableList {
+    display: grid;
+    grid-gap: 10px;
+    grid-template-columns: repeat(6, calc(50% - 40px));
+    grid-template-rows: minmax(150px, 1fr);
+  }
 
 #BestOffers > header{
     font-size: larger;
     text-align: center;
 }
 
-#BestOffers > button{
+#BestOffers > button {
     text-align: center;
-    margin: auto;
+    margin-top: 3vh;
     padding: 0.5em;
     width: 10%;
+    border-radius: 2vh;
 }
 
 #BiggerPhoto {
