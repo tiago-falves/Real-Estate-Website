@@ -24,23 +24,4 @@
         overflow: hidden;
         font-size: 11px;
     }
-    #BestOffers {
-        display: flex;
-        flex-wrap: wrap;
-        width: 90%;
-        margin: auto;
-    }
-    #Homes {
-        display: grid;
-    }
-        
-    #BiggerPhoto {
-        width: 100%; 
-    }
-
-    .SmallerPhotosCollumn {
-        width: 100%;
-    }
-
-    
 }
