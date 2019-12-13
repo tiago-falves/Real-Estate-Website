@@ -138,6 +138,7 @@ INSERT INTO Message(id,date,hour,content,senderID,receiverID) VALUES (1,20190423
 INSERT INTO Image(id,path) VALUES (1,'restivo.jpg');
 INSERT INTO Image(id,path) VALUES (2,'casa.jpeg');
 INSERT INTO Image(id,path) VALUES (3,'manson.jpg');
+INSERT INTO Image(id,path) VALUES (4,'noProfile.png');
 
 
 INSERT INTO HOME (id,title,price,description,rating,type,bedrooms,address,location,owner,characteristics) VALUES (NULL,"House tiles",2000,"xxx",4.8,"House","T2","Rua zas",1,2,"Bathroom,Cinema");

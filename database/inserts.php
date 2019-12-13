@@ -3,7 +3,7 @@
 
     function insertUser($username, $password) {
         $db = Database::instance()->db();
-        $stmt = $db->prepare('INSERT INTO Person  VALUES (NULL, ?, 1, ?, "", 1, "", 0)');
+        $stmt = $db->prepare('INSERT INTO Person  VALUES (NULL, ?, 4, ?, "", 1, "", 0)');
         $options = ['cost' => 8];
         error_log("User-Pass: ".$username."-".$password);
         $stmt->execute(array($username, password_hash($password, PASSWORD_DEFAULT, $options)));

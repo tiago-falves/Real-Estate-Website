@@ -146,11 +146,24 @@
         return $statement->fetch();
     }
 
-    function getReservationsFromPerson($id){
+    function getReservationsUserHouses($id){
         $db = Database::instance()->db();
         $statement = $db->prepare('SELECT *  FROM Person, Reservation,Home WHERE Person.id = ? AND Home.owner = Person.id AND Reservation.home = home.id');
         $statement->execute(array($id));
         return $statement->fetchAll();
+    }
+
+    function getClientReservations($id){
+        $db = Database::instance()->db();
+        $statement = $db->prepare('SELECT * FROM Person, Reservation WHERE Person.id = ? AND Reservation.userID = Person.id');
+        $statement->execute(array($id));
+        return $statement->fetchAll();
+    }
+    function getReservationOwner($id){
+        $db = Database::instance()->db();
+        $statement = $db->prepare('SELECT home.owner FROM Reservation,Home WHERE reservation.id  = ? AND reservation.home = home.id');
+        $statement->execute(array($id));
+        return $statement->fetch();
     }
 
     

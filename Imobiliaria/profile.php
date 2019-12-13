@@ -23,7 +23,8 @@ $profilePicture = getProfilePic($profile['id']);
     $profilePicture = array("path" =>"noProfile.png");
   }
 $homes = getHomesFromOwner($profile['id']);
-$reservations = getReservationsFromPerson($profile['id']);
+$reservationsMyHouses = getReservationsUserHouses($profile['id']);
+$myReservations = getClientReservations($profile['id']);
 
 
  
@@ -52,7 +53,9 @@ $reservations = getReservationsFromPerson($profile['id']);
                 <h2>Houses of this user</h2>
             </header>
             <?php draw_homes($homes);
-            draw_reservations($reservations);  ?>
+            draw_reservations($reservationsMyHouses,false);
+            draw_reservations($myReservations,true);
+              ?>
             
             <!-- <section id = "HomesProfile">
                  <div class = "SmallerPhotosCollumn">
