@@ -3,6 +3,10 @@
  include_once('../database/database.php');
  include_once('../database/queries.php');
 
+  if(isset($_SESSION['username'])){
+    die(header('Location: ../Imobiliaria/main_page.php'));
+  }
+
   $username = $_POST['username'];
   $password = $_POST['password'];
 

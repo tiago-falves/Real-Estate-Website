@@ -51,7 +51,16 @@
     function updateUserProfile($id, $title, $location, $description){
         $db = Database::instance()->db();
 
-        $statement = $db->prepare('UPDATE User SET title = ?, location = ?, description = ? WHERE id = ?');
+        $statement = $db->prepare('UPDATE Person SET title = ?, userLocation = ?, userDescription = ? WHERE id = ?');
         $statement->execute(array($title, $location, $description, $id));
+    }
+
+    function changeUserPassword($id, $newPassword){
+        $db = Database::instance()->db();
+        $stmt = $db->prepare('UPDATE Person SET password_hash = ?');
+        $options = ['cost' => 8];
+        error_log("User-Pass: ".$username."-".$password);
+        $stmt->execute(array(password_hash($password, PASSWORD_DEFAULT, $options)));
+    
     }
 ?>

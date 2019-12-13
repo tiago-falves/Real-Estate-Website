@@ -118,6 +118,14 @@
         $statement->execute(array($id));
         return $statement->fetch();
     }
+    
+    function getLocationFromName($name){
+        $db = Database::instance()->db();
+        $statement = $db->prepare('SELECT * FROM Location WHERE name = ?');
+        $statement->execute(array($name));
+        return $statement->fetch();
+    }
+
     function getPhotosFromHouse($id){
         $db = Database::instance()->db();
         $statement = $db->prepare('SELECT PHOTO.ID FROM PHOTO,HOME WHERE PHOTO.HOME = HOME.ID AND HOME.ID = ?');
