@@ -156,6 +156,7 @@
     
     function checkUserCredentials($user_name, $password){
         $user = getUserFromUserName($user_name);
-        return $user !== false && password_verify($password, $user['password']);
+        error_log("User:".$user['id']);
+        return $user !== false && password_verify($password, $user['password_hash']);
     }
 ?>

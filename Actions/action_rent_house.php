@@ -5,7 +5,7 @@
 
 
     if(!isset($_SESSION['username'])){
-        die(header('Location: login.php'));
+        die(header('Location: ../Imobiliaria/login.php'));
     }
     $profile =  getUserFromUserName($_SESSION['username']);
     $idHouse = $_GET['id']; 

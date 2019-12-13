@@ -4,7 +4,9 @@
     function insertUser($username, $password) {
         $db = Database::instance()->db();
         $stmt = $db->prepare('INSERT INTO Person  VALUES (NULL, ?, 1, ?, "", 1, "", 0)');
-        $stmt->execute(array($username, password_hash($password, PASSWORD_DEFAULT)));
+        $options = ['cost' => 8];
+        error_log("User-Pass: ".$username."-".$password);
+        $stmt->execute(array($username, password_hash($password, PASSWORD_DEFAULT, $options)));
     } 
 
     function insertUserHomePhoto($id,$image,$home){
@@ -34,7 +36,7 @@
         $statement = $db->prepare('INSERT INTO Home Values(NULL, ?, ?, ?, 0, ?, ?, ?, ?, ?)');
         $statement->execute(array($title, $price, $description, $type, $bedrooms, $address, $location_id, $owner_id));
     }
-    function insertReservation($start_date, $end_date, $userId, $home)){
+    function insertReservation($start_date, $end_date, $userId, $home){
         $db = Database::instance()->db();
         $statement = $db->prepare('INSERT INTO Reservation Values(NULL,?,?,?,?)');
         $statement->execute(array($start_date, $end_date, $userId, $home));
