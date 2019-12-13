@@ -1,17 +1,11 @@
 <?php
   include('../templates/common/Header.php');  
   include('../templates/search.php');
-?>
-<div id = "BestOffers">
-    <header>
-        <h2>Best Offers</h2>
-    </header>
-    <?php include('../templates/Homes/homes.php'); ?>
-    <button  type="button">See All</button>         
-</div>
+  include_once('../templates/Homes/homes.php');
+  include_once('../database/queries.php');
 
+  $homes = getAllHouses();
 
-
-<?php
+  draw_best_offers($homes);
   include('../templates/common/Footer.php');  
 ?>

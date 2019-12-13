@@ -110,13 +110,20 @@ INSERT INTO Person (id, userName, profilePicture, password_hash, title, userLoca
 --                                         Duis condimentum metus et ex tincidunt, faucibus aliquet ligula porttitor. In vitae posuere massa. Donec fermentum magna sit amet suscipit pulvinar. Cras in elit sapien. Vivamus nunc sem, finibus ac suscipit ullamcorper, hendrerit vitae urna. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Quisque eget tincidunt orci. Mauris congue ipsum non purus tristique, at venenatis elit pellentesque. Etiam congue euismod molestie. Mauris ex orci, lobortis a faucibus sed, sagittis eget neque.
 --                                         Mauris tincidunt orci congue turpis viverra pulvinar. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Quisque rhoncus lorem eget.'
 --                                         ,5.0,'House','T1','Hogwartz',1,1, 'Bathroom,Cinema,Garage,Air conditioning, Basement to put corpses');
-INSERT INTO Reservation(id,start_date,end_date,userID,home) VALUES (1,20190423,20190424,1,1);
+INSERT INTO Reservation(id,start_date,end_date,userID,home) VALUES (NULL,20190423,20190424,1,1);
+INSERT INTO Reservation(id,start_date,end_date,userID,home) VALUES (NULL,20190425,20190426,1,1);
+INSERT INTO Reservation(id,start_date,end_date,userID,home) VALUES (NULL,20190427,20190428,1,1);
+INSERT INTO Reservation(id,start_date,end_date,userID,home) VALUES (NULL,20190429,20190430,1,3);
+INSERT INTO Reservation(id,start_date,end_date,userID,home) VALUES (NULL,20190429,20190430,2,2);
+INSERT INTO Reservation(id,start_date,end_date,userID,home) VALUES (NULL,20190429,20190430,1,4);
+INSERT INTO Reservation(id,start_date,end_date,userID,home) VALUES (NULL,20190429,20190430,1,5);
+
 INSERT INTO Photo(id,approved,image,uploader_id,home) VALUES (1,1,1,1,1);
 INSERT INTO Photo(id,approved,image,uploader_id,home) VALUES (2,1,2,2,1);
 INSERT INTO Photo(id,approved,image,uploader_id,home) VALUES (3,1,2,1,2);
 INSERT INTO Photo(id,approved,image,uploader_id,home) VALUES (4,1,2,1,3);
 INSERT INTO Photo(id,approved,image,uploader_id,home) VALUES (5,1,2,1,4);
-INSERT INTO Photo(id,approved,image,uploader_id,home) VALUES (6,1,1,1,5);
+INSERT INTO Photo(id,approved,image,uploader_id,home) VALUES (6,1,3,1,5);
 INSERT INTO Photo(id,approved,image,uploader_id,home) VALUES (7,1,2,1,5);
 INSERT INTO Photo(id,approved,image,uploader_id,home) VALUES (8,1,1,1,5);
 INSERT INTO Photo(id,approved,image,uploader_id,home) VALUES (9,2,1,1,6);
@@ -130,13 +137,15 @@ INSERT INTO Reply(id,date,hour,content,comment,userID) VALUES (1,20190423,1200,'
 INSERT INTO Message(id,date,hour,content,senderID,receiverID) VALUES (1,20190423,1200,'Gosto de sopa',1,2);
 INSERT INTO Image(id,path) VALUES (1,'restivo.jpg');
 INSERT INTO Image(id,path) VALUES (2,'casa.jpeg');
+INSERT INTO Image(id,path) VALUES (3,'manson.jpg');
+INSERT INTO Image(id,path) VALUES (4,'noProfile.png');
 
 
 INSERT INTO HOME (id,title,price,description,rating,type,bedrooms,address,location,owner,characteristics) VALUES (NULL,"House tiles",2000,"xxx",4.8,"House","T2","Rua zas",1,2,"Bathroom,Cinema");
 INSERT INTO HOME (id,title,price,description,rating,type,bedrooms,address,location,owner,characteristics) VALUES (NULL,"Apartment",2000,"xxx",4.8,"Apartment","T2","Rua zas",1,1,"Bathroom,Cinema");
 INSERT INTO HOME (id,title,price,description,rating,type,bedrooms,address,location,owner,characteristics) VALUES (NULL,"Low Punctuation",2000,"xxx",4.3,"House","T2","Rua zas",2,2,"Bathroom,Cinema");
 INSERT INTO HOME (id,title,price,description,rating,type,bedrooms,address,location,owner,characteristics) VALUES (NULL,"Porto",2000,"xxx",4.8,"House","T2","Rua zas",1,2,"Bathroom,Cinema");
-INSERT INTO HOME (id,title,price,description,rating,type,bedrooms,address,location,owner,characteristics) VALUES (NULL,"Expensive 3 Photos",5000,"xxx",4.8,"House","T2","Rua zas",1,2,"Bathroom,Cinema");
+INSERT INTO HOME (id,title,price,description,rating,type,bedrooms,address,location,owner,characteristics) VALUES (NULL,"Expensive 3 Photos",5000,"xxx",4.9,"House","T2","Rua zas",1,2,"Bathroom,Cinema");
 INSERT INTO HOME (id,title,price,description,rating,type,bedrooms,address,location,owner,characteristics) VALUES (NULL,"High rating",5000,"xxx",5.0,"House","T2","Rua zas",1,2,"Bathroom,Cinema");
 
 

@@ -1,24 +1,31 @@
 <?php
-  include('../session/session.php');  
-  include('../templates/profileHeader.php');  
+  include_once('../session/session.php');  
+  include_once('../templates/profileHeader.php');  
   include_once('../templates/Homes/homeFunctions.php');
-  include('../database/queries.php');
-  include('../templates/comments.php');
+  include_once('../templates/reservations.php');
+  include_once('../database/queries.php');
+  include_once('../templates/comments.php');
 
 
 
   //$profile = getUserFromId($idUser);
   
 if(isset($_GET['id'])){
-    $idUser = $_GET['id']; //TEMPORARIO SUBSTITUIR POR VERSAO ACIMA
+    $idUser = $_GET['id']; 
     $profile = getUserFromId($idUser);   
 }
 else{
     $profile = getUserFromUserName($_SESSION['username']);
 }
     
-$profilePicture = getPathsFromPerson($profile['id']);
+$profilePicture = getProfilePic($profile['id']); 
+  if($profilePicture == false){
+    $profilePicture = array("path" =>"noProfile.png");
+  }
 $homes = getHomesFromOwner($profile['id']);
+$reservationsMyHouses = getReservationsUserHouses($profile['id']);
+$myReservations = getClientReservations($profile['id']);
+
 
  
 ?>
@@ -28,7 +35,7 @@ $homes = getHomesFromOwner($profile['id']);
             <p class="title"><?php echo $profile['title'] ?></p>
             <!-- <p>Harvard University</p> -->
         </header>
-        <img src= '../Images/<?php echo $profilePicture['path']; ?>' alt="Ribeira"> 
+        <img src= '../Images/<?php echo $profilePicture['path']; ?>' alt="ProfilePicture"> 
         <section id = "rating">
             <h2><?php echo $profile['rating'] ?> stars</h2>
         </section>
@@ -45,7 +52,11 @@ $homes = getHomesFromOwner($profile['id']);
             <header>
                 <h2>Houses of this user</h2>
             </header>
-            <?php draw_homes($homes);?>
+            <?php draw_homes($homes);
+            draw_reservations($reservationsMyHouses,false);
+            draw_reservations($myReservations,true);
+              ?>
+            
             <!-- <section id = "HomesProfile">
                  <div class = "SmallerPhotosCollumn">
                     <section class = "Home">
@@ -84,4 +95,4 @@ $homes = getHomesFromOwner($profile['id']);
             
             <a href="">See All</a>            
         </div>-->
-<?php include('../templates/profileHeader.php');?>  
+<?php include_once('../templates/common/Footer.php');?>  

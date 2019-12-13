@@ -21,9 +21,18 @@
         return $statement->fetch();
     }
 
-    function getPathsFromPerson($id){
+    //O que e que este fazia mesmo?
+    function getProfilePic($id){
         $db = Database::instance()->db();
-        $statement = $db->prepare('SELECT PATH FROM Person,PHOTO,IMAGE WHERE Person.ID = ? AND PHOTO.uploader_id = Person.ID AND PHOTO.IMAGE = IMAGE.ID;');
+        //$statement = $db->prepare('SELECT PATH FROM Person,PHOTO,IMAGE WHERE Person.ID = ? AND PHOTO.uploader_id = Person.ID AND PHOTO.IMAGE = IMAGE.ID;');
+        $statement = $db->prepare('SELECT PATH FROM Person,IMAGE WHERE Person.ID = ? AND IMAGE.id = Person.profilePicture');
+        $statement->execute(array($id));
+        return $statement->fetch();
+    }
+    function getUsernameFromId($id){
+        $db = Database::instance()->db();
+        //$statement = $db->prepare('SELECT PATH FROM Person,PHOTO,IMAGE WHERE Person.ID = ? AND PHOTO.uploader_id = Person.ID AND PHOTO.IMAGE = IMAGE.ID;');
+        $statement = $db->prepare('SELECT userName FROM Person WHERE Person.ID = ?');
         $statement->execute(array($id));
         return $statement->fetch();
     }
@@ -107,8 +116,16 @@
         $db = Database::instance()->db();
         $statement = $db->prepare('SELECT * FROM Location WHERE id = ?');
         $statement->execute(array($id));
-        return $statement->fetchAll();
+        return $statement->fetch();
     }
+    
+    function getLocationFromName($name){
+        $db = Database::instance()->db();
+        $statement = $db->prepare('SELECT * FROM Location WHERE name = ?');
+        $statement->execute(array($name));
+        return $statement->fetch();
+    }
+
     function getPhotosFromHouse($id){
         $db = Database::instance()->db();
         $statement = $db->prepare('SELECT PHOTO.ID FROM PHOTO,HOME WHERE PHOTO.HOME = HOME.ID AND HOME.ID = ?');
@@ -137,10 +154,30 @@
         return $statement->fetch();
     }
 
-    
+    function getReservationsUserHouses($id){
+        $db = Database::instance()->db();
+        $statement = $db->prepare('SELECT *  FROM Person, Reservation,Home WHERE Person.id = ? AND Home.owner = Person.id AND Reservation.home = home.id');
+        $statement->execute(array($id));
+        return $statement->fetchAll();
+    }
 
+    function getClientReservations($id){
+        $db = Database::instance()->db();
+        $statement = $db->prepare('SELECT * FROM Person, Reservation WHERE Person.id = ? AND Reservation.userID = Person.id');
+        $statement->execute(array($id));
+        return $statement->fetchAll();
+    }
+    function getReservationOwner($id){
+        $db = Database::instance()->db();
+        $statement = $db->prepare('SELECT home.owner FROM Reservation,Home WHERE reservation.id  = ? AND reservation.home = home.id');
+        $statement->execute(array($id));
+        return $statement->fetch();
+    }
+
+    
     function checkUserCredentials($user_name, $password){
         $user = getUserFromUserName($user_name);
-        return $user !== false && password_verify($password, $user['password']);
+        error_log("User:".$user['id']);
+        return $user !== false && password_verify($password, $user['password_hash']);
     }
 ?>
