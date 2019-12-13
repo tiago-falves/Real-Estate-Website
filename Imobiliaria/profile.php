@@ -52,7 +52,9 @@ $myReservations = getClientReservations($profile['id']);
             <header>
                 <h2>Houses of this user</h2>
             </header>
-            <?php draw_homes($homes);
+            <?php draw_homes($homes);?>
+            <button onclick="location.href = 'addHouse.php'" type="button">Add House</button>
+            <?php
             draw_reservations($reservationsMyHouses,false);
             draw_reservations($myReservations,true);
               ?>
