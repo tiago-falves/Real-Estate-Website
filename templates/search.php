@@ -10,7 +10,7 @@
             <li><a href="">Zaaaaaas</a></li>
         </ul>
         <section id = "SearchBar">
-            <input type="search" name="searchHouses" value="Search...">
+            <input type="search" name="searchHouses" value="Location, Name, Postal Code or Property ID  ">
             <a href= "discover.php"><img src="../Images/search.png" alt="Search Logo"></a>  
             
         </section>
