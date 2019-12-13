@@ -68,11 +68,6 @@ body > div:first-of-type {
     border-radius: 2vh;
 }
 
-#BiggerPhoto {
-    display: inline-block;
-    flex-wrap: wrap; 
-}
-
 .ScrollableList {
     margin: 0px;
     width: 100%;

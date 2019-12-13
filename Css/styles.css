@@ -169,22 +169,36 @@ body > header > nav > ul> *:hover{
 
 #BiggerPhoto {
     width: 45vw;
-    overflow: hidden;
 }
 
-#BiggerPhoto img {
+.cover {
+    object-fit: cover;
+    height: 25vh;
+    width: 22.5vw;
+}
+
+#BiggerPhoto > section > a > div > img {
+    object-fit: cover;
+    height: 50vh;
     width: 45vw;
 }
+
 #SmallerPhotosCollumn{
     size: 22.5vw;
 }
 #SmallerPhotosCollumn img  {
     width: 22.5vw;
     z-index: -1;
+    object-fit: contain;
 }
 .imageZoomContainer {
     height: 25vh;
     width: 22.5vw;
+    overflow: hidden;
+}
+#BiggerPhoto > section > a > div{
+    height: 50vh;
+    width: 45vw;
     overflow: hidden;
 }
 .imageZoomContainer img {
@@ -193,9 +207,8 @@ body > header > nav > ul> *:hover{
 #BiggerPhoto > section > div {
     height: 50vh;
     width: 45vw;
-    overflow: hidden;
 }
-.Home > div > a:hover img {
+.Home > a > div:hover img {
 	-webkit-transform: scale(1.3);
     transform: scale(1.3);
 }

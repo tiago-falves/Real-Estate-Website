@@ -71,6 +71,10 @@ function draw_main_home($homes,$id){ ?>
         <h3><?php echo $home['price']; ?></h3>
         <h4><?php echo $location['name']; ?></h4>
     </header>
-    <a href="home.php?id=<?php echo $home['id']; ?>"><img src="../Images/<?php echo $images[0]['path'];?>" alt="Casa"></a>
+    <a href="home.php?id=<?php echo $home['id']; ?>">
+      <div class="imageZoomContainer">
+        <img class="cover" src="../Images/<?php echo $images[0]['path'];?>" alt="Casa">
+      </div>
+    </a>
 </section>
 <?php } ?>

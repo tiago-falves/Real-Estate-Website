@@ -8,13 +8,21 @@ function draw_best_offers($homes){
         <h2>Best Offers</h2>
     </header>
     <section id = "Homes">
-        <div id = "ScrollableList">
+        <div class = "ScrollableList">
             <div class = "item" id = "BiggerPhoto">
                 <?php draw_main_home($homes,0);?>
             </div>
             <div class = "item" class = "SmallerPhotosCollumn">
                 <?php draw_main_home($homes,1);
                 draw_main_home($homes,2)?>
+            </div>
+            <div class = "item" class = "SmallerPhotosCollumn">
+            <?php draw_main_home($homes,3);
+                draw_main_home($homes,4)?>
+            </div>
+            <div class = "item" class = "SmallerPhotosCollumn">
+            <?php draw_main_home($homes,3);
+                draw_main_home($homes,4)?>
             </div>
             <div class = "item" class = "SmallerPhotosCollumn">
             <?php draw_main_home($homes,3);
