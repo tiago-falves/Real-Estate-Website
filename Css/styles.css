@@ -90,7 +90,6 @@ body > header > nav > ul> *:hover{
 }
 
 #SearchText{
-    
     left: 10%;
     top: 20%;
     width: 90%;
@@ -101,106 +100,119 @@ body > header > nav > ul> *:hover{
 
 #SearchText li{
     display: inline;
-    background-color: #696969;
+    background-color: rgba(96, 96, 96, 0.6);
     color: white;
     padding: 1em;
     font-size: 100%;
-    border-radius: 1vh;
+    margin-right: -0.4vw;
+    /*border-radius: 1vh;*/
     outline: none;
 }
 
 #SearchText ul{
     text-align: left;
     padding: 0%;
-    font-size: 2vh;
+    font-size: 1.3vw;
 }
 
 #SearchText ul li:hover{
-    background-color: white;
+    background-color: rgba(255, 255, 255, 0.6);
+    color: #3b3838;
 }
 
 #SearchBar input{
     height: 5.5vh;
-    width: 40%;
-    font-size: larger;
+    width: 60%;
+    font-size: 2vh;
     border-right: none;
     padding: 0.5vh;
-    border-radius: 2vh 0 0 2vh;
+    /*border-radius: 2vh 0 0 2vh;*/
     outline: none;
     color: #606060;
 }
 
 #SearchBar img{
-    width: 5vh;
-    height: 5vh;
+    width: 5.5vh;
+    height: 5.5vh;
     padding: 0em;
-    border: #757575;
-    border-style: solid;
-    border-radius: 0.1vh;
-    background-color: #606060;
-    border-radius: 0 2vh 2vh 0;
+    background-color: rgba(90, 90, 90, 0.8);
+   /* border-radius: 0 2vh 2vh 0;*/
 }
 
 #Search {
     text-align:  center;
 }
 
-#BestOffers{
-    background-color: lightblue;
-}
-
 .Home  {
     position: relative;
 }
+
 .Home header {
     position: absolute;
-    color: black;
+    color: white;
     margin: 0em;
     width: 50%;
+    height: 40%;
     line-height: 10%;
 }
-
+#BiggerPhoto > section > header {
+    position: absolute;
+    color: white;
+    margin: 0em;
+    width: 50%;
+    height: 20%;
+    line-height: 10%;
+}
 .Home h3{
     width: 80%;
 } 
 
 #BiggerPhoto {
-    width: 100%;
-    overflow: hidden;
-    size: 10vh;
+    width: 45vw;
 }
 
-#BiggerPhoto img {
-    width: 100%;
+.cover {
+    object-fit: cover;
+    height: 17vw;
+    width: 22.5vw;
 }
 
-#BiggerPhoto img {
-    width: 100%;
+#BiggerPhoto > section > a > div > img {
+    object-fit: cover;
+    height: 34vw;
+    width: 45vw;
 }
-.SmallerPhotosCollumn{
-    width: 50%;
-    size: 10vh;
+
+#SmallerPhotosCollumn{
+    size: 22.5vw;
 }
-.SmallerPhotosCollumn img  {
-    width: 100%;
+#SmallerPhotosCollumn img  {
+    width: 22.5vw;
     z-index: -1;
+    object-fit: contain;
 }
-.SmallerPhotosCollumn > section{
-    width: 100%;
+.imageZoomContainer {
+    height: 17vw;
+    width: 22.5vw;
     overflow: hidden;
 }
-.Home > a img {
-	-webkit-transform: scale(1);
-	transform: scale(1);
-	-webkit-transition: .3s ease-in-out;
-    transition: .3s ease-in-out;
-    size: 5em;
+#BiggerPhoto > section > a > div{
+    height: 34vw;
+    width: 45vw;
+    overflow: hidden;
 }
-.Home > a:hover img {
+.imageZoomContainer img {
+    transition: transform .5s ease;
+}
+#BiggerPhoto > section > div {
+    height: 34vw;
+    width: 45vw;
+}
+.Home > a > div:hover img {
 	-webkit-transform: scale(1.3);
     transform: scale(1.3);
-    size: 70em;
 }
+
 
 #BestOffers > button {
     background-color: #696969;
@@ -226,7 +238,6 @@ body > footer nav{
     margin: auto;
     justify-content: space-around;
     font-size: 2.5vh;
-    
 }
 
 body > footer h3{

@@ -4,10 +4,8 @@
   include_once('../templates/Homes/homeFunctions.php');
   include_once('../templates/reservations.php');
   include_once('../database/queries.php');
-  include_once('../templates/comments.php');
-
-
-
+  include_once('../templates/comments.php');    
+  include_once("../templates/Homes/homeFunctions.php");
   //$profile = getUserFromId($idUser);
   
 if(isset($_GET['id'])){
@@ -58,43 +56,29 @@ $myReservations = getClientReservations($profile['id']);
             draw_reservations($reservationsMyHouses,false);
             draw_reservations($myReservations,true);
               ?>
-            
-            <!-- <section id = "HomesProfile">
-                 <div class = "SmallerPhotosCollumn">
-                    <section class = "Home">
-                        <header>
-                            <h3>Price</h3>
-                            <h4>City</h4>
-                        </header>
-                        <a href="home.html"><img src="../Images/home.jpg" alt="Casa 2"></a>
-                    </section>
-                    <section class = "Home">
-                        <header>
-                            <h3>Price</h3>
-                            <h4>City</h4>
-                        </header>
-                        <a href="home.html"><img src="../Images/home.jpg" alt="Casa 3"></a>                
-                    </section>
-                </div>
-                <div class = "SmallerPhotosCollumn">
-         
-                    <section class = "Home">
-                        <header>
-                            <h3>Price</h3>
-                            <h4>City</h4>
-                        </header>
-                        <a href="home.html"><img src="../Images/home.jpg" alt="Casa 3"></a>
-                    </section>
-                    <section class = "Home">
-                        <header>
-                            <h3>Price</h3>
-                            <h4>City</h4>
-                        </header>
-                        <a href="home.html"><img src="../Images/home.jpg" alt="Casa 4"></a>                
-                    </section>
-                </div>
-            </section> 
-            
-            <a href="">See All</a>            
-        </div>-->
+            <div id = "BestOffers">
+                <section id = "Homes">
+                    <div class = "ScrollableList">
+                        <div class = "item" id = "BiggerPhoto">
+                            <?php draw_main_home($homes,0);?>
+                        </div>
+                        <div class = "item" class = "SmallerPhotosCollumn">
+                            <?php draw_main_home($homes,1);
+                            draw_main_home($homes,2)?>
+                        </div>
+                        <div class = "item" class = "SmallerPhotosCollumn">
+                        <?php draw_main_home($homes,3);
+                            draw_main_home($homes,4)?>
+                        </div>
+                        <div class = "item" class = "SmallerPhotosCollumn">
+                        <?php draw_main_home($homes,3);
+                            draw_main_home($homes,4)?>
+                        </div>
+                        <div class = "item" class = "SmallerPhotosCollumn">
+                        <?php draw_main_home($homes,3);
+                            draw_main_home($homes,4)?>
+                        </div>
+                    </div>
+                </section>  
+            </div>
 <?php include_once('../templates/common/Footer.php');?>  
