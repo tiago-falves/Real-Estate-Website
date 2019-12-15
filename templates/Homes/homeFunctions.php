@@ -15,7 +15,11 @@
 <?php function draw_home($home) {
   $id = $home['id'];  
   $paths = getPathsFromHouse($id);
-  $firstPath = $paths[0];
+  if(!empty($paths)){
+    $firstPath = $paths[0];
+  } else{
+    $firstPath['path'] = "noProfile.png";
+  }
   $owner = getUsernameFromOwner($home);
  
 ?>
