@@ -8,6 +8,7 @@
       <link href="../Css/comments.css" rel="stylesheet" type="text/css">
       <link href="../Css/styles.css" rel="stylesheet" type="text/css">
       <link href="../Css/layout.css" rel="stylesheet" type="text/css">
+      <!-- <link href="../Css/discover.css" rel="stylesheet" type="text/css"> -->
   </head>
     <body>
         <header>

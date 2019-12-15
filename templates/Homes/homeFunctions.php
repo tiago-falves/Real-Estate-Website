@@ -24,17 +24,19 @@
  
 ?>
   <section class = House>
-    <header>
-        <h3><?php echo $home['title']?></h3>
-        <h4>Price: <?php echo $home['price']?></h4>
-    </header>
-    <p>Bedrooms: <?php echo $home['bedrooms']?></p>
-    <p>Rating: <?php echo $home['rating'] //Adicionar umas estrelinhas giras?></p>
-    <footer>
-      <span  class="Owner"> <a href="profile.php?id=<?php echo $home['owner'];?>"> <?php echo $owner['userName']?></a></span>
-      <button onclick="myFunction()" id="seeMore2">More Info</button>
-    </footer>
     <a href="home.php?id=<?php echo $id; ?>"><img src="../Images/<?=$firstPath['path'] ?>" alt="Casa 1"></a>
+    <section  id = #HouseInfo>
+      <header>
+          <h3><?php echo $home['title']?></h3>
+          <h4>Price: <?php echo $home['price']?></h4>
+      </header>
+      <p>Bedrooms: <?php echo $home['bedrooms']?></p>
+      <p>Rating: <?php echo $home['rating'] //Adicionar umas estrelinhas giras?></p>
+      <footer>
+        <span  class="Owner"> <a href="profile.php?id=<?php echo $home['owner'];?>"> <?php echo $owner['userName']?></a></span>
+        <button onclick="myFunction()" id="seeMore2">More Info</button>
+      </footer>
+    </section>
   </section>   
 <?php } 
 

@@ -58,7 +58,7 @@ body{
 }
 
 #comments {
-    grid-area: middle / left / bottom / middle;
+    grid-area: middle / left / middlebottom / middle;
     margin: 1em;
 }
 
@@ -67,7 +67,6 @@ body{
     flex-wrap: wrap;
     flex-direction: column;
     /* flex-grow: 1 ; */
-
 }
 
 
@@ -98,5 +97,32 @@ footer{
 }
 
 
+
+#ListHouses{
+    background: #ebebeb;
+    display: flex;
+    flex-direction: column;
+}
+
+#ListHouses > .House{
+    display: flex;  
+    margin-bottom: 1em;
+    width: 50%;
+    border: 1px solid black;
+} 
+
+
+/* padding: 0 0 0 225px; */
+
+#ListHouses > section > a > img {
+    max-width: 90%;
+    margin: 1em;
+ 
+      
+}
+
+#ListHouses > section > a {
+        width: 50%;      
+}
 
 
