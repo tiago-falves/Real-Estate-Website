@@ -1,17 +1,19 @@
 <?php
 
 function draw_reservations($reservations,$myReservation){?>
-    <header>
-        <h2><?php if($myReservation) {echo("My Reservations");} else echo("Reservations From my houses"); ?></h2>
-    </header>
-    <table id = "Reservations">
-        <tr>
-            <th scope="col">Photo</th><th scope="col">username</th><th scope="col">Estado</th><th scope="col">Data Inicial</th><th scope="col">Data Final</th><th scope="col">Casa</th>
-        </tr>
-        <?php foreach($reservations as $reservation) {
-            draw_reservation($reservation,$myReservation);
-        } ?> 
-    </table>
+    <section id = Reservations>
+        <header>
+            <h2><?php if($myReservation) {echo("My Reservations");} else echo("Reservations From my houses"); ?></h2>
+        </header>
+        <table id = "Reservations">
+            <tr>
+                <th scope="col">Photo</th><th scope="col">username</th><th scope="col">Estado</th><th scope="col">Data Inicial</th><th scope="col">Data Final</th><th scope="col">Casa</th>
+            </tr>
+            <?php foreach($reservations as $reservation) {
+                draw_reservation($reservation,$myReservation);
+            } ?> 
+        </table>
+    </section>
 <?php } 
 
 function draw_reservation($reservation,$myReservations){

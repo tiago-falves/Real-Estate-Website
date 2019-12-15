@@ -36,7 +36,7 @@ CREATE TABLE Home(
     address TEXT NOT NULL,
     location INTEGER REFERENCES Location,
     owner INTEGER REFERENCES Person,
-    characteristics TEXT,
+    characteristics TEXT NOT NULL,
     CONSTRAINT type_name CHECK (
         type = 'House'
         OR type = 'Apartment'
