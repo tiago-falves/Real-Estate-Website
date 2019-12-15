@@ -1,6 +1,7 @@
 <?php include_once('../session/session.php'); ?>
 <!DOCTYPE html>
 <html lang="en-US">
+    <script src="../Scripts/includes.js"></script>
     <head>
         <title>Invicta</title>
         <meta charset="UTF-8">

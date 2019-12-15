@@ -9,7 +9,6 @@
     background-image: url("../Images/viver-no-porto-ponte-pequena-2.jpg");
 }
 
-
 .loginRegister header {
     color: white;
     padding: 2em 0;
@@ -18,6 +17,10 @@
     text-transform: uppercase;
 
   }
+
+.loginRegister form {
+  text-shadow: 1px 1px black, -1px -1px black, -1px 1px black, 1px -1px black;
+}
 
 .error{
   background-color: red;
@@ -44,25 +47,20 @@ input[type=text], input[type=password] ,input[type=email] {
 
 
 input[type="submit"], input[type="button"] {
-padding: 1em;
+  padding: 1em;
 
-color: black;
-width: 20%;
+  color: black;
+  width: 20%;
 
+  text-transform: uppercase;
 
-
-
-
-
-
-text-transform: uppercase;
+  margin-bottom: 1em;
 }
 
 .loginRegister footer p{
     margin: 0;
-    padding-bottom: 2em;
+    padding-bottom: 1em;
     color: black;
     text-align: center;
-    border: 1px solid black;
-  
+    text-shadow: 1px 1px white, -1px 1px white, 1px -1px white, -1px -1px white;
   }
