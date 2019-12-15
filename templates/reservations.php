@@ -17,12 +17,13 @@ function draw_reservations($reservations,$myReservation){?>
 <?php } 
 
 function draw_reservation($reservation,$myReservations){
+    $personId = getReservationOwner($reservation['id']);
     if($myReservations == false){
         $person = getUserFromId($reservation['userID']); 
         $image  = getProfilePic($reservation['userID']);
     }
     else {
-        $personId = getReservationOwner($reservation['id']);
+        
         $person =getUserFromId($personId['owner']);
 
         $image  = getProfilePic($personId['owner']);
@@ -31,7 +32,7 @@ function draw_reservation($reservation,$myReservations){
     $home = getHomeFromId($reservation['home'])?>
     
     <tr>
-        <td><a href="profile.php?id=<?php echo $reservation['userID']; ?>"><img src= '../Images/<?php echo $image['path']; ?>' alt="ProfilePicture"> </td></a>
+        <td><a href="profile.php?id=<?php echo $personId['owner']; ?>"><img src= '../Images/<?php echo $image['path']; ?>' alt="ProfilePicture"> </td></a>
         <td><?php echo $person['userName'] ?></td>
         <td>Aceite</td>
         <td><?php echo $reservation['start_date'] ?></td>
