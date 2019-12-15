@@ -59,6 +59,12 @@
         $statement = $db->prepare('UPDATE Person SET title = ?, userLocation = ?, userDescription = ? WHERE id = ?');
         $statement->execute(array($title, $location, $description, $id));
     }
+    function updateHome($title, $price, $description, $type, $bedrooms, $address, $location_id, $owner_id,$characteristics,$id){
+        
+        $db = Database::instance()->db();
+        $statement = $db->prepare('UPDATE Home Set  title = ?, price = ?, description = ? , type = ?, bedrooms = ?, address =  ?, location = ?, owner = ?, characteristics = ? WHERE id = ?');
+        $statement->execute(array($title, $price, $description, $type, $bedrooms, $address, $location_id, $owner_id,$characteristics,$id));
+    }
 
     function changeUserPassword($id, $newPassword){
         $db = Database::instance()->db();

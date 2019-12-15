@@ -5,12 +5,28 @@ if(!isset($_SESSION['username'])){
     die(header('Location: login.php'));
 }
 
-$profile =  getUserFromUserName($_SESSION['username']);
-$housePicture = array("path" =>"noProfile.png");?>
 
-<div id = "addHouse">
+
+$profile =  getUserFromUserName($_SESSION['username']);
+$housePicture = array("path" =>"noProfile.png");
+if(isset($_GET['id'])){
+    $images = getPathsFromHouse($_GET['id']);
+    if(sizeof($images) != 0){
+        $housePicture = $images[0];
+    }
+}
+
+?>
+
+<div id = "editHouse">
   <header>
-        <h1>Add new House</h1>
+    <?php
+    if(isset($_GET['id'])){?>
+      <h1>Edit House</h1><?php 
+    }else{ ?>
+      <h1>Add New House</h1><?php 
+    } ?>
+  
   </header>
   <img src= '../Images/<?php echo $housePicture['path'];?>' alt="Casa"> <?php //echo $//housePicture; ?>
   <section>
@@ -22,6 +38,14 @@ $housePicture = array("path" =>"noProfile.png");?>
       <input type="submit" value="Upload Image" name="submit">
     </form>
   </section>
+
+  <?php
+    if(isset($_GET['id'])){?>
+      <form method="post" action="../Actions/action_add_house.php?id=<?php echo $_GET['id'];?>"><?php 
+    }else{ ?>
+      <form method="post" action="../Actions/action_add_house.php"><?php 
+    } ?>
+  
 
   <form method="post" action="../Actions/action_add_house.php">
     <input type="text" name="title" placeholder="House Title" required>

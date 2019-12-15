@@ -22,18 +22,13 @@ $myReservations = getClientReservations($profile['id']);?>
         <!-- <p>Harvard University</p> -->
     </header>
     <img src= '../Images/<?php echo $profilePicture['path']; ?>' alt="ProfilePicture"> 
-    
     <h2 id = "rating"><?php echo $profile['rating'] ?> stars</h2>
-    
     <article class = Description>
         <header>
             <h2>Description</h2>
         </header>
         <p><?php echo $profile['userDescription'] ?></p>
     </article>
-    
-    <!-- <?php // draw_comments();?> -->
-
     <div id="RecentVisits">
         <header>
             <h2>Houses of this user</h2>
@@ -43,6 +38,6 @@ $myReservations = getClientReservations($profile['id']);?>
         <?php
         draw_reservations($reservationsMyHouses,false);
         draw_reservations($myReservations,true);
-            ?>
+        ?>
     </div>
 </div>

@@ -1,3 +1,5 @@
+
+//TO DO: Por isto a funcionar
 let commentForm = document.querySelector('#comments form');
 commentForm.addEventListener('submit', submitComment);
 

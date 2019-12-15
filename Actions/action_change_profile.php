@@ -22,6 +22,9 @@
   }
   */
 
+  //TO DO: Verificar password antes de submter
+  //Fazer com que ele atualize a foto de perfil, javascript?
+
   $user = getUserFromUserName($username);
   $new_title = $_POST['title'];
   $new_location = getLocationFromName($_POST['location']);
