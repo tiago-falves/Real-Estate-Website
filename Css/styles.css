@@ -220,7 +220,7 @@ body > header > nav > ul> *:hover{
     font-weight: bold   ;
 
 }
-body > footer{
+footer{
     display: flex;
     color: white;
     background-color: rgba(96, 96, 96, 1);
@@ -232,7 +232,7 @@ body > footer{
     overflow: hidden;
 }
 
-body > footer nav{
+footer nav{
     display: flex;
     width: 100%;;
     margin: auto;
@@ -240,7 +240,7 @@ body > footer nav{
     font-size: 2.5vh;
 }
 
-body > footer h3{
+footer h3{
     padding-left: 2vw;
     font-size: 5vh;
     margin: 0;

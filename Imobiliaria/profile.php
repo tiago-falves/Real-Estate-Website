@@ -54,29 +54,4 @@ $myReservations = getClientReservations($profile['id']);
             draw_reservations($reservationsMyHouses,false);
             draw_reservations($myReservations,true);
               ?>
-            <div id = "BestOffers">
-                <section id = "Homes">
-                    <div class = "ScrollableList">
-                        <div class = "item" id = "BiggerPhoto">
-                            <?php draw_main_home($homes,0);?>
-                        </div>
-                        <div class = "item" class = "SmallerPhotosCollumn">
-                            <?php draw_main_home($homes,1);
-                            draw_main_home($homes,2)?>
-                        </div>
-                        <div class = "item" class = "SmallerPhotosCollumn">
-                        <?php draw_main_home($homes,3);
-                            draw_main_home($homes,4)?>
-                        </div>
-                        <div class = "item" class = "SmallerPhotosCollumn">
-                        <?php draw_main_home($homes,3);
-                            draw_main_home($homes,4)?>
-                        </div>
-                        <div class = "item" class = "SmallerPhotosCollumn">
-                        <?php draw_main_home($homes,3);
-                            draw_main_home($homes,4)?>
-                        </div>
-                    </div>
-                </section>  
-            </div>
 <?php include_once('../templates/common/Footer.php');?>  
