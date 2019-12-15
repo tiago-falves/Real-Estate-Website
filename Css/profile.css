@@ -1,14 +1,12 @@
 
 body{
     background-color: #ebebeb;
-  
-
 }
 
 #profile{
     display: grid;
     grid-template-columns: [left] 1fr [middle] 3fr [right] ;
-    grid-template-rows: [top] auto [name] auto [stars] auto [middle] auto [bottom];
+    grid-template-rows: [top] auto [name] auto [stars] auto [middle] auto [middleBottom] auto [bottom];
     text-align: left;
 }
 
@@ -45,6 +43,7 @@ body{
 
 #rating {
     grid-area: name / middle / stars / end;
+    margin: 0em 1em;
 }
 
 #profile > form{
@@ -71,24 +70,33 @@ body{
 
 }
 
+
+
 #RecentVisits{
-    grid-area: middle / middle / bottom / end;
-    
-
+    grid-area: middle / middle / middleBottom / end; 
 }
 
-#RecentVisits > section{
-    display: grid;
-    grid-template-columns: [begin] 1fr [mid] 3fr [end] ;
-    grid-template-rows: [begin] auto [mid] auto [end] ;
-    position: relative;
-    
+footer{
+    grid-area: middleBottom / left / bottom / right; 
 }
 
-#RecentVisits > section >header{
+
+
+/* #RecentVisits > section >header{
     position: absolute;
+} */
+#Reservations > tbody  td:nth-child(1) > a > img{
+    max-width: 3em;
+    height: auto;
+    border-radius: 50%;
+
 }
 
-#HomesProfile{
-    width: 50%;
+#Reservations table{
+    border: 1px solid black;
+    width: 100%;
 }
+
+
+
+

@@ -7,7 +7,11 @@
   $house = getHomeFromId($idHouse);
   $characetristics = getHouseCharacteristics($idHouse);
   $images = getPathsFromHouse($idHouse);
-  $bigPhoto = $images[0];
+  if(!empty($images)){
+    $bigPhoto = $images[0];
+  } else{
+    $bigPhoto['path'] = "noProfile.png";
+  }
   
   drawHomePhotos($house,$images,$bigPhoto);
 ?>
@@ -21,7 +25,8 @@
       <p><?php echo $house['description'] ?></p>
   </article>
   <?php drawCharacteristics($characetristics);?>
-  <img src="../Images/location.JPG" alt="Location">
+  <!-- <img src="../Images/location.JPG" alt="Location"> -->
+  <p><a href="profile.php?id=<?php echo $house['owner'];?>"> Owner</a></p>
   
    <!-- To do: Passar mais argumentos! -->
   <form method="post" action="../Actions/action_rent_house.php?id=<?php echo $idHouse; ?>">

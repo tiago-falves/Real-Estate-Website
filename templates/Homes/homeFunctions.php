@@ -67,7 +67,7 @@ function drawCharacteristics($characetristics){?>
 
 function draw_main_home($homes,$id){ ?>
   <section class = "Home">
-    <?php $home = getHomeFromId($id);
+    <?php $home = $homes[$id];
     $location = getLocationFromId($home['location']);
     $images = getPathsFromHouse($home['id']);?>
     <header>

@@ -34,9 +34,9 @@ $myReservations = getClientReservations($profile['id']);
             <!-- <p>Harvard University</p> -->
         </header>
         <img src= '../Images/<?php echo $profilePicture['path']; ?>' alt="ProfilePicture"> 
-        <section id = "rating">
-            <h2><?php echo $profile['rating'] ?> stars</h2>
-        </section>
+        
+        <h2 id = "rating"><?php echo $profile['rating'] ?> stars</h2>
+        
         <article class = Description>
             <header>
                 <h2>Description</h2>
