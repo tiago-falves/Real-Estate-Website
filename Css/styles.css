@@ -42,7 +42,10 @@ body > header > nav > ul> *:hover{
     padding-left: 2em;
     padding-right: 2em;
     border-radius: 1vh;
-   
+}
+
+#warnings{
+    color:red;
 }
 
 .wrapper-dropdown {
