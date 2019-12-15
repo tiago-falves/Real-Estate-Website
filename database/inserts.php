@@ -31,10 +31,10 @@
         $statement->execute(array($imageId,$id));
     } 
 
-    function insertHome($title, $price, $description, $type, $bedrooms, $address, $location_id, $owner_id){
+    function insertHome($title, $price, $description, $type, $bedrooms, $address, $location_id, $owner_id,$characteristics){
         $db = Database::instance()->db();
-        $statement = $db->prepare('INSERT INTO Home Values(NULL, ?, ?, ?, 0, ?, ?, ?, ?, ?)');
-        $statement->execute(array($title, $price, $description, $type, $bedrooms, $address, $location_id, $owner_id));
+        $statement = $db->prepare('INSERT INTO Home Values(NULL, ?, ?, ?, 0, ?, ?, ?, ?, ?,?)');
+        $statement->execute(array($title, $price, $description, $type, $bedrooms, $address, $location_id, $owner_id,$characteristics));
     }
     function insertReservation($start_date, $end_date, $userId, $home){
         $db = Database::instance()->db();

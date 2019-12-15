@@ -9,6 +9,15 @@
             <li><a href="">Rent</a></li>
             <li><a href="">Zaaaaaas</a></li>
         </ul>
+        <!-- <form method="post" action="test1.php">
+            <select name="keywords" >
+                <option value="Title">Title</option>
+                <option value="Rating">Rating</option>
+                <option value="Price">Price</option>
+            </select>   
+            <input type="submit">
+        </form> -->
+        
         <section id = "SearchBar">
             <input type="search" name="searchHouses" value="Location, Name, Postal Code or Property ID  ">
             <a href= "discover.php"><img src="../Images/search.png" alt="Search Logo"></a>  
