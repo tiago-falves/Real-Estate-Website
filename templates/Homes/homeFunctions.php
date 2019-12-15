@@ -15,7 +15,11 @@
 <?php function draw_home($home) {
   $id = $home['id'];  
   $paths = getPathsFromHouse($id);
-  $firstPath = $paths[0];
+  if(!empty($paths)){
+    $firstPath = $paths[0];
+  } else{
+    $firstPath['path'] = "noProfile.png";
+  }
   $owner = getUsernameFromOwner($home);
  
 ?>
@@ -63,7 +67,7 @@ function drawCharacteristics($characetristics){?>
 
 function draw_main_home($homes,$id){ ?>
   <section class = "Home">
-    <?php $home = $homes[$id];
+    <?php $home = getHomeFromId($id);
     $location = getLocationFromId($home['location']);
     $images = getPathsFromHouse($home['id']);?>
     <header>

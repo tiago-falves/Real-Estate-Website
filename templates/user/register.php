@@ -12,18 +12,8 @@
     <input type="submit" value="Register">
   </form>
   <footer>
-    <p> <a href="register.php"> Already have an account? Login!</a></p>
-    <section id="messages">
-      <?php $errors = getErrorMessages();foreach ($errors as $error) { ?>
-      <article class="error">
-        <p><?=$error?></p>
-      </article>
-      <?php } ?>
-      <?php $successes = getSuccessMessages();foreach ($successes as $success) { ?>
-      <article class="success">
-        <p><?=$success?></p>
-      </article>
-      <?php } clearMessages(); ?>
-  </section>
+    <p> <a href="login.php"> Already have an account? Login!</a></p>
+    <?php  include_once("../templates/messages.php");?>
+
   </footer>
 </section>

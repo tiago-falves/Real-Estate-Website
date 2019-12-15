@@ -1,4 +1,5 @@
 <?php
+//include_once("../../database/inserts.php");
 
 $target_dir = "../../Images/";
 $target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);

@@ -29,8 +29,8 @@
     <input type="date" name="start_date" value="2020-01-01">
     <input type="date" name="end_date" value="2020-01-01">
     <input type="submit" name="submit" value="Rent Now!" >
-
   </form>
+  <?php  include_once("../templates/messages.php");?>
 
 </section>
 

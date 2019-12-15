@@ -174,6 +174,13 @@
         return $statement->fetch();
     }
 
+    function getHouseReservations($id){
+        $db = Database::instance()->db();
+        $statement = $db->prepare('SELECT Reservation.id,start_date,end_date,userId,home FROM Home, Reservation WHERE home.id = ? AND Reservation.home = home.id');
+        $statement->execute(array($id));
+        return $statement->fetchAll();
+    }
+
     
     function checkUserCredentials($user_name, $password){
         $user = getUserFromUserName($user_name);
