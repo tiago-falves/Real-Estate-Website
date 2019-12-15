@@ -57,4 +57,7 @@ $myReservations = getClientReservations($profile['id']);
             draw_reservations($myReservations,true);
               ?>
         </div>
+    </div>
+
+
 <?php include_once('../templates/common/Footer.php');?>  

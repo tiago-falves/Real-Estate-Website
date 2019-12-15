@@ -13,14 +13,49 @@ body{
 #profile > *{
     margin: 1em;
 }
+#profile >header{
+    height: fit-content;
+}
 
+#Editprofile{
+    width: 80%;
+    max-height: 50%;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    border: 1px solid black;
+    
+}
+
+
+#Editprofile > img{
+    width: 30em;
+    margin: auto;
+    border-radius: 50%;
+}
+
+#Editprofile > form{
+    margin: 2em;
+  
+}
+
+#Editprofile > form input, #Editprofile > form textarea{
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 1em;
+    text-align: center;
+  
+    
+}
 
 #profile > img{
     width: 30em;
     margin: 1em;
-
     border-radius: 50%;
-
     grid-area: top / left / middle / middle;
 }
 
@@ -72,7 +107,7 @@ body{
 
 
 #RecentVisits{
-    grid-area: middle / middle / middleBottom / end; 
+    grid-area: middle / middle / bottom / end; 
 }
 
 footer{
@@ -107,7 +142,7 @@ footer{
 #ListHouses > .House{
     display: flex;  
     margin-bottom: 1em;
-    width: 50%;
+    width: 80%;
     border: 1px solid black;
 } 
 
@@ -117,12 +152,12 @@ footer{
 #ListHouses > section > a > img {
     max-width: 90%;
     margin: 1em;
- 
       
 }
 
 #ListHouses > section > a {
-        width: 50%;      
+        width: 50%;     
+       
 }
 
 
