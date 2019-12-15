@@ -16,7 +16,7 @@ function draw_reservations($reservations,$myReservation){?>
 
 function draw_reservation($reservation,$myReservations){
     if($myReservations == false){
-        $username = getUsernameFromId($reservation['userID']); 
+        $person = getUserFromId($reservation['userID']); 
         $image  = getProfilePic($reservation['userID']);
     }
     else {

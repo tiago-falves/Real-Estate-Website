@@ -1,0 +1,36 @@
+#ListHouses{
+    background: lightgrey;
+}
+
+#ListHouses > .House{
+    background-color: #fff;
+    margin: 0 10px 10px 0;
+    border-radius: 3px;
+    padding: 0 0 0 225px;
+    position: relative;
+    height: 220px;
+    border: 1px solid #e6e6e6;
+}
+
+#ListHouses > section > a > img {
+    width: 360px;
+    height: 270px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin: -135px 0 0 -180px;
+}
+
+
+
+#ListHouses > section > a{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 210px;
+    height: 220px;
+    overflow: hidden;
+    border-top-left-radius: 3px;
+    border-bottom-left-radius: 3px;
+    z-index: 99;
+}

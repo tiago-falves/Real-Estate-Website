@@ -12,6 +12,7 @@
         <link href="../Css/forms.css" rel="stylesheet">
         <link href="../Css/home.css" rel="stylesheet">
         <link href="../Css/comments.css" rel="stylesheet">
+        <link href="../Css/discover.css" rel="stylesheet">
 
     </head>
     <body>

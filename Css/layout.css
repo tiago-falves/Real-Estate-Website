@@ -33,48 +33,26 @@ body > div:first-of-type {
     width: 100%;
 }
 
-#Homes {
-    display: flex;
-    flex-wrap: wrap;
-    width: 95%;
-    margin: auto;
-}
 #Homes header {
     padding: 0%;
-    background:rgba(68, 68, 68, 0.8);
-    color: white;
+    background:rgba(68, 68, 68, 0.6);
     z-index: 1000;
-    border-radius: 0 0 5vh 0;
 }
 
-#Homes h3 {
+.Home > div > a:hover .Homes header {
+    background:rgba(68, 68, 68, 0.8);
+}
+
+.Homes h3 {
     font-size: 2vw; 
 }
 
-#Homes h4 {
+.Homes h4 {
     font-size: 1.5vw; 
 }
-
 #BestOffers {
     text-align: center;
 }
-#BestOffers {
-    display: grid;
-    grid-template-columns: 20px 1fr 20px;
-}
-#BestOffers > * {
-    grid-column: 2 / -2;
-}
-#BestOffers > #Homes {
-    grid-column: 1 / -1;
-}
-
-#ScrolableList {
-    display: grid;
-    grid-gap: 10px;
-    grid-template-columns: repeat(6, calc(50% - 40px));
-    grid-template-rows: minmax(150px, 1fr);
-  }
 
 #BestOffers > header{
     font-size: larger;
@@ -89,9 +67,24 @@ body > div:first-of-type {
     border-radius: 2vh;
 }
 
-#BiggerPhoto {
-    display: inline-block;
-    flex-wrap: wrap; 
+.ScrollableList {
+    margin: 0px;
+    width: 100%;
+    white-space: nowrap;
+}
+
+#item {
+    border: 2px solid #B85B14;
+    background-color: #FC7307;
+    width: 10vw;
+}
+.ScrollableList {
+    display: flex;
+    flex-wrap: nowrap; 
+    overflow: auto;
+}
+.item {
+    flex: 0 0 auto;
 }
 
 .SmallerPhotosCollumn {
@@ -106,5 +99,5 @@ footer {
     height: 5%;  
     position: relative; 
     bottom: 0px; 
-    left: 0px; 
+    left: 0px;
  }
