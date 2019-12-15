@@ -44,7 +44,7 @@ $myReservations = getClientReservations($profile['id']);
             <p><?php echo $profile['userDescription'] ?></p>
         </article>
       
-        <?php draw_comments();?>
+        <!-- <?php draw_comments();?> -->
     
         <div id="RecentVisits">
             <header>

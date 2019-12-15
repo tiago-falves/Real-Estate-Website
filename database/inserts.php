@@ -47,6 +47,11 @@
         $statement = $db->prepare('INSERT INTO Location Values(NULL,?)');
         $statement->execute(array($name));
     }
+    function insertComment($title,$date,$hour,$content,$userId,$houseId,$rating){
+        $db = Database::instance()->db();
+        $statement = $db->prepare(' INSERT INTO COMMENT VALUES(NULL,?,?,?,?, ?,?,?)');
+        $statement->execute(array($title,$date,$hour,$content,$userId,$houseId,$rating));
+    }
 
     function updateUserProfile($id, $title, $location, $description){
         $db = Database::instance()->db();

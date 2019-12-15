@@ -181,6 +181,13 @@
         return $statement->fetchAll();
     }
 
+    function getHouseComments($id){
+        $db = Database::instance()->db();
+        $statement = $db->prepare('SELECT Comment.id, Comment.title, date, hour, content, commenter_id FROM comment,home WHERE Comment.home_id = home.id AND home .id = ?');
+        $statement->execute(array($id));
+        return $statement->fetchAll();
+    }
+
     
     function checkUserCredentials($user_name, $password){
         $user = getUserFromUserName($user_name);
