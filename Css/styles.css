@@ -36,11 +36,13 @@ body > header > nav > ul> *:hover{
 #signup{
     padding: 1em;
     margin: auto;
+    list-style: none;
 }
 #signup a{
     padding: 4vw;
     padding-top: 1vw;
     padding-bottom: 1vw;
+
     /*border-radius: 1vh;*/
 }
 
