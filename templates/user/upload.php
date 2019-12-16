@@ -2,9 +2,9 @@
 //include_once("../../database/inserts.php");
 
 $target_dir = "../../Images/";
-$target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
+
 $uploadOk = 1;
-$imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
+$imageFileType = strtolower(pathinfo($_FILES["fileToUpload"]["name"],PATHINFO_EXTENSION));
 // Check if image file is a actual image or fake image
 if(isset($_POST["submit"]) && $_FILES["fileToUpload"]["tmp_name"] != NULL) {
     $check = getimagesize($_FILES["fileToUpload"]["tmp_name"]);
@@ -17,11 +17,9 @@ if(isset($_POST["submit"]) && $_FILES["fileToUpload"]["tmp_name"] != NULL) {
     }
 }
 
-// Check if file already exists
-if (file_exists($target_file)) {
-    echo "Sorry, file already exists.";
-    $uploadOk = 0;
-}
+$target_file = $target_dir .  uniqid('user_') . '.' . $imageFileType;
+echo '<script>console.log(\'' . $target_file . '\')</script>';
+
 // // Check file size
 // if ($_FILES["fileToUpload"]["size"] > 5000000) {
 //     echo "Sorry, your file is too large.";

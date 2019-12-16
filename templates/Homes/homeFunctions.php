@@ -51,7 +51,9 @@ function drawHomePhotos($house,$images,$img) { ?>
         <?php foreach ($images as $image ){?>
           <img src="../Images/<?php echo $image['path'] ?>" alt="House1">
         <?php }?>
-      </div>
+      </div>         
+      <a class="arrowLeft" onclick="plusSlides(-1)">&#10094;</a>
+      <a class="arrowRight" onclick="plusSlides(1)">&#10095;</a>
     </section>
   </section>
 <?php } 

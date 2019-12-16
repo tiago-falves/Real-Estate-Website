@@ -12,11 +12,6 @@ body > header > nav{
     flex-grow: 2;
 }
 
-.wrapper-dropdown {
-    padding: 5vh;
-}
-
-
 body > div:first-of-type {
     padding-top: 12.5vh;
 }

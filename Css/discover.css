@@ -12,10 +12,10 @@
 #ListHouses > .House{
     display: flex;
     background-color: #fff;
-    margin: auto;
+    margin-left: 2vw;
     margin-bottom: 1em;
-    width: 70%;
-    border: 1px solid black;
+    width: 80%;
+    box-shadow: darkgray;
 } 
 
 
@@ -23,13 +23,12 @@
 
 #ListHouses > section > a > img {
     max-width: 90%;
-    margin: 1em;
- 
-      
+    margin: 1em;    
 }
 
 #ListHouses > section > a {
-        width: 50%;      
+    width: 30vw;
+    height: 25vw;      
 }
 
 /* #ListHouses > section > a{

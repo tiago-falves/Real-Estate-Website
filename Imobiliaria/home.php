@@ -12,10 +12,8 @@
   } else{
     $bigPhoto['path'] = "noProfile.png";
   }
-  
   drawHomePhotos($house,$images,$bigPhoto);
 ?>
-
 
 <section id="Informations">
   <article class = Description>
