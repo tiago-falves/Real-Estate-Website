@@ -12,12 +12,16 @@
 #ListHouses > .House{
     display: flex;
     background-color: #fff;
-    margin-left: 2vw;
-    margin-bottom: 1em;
+    margin:auto;
+    margin-top: 2vh;
+    margin-bottom: 2vh;
     width: 80%;
     box-shadow: darkgray;
 } 
 
+#HouseInfo{
+    padding-left: 2vw;
+}
 
 /* padding: 0 0 0 225px; */
 

@@ -28,15 +28,16 @@ function draw_homes($homes) {?>
  
 ?>
   <section class = House>
-    <a href="home.php?id=<?php echo $id; ?>"><img src="../Images/<?=$firstPath['path'] ?>" alt="Casa 1"></a>
-    <section  id = #HouseInfo>
+    <div class="imageZoomContainer">
+      <a href="home.php?id=<?php echo $id; ?>"><img class= "cover" src="../Images/<?=$firstPath['path'] ?>" alt="Casa 1"></a>
+    </div>
+    <section id = HouseInfo>
       <header>
           <h3><?php echo $home['title']?></h3>
           <h4>Price: <?php echo $home['price']?></h4>
       </header>
       <p>Bedrooms: <?php echo $home['bedrooms']?></p>
       <p>Rating: <?php echo $home['rating'] //Adicionar umas estrelinhas giras?></p>
-      <footer>
         <span  class="Owner"> <a href="profile.php?id=<?php echo $home['owner'];?>">Owner:  <?php echo $owner['userName']?></a></span>
         <?php
       // echo( $owner);
@@ -45,8 +46,6 @@ function draw_homes($homes) {?>
           <button onclick="location.href = 'addHouse.php?id=<?php echo $home['id']; ?>'" type="button">Edit house</button>
           <button onclick="location.href = '../Actions/action_remove_house.php?id=<?php echo $home['id']; ?>'" type="button">Remove House</button>
         <?php } ?>
-
-      </footer>
     </section>
   </section>   
 <?php } 
