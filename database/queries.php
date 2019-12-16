@@ -88,8 +88,6 @@
         $statement->execute(array($type));
         return $statement->fetch();
     }
-
-
     
     function getHomeFromTitle($title){
         $db = Database::instance()->db();
@@ -167,6 +165,22 @@
         $statement->execute(array($id));
         return $statement->fetchAll();
     }
+    
+    function getPendingReservationsFromOwner($owner){
+        $db = Database::instance()->db();
+
+        $user = getUserFromUserName($owner);
+
+        $statement = $db->prepare("SELECT Reservation.id AS RESERVATION_ID, Reservation.home AS HOME_ID, start_date, end_date
+                                    FROM Reservation, Home
+                                    WHERE Home.owner = ? AND Home.id = Reservation.home AND Reservation.approved = 'PENDING'
+                                    ORDER BY Reservation.start_date DESC");
+
+        $statement->execute(array($user['id']));
+
+        return $statement->fetchAll();
+    }
+
     function getReservationOwner($id){
         $db = Database::instance()->db();
         $statement = $db->prepare('SELECT home.owner FROM Reservation,Home WHERE reservation.id  = ? AND reservation.home = home.id');

@@ -58,9 +58,10 @@ input[type="submit"], input[type="button"] {
 }
 
 .loginRegister footer p{
+    width: 100%;
     margin: 0;
     padding-bottom: 1em;
     color: black;
-    text-align: center;
+    justify-content: space-around;
     text-shadow: 1px 1px white, -1px 1px white, 1px -1px white, -1px -1px white;
   }

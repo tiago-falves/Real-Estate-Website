@@ -38,7 +38,7 @@
     }
     function insertReservation($start_date, $end_date, $userId, $home){
         $db = Database::instance()->db();
-        $statement = $db->prepare('INSERT INTO Reservation Values(NULL,?,?,?,?)');
+        $statement = $db->prepare('INSERT INTO Reservation Values(NULL,?,?,?,?, NULL)');
         $statement->execute(array($start_date, $end_date, $userId, $home));
     }
 

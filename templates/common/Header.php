@@ -32,10 +32,12 @@
                     ?>
                 </ul>
             </div>
-            </nav>       
+            </nav>     
             <div id="signup">
                 <?php
                     if(isset($_SESSION['username'])){
+                        //TODO: echo toggle icon
+                        echo ('<div id="notifications" hidden></div>');  
                         echo ('<li><a href="../Actions/action_logout.php">Log out</a></li>');
                     }
                     else{
