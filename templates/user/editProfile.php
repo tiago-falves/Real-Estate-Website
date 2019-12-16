@@ -18,7 +18,7 @@ if($profilePicture == false){
     </header>
     <img src= '../Images/<?php echo $profilePicture['path'];?>' alt="Ribeira"> <?php //echo $//profilePicture; ?>
     
-    <form action="../templates/user/upload.php" method="post" enctype="multipart/form-data">
+    <form action="../templates/user/upload.php?id=<?php echo $profile['id'] ?>" method="post" enctype="multipart/form-data">
         Select image to upload:
         <input type="hidden" name="username" value="<?php ?>">
         <input type="file" name="fileToUpload" id="fileToUpload">
