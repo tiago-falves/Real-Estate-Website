@@ -6,6 +6,7 @@
 
 @media (max-width: 40em){
     #signup a{
+        padding:0;
         padding-right: 2vw;
         /*border-radius: 1vh;*/
     }
@@ -23,5 +24,9 @@
         object-fit: cover;
         height: 70vw;
         width: 100vw;
+    }
+
+    footer nav{
+        font-size: 2.5vw;
     }
 }

@@ -5,7 +5,9 @@
     die(header('Location: main_page.php'));
   }
 
-  include_once('../templates/common/Header.php');  
-  include_once('../templates/user/register.php');
-  include_once('../templates/common/Footer.php');  
-?>
+  include_once('../templates/common/Header.php'); 
+  ?> 
+  <div class="loginRegisterWrapper">
+    <?php include_once('../templates/user/register.php');?>
+  </div>
+  <?php include_once('../templates/common/Footer.php'); ?>

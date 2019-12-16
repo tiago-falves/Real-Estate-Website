@@ -57,10 +57,13 @@ body > div:first-of-type {
 #BestOffers > button {
     text-align: center;
     margin-top: 3vh;
-    padding: 0.5em;
-    width: 10%;
-    border-radius: 2vh;
+    padding-top: 1vw;
+    padding-bottom: 1vw;
+    padding-left: 3vw;
+    padding-right: 3vw;
+    border: none;
 }
+
 
 .ScrollableList {
     margin: 0px;
