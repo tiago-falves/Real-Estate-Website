@@ -43,6 +43,7 @@ function draw_homes($homes) {?>
        
        if($_SESSION['username'] == $owner['userName'] ) { ?>
           <button onclick="location.href = 'addHouse.php?id=<?php echo $home['id']; ?>'" type="button">Edit house</button>
+          <button onclick="location.href = '../Actions/action_remove_house.php?id=<?php echo $home['id']; ?>'" type="button">Remove House</button>
         <?php } ?>
 
       </footer>
