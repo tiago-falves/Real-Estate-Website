@@ -24,20 +24,30 @@
     $location = getLocationFromName($location_name);
   }
  
+  //QUESTION: É suposto ter o PDO Date?
+  //Editing house
+  if(isset($_GET['id'])){
 
-  
-  
-  //Porque a PDO EXCEPTION?
-  try {
-    //Mudar para localização decente
-    insertHome($title, $price,$description,$type,$bedrooms,$adress,$location['id'],$user['id'],$characteristics);
-    $_SESSION['success_messages'][] = 'Home added successfully!';
-    //header('Location: ../Imobiliaria/main_page.php');
-    
-  } catch (PDOException $e) {
-    die($e->getMessage());
-    $_SESSION['error_messages'][] = 'Failed to add Home!';
-    //header('Location: ../Imobiliaria/register.php');
+    try {
+      updateHome($title, $price,$description,$type,$bedrooms,$adress,$location['id'],$user['id'],$characteristics,$_GET['id']);
+      $_SESSION['success_messages'][] = 'Home edited successfully!';
+      
+    } catch (PDOException $e) {
+
+      die($e->getMessage());
+      $_SESSION['error_messages'][] = 'Failed to edit Home!';
+    }    
+  }else{
+    //Adding house
+    try {
+      insertHome($title, $price,$description,$type,$bedrooms,$adress,$location['id'],$user['id'],$characteristics);
+      $_SESSION['success_messages'][] = 'Home added successfully!';
+      
+    } catch (PDOException $e) {
+
+      die($e->getMessage());
+      $_SESSION['error_messages'][] = 'Failed to add Home!';
+    }
   }
 
   header('Location: ' . $_SERVER['HTTP_REFERER']);

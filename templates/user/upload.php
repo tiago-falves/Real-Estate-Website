@@ -1,5 +1,17 @@
 <?php
-//include_once("../../database/inserts.php");
+include("../../database/database.php");
+
+function insertUserPhoto($id, $image) {
+    $db = Database::instance()->db();
+    $stmt = $db->prepare('INSERT INTO Image  VALUES (NULL, ?, 1, ?, "", 1, "", 0)');
+    $stmt->execute(array($image));
+    $stmt = $db->prepare('SELECT id FROM IMAGE WHERE path = ?');
+    $stmt->execute(array($image));
+    $imageId = $stmt->fetch();
+    $statement = $db->prepare('UPDATE User SET profilePicture = ? WHERE id = ?');
+    $statement->execute(array($imageId,$id));
+} 
+
 
 $target_dir = "../../Images/";
 
@@ -36,8 +48,10 @@ if ($uploadOk == 0) {
     echo "Sorry, your file was not uploaded.";
 // if everything is ok, try to upload file
 } else {
+
+    $id = $_GET['id'];
     if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
-        insertUserPhoto($id, $image);
+        insertUserPhoto($id, basename($_FILES["fileToUpload"]["name"]));
         echo "The file ". basename( $_FILES["fileToUpload"]["name"]). " has been uploaded.";
     } else {
         echo "Sorry, there was an error uploading your file.";

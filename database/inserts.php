@@ -47,12 +47,28 @@
         $statement = $db->prepare('INSERT INTO Location Values(NULL,?)');
         $statement->execute(array($name));
     }
+    function insertComment($title,$date,$hour,$content,$userId,$houseId,$rating){
+        $db = Database::instance()->db();
+        $statement = $db->prepare(' INSERT INTO COMMENT VALUES(NULL,?,?,?,?, ?,?,?)');
+        $statement->execute(array($title,$date,$hour,$content,$userId,$houseId,$rating));
+    }
 
     function updateUserProfile($id, $title, $location, $description){
         $db = Database::instance()->db();
 
         $statement = $db->prepare('UPDATE Person SET title = ?, userLocation = ?, userDescription = ? WHERE id = ?');
         $statement->execute(array($title, $location, $description, $id));
+    }
+    function updateHome($title, $price, $description, $type, $bedrooms, $address, $location_id, $owner_id,$characteristics,$id){
+        
+        $db = Database::instance()->db();
+        $statement = $db->prepare('UPDATE Home Set  title = ?, price = ?, description = ? , type = ?, bedrooms = ?, address =  ?, location = ?, owner = ?, characteristics = ? WHERE id = ?');
+        $statement->execute(array($title, $price, $description, $type, $bedrooms, $address, $location_id, $owner_id,$characteristics,$id));
+    }
+    function deleteHome($id){   
+        $db = Database::instance()->db();
+        $statement = $db->prepare('DELETE FROM Home WHERE id = ?');
+        $statement->execute(array($id));
     }
 
     function changeUserPassword($id, $newPassword){
