@@ -10,7 +10,7 @@ if($profilePicture == false){
    $profilePicture = array("path" =>"noProfile.png");
 } ?>
 
-<div id = "Editprofile">
+<div id = "profile">
     <header>
         <h1>Edit Profile</h1>
         <h2><?php echo $_SESSION['username']; ?></h2>
@@ -18,14 +18,14 @@ if($profilePicture == false){
     </header>
     <img src= '../Images/<?php echo $profilePicture['path'];?>' alt="Ribeira"> <?php //echo $//profilePicture; ?>
     
-    <form action="../templates/user/upload.php?id=<?php echo $profile['id'] ?>" method="post" enctype="multipart/form-data">
+    <form id = "photoUpload" action="../templates/user/upload.php?id=<?php echo $profile['id'] ?>" method="post" enctype="multipart/form-data">
         Select image to upload:
         <input type="hidden" name="username" value="<?php ?>">
         <input type="file" name="fileToUpload" id="fileToUpload">
         <input type="submit" value="Upload Image" name="submit">
     </form>
     
-    <form method="post" action="../Actions/action_change_profile.php">
+    <form id = "fields" method="post" action="../Actions/action_change_profile.php">
         <input type="text" name="location" placeholder="Location">
         <input type="text" name="title" placeholder="Occupation">
         <input type="password" name="password" placeholder="Password" >
