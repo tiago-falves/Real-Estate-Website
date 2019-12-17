@@ -1,4 +1,3 @@
-//TODO: toggle icon element
 let notificationsButtonElement = document.getElementById("notificationsButton");
 let notificationsElement = document.getElementById("notificationsList");
 
@@ -10,8 +9,14 @@ let setNotificationState = function(state, reservation){
     request.send(encodeForAjax({reservation: reservation, state: state}));
 
     request.onreadystatechange = function() {
-        if (!(this.readyState == 4 && this.status == 200)) {
-            console.log("Request wasn't accepted: code " + this.status);
+        if (this.readyState == 4) {
+            if(this.status != 200){
+                console.log("Request wasn't accepted: code " + this.status);
+            }
+            else{
+                updateNotifications(undefined);
+                notificationsElement.style.visibility = "hidden";
+            }
         }
     };
 }
@@ -21,10 +26,12 @@ let notificationsRequestReponse = function(response){
     if(response.length){
         notificationsElement.innerHTML = "";
 
+        notificationsButtonElement.innerHTML = "Pending Notifications";
+
         for(let i = 0; i < response.length && i < 5; ++i){
             let reservationElement = document.createElement('div');
             reservationElement.setAttribute("class","notification");
-            reservationElement.reservationID = response[0];
+            reservationElement.reservationID = response[i][0];
 
             let acceptFunction = function(){
                 setNotificationState("ACCEPTED",this.reservationID);
@@ -42,7 +49,7 @@ let notificationsRequestReponse = function(response){
             refuseElement.innerHTML = "Refuse";
             refuseElement.onclick = refuseFunction.bind(reservationElement);
 
-            let notificationNode = document.createTextNode("" + response[2] + "," + response[3] + "," + response[4]);
+            let notificationNode = document.createTextNode("" + response[i][2] + "," + response[i][3] + "," + response[i][4]);
             
             reservationElement.appendChild(notificationNode);
             reservationElement.appendChild(acceptElement);
@@ -50,6 +57,10 @@ let notificationsRequestReponse = function(response){
 
             notificationsElement.appendChild(reservationElement);
         }
+    }
+    else{
+        notificationsButtonElement.innerHTML = "No Notifications";
+        notificationsElement.innerHTML = "";
     }
 }
 
@@ -71,9 +82,13 @@ let updateNotifications = function(event){
 setInterval(updateNotifications, 10000);
 
 let notifsClickHandler = function(event){
-    notificationsElement.hidden = !notificationsElement.hidden;
+    if(notificationsElement.style.visibility == "visible")
+        notificationsElement.style.visibility = "hidden";
+    else
+        if(notificationsElement.innerHTML != "")
+            notificationsElement.style.visibility = "visible";
 }
 
 notificationsButtonElement.onclick = notifsClickHandler;
 
-console.log("Hello");
+updateNotifications(undefined);

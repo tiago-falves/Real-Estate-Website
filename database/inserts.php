@@ -38,7 +38,7 @@
     }
     function insertReservation($start_date, $end_date, $userId, $home){
         $db = Database::instance()->db();
-        $statement = $db->prepare('INSERT INTO Reservation Values(NULL,?,?,?,?, NULL)');
+        $statement = $db->prepare('INSERT INTO Reservation (start_date, end_date, userID, home) Values(?,?,?,?)');
         $statement->execute(array($start_date, $end_date, $userId, $home));
     }
 
@@ -88,7 +88,7 @@
     
     function refuseReservation($id){
         $db = Database::instance()->db();
-        $stmt = $db->prepare("UPDATE Reservation SET approved = 'REFUSED' WHERE id = ?");
+        $stmt = $db->prepare("DELETE FROM Reservation WHERE id = ?");
         $stmt->execute(array($id));
     }
 ?>

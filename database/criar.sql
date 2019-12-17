@@ -64,8 +64,7 @@ CREATE TABLE Reservation(
     approved TEXT DEFAULT 'PENDING',
     CONSTRAINT approved_type CHECK (
         approved = 'PENDING' OR
-        approved = 'ACCEPTED' OR
-        approved = 'REFUSED'
+        approved = 'ACCEPTED'
         )
     );
 

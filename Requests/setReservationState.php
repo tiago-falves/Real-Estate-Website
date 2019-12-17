@@ -1,5 +1,6 @@
 <?php
  include_once('../database/queries.php');
+ include_once('../database/inserts.php');
  include_once('../session/session.php');
 
   $user = getUserFromUserName($_SESSION['username']);
@@ -12,9 +13,11 @@
   else{ 
     error_log("True");
     if($state == 'ACCEPTED'){
+        error_log("Accepted");
         acceptReservation($reservation);
     }
     else{
+      error_log("Refused");
         refuseReservation($reservation);
     }
   }
