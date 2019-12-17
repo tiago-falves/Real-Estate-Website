@@ -64,8 +64,8 @@ function drawHomePhotos($house,$images,$img) { ?>
               <img class="cover" id= "Slide" src="../Images/<?php echo $image['path'] ?>" alt="House1">
           </div>
         <?php }?>         
-        <a class="arrowLeft" onclick="plusSlides(-1)">&#10094;</a>
-        <a class="arrowRight" onclick="plusSlides(1)">&#10095;</a>
+        <a class="arrowLeft" onclick="addSlide(-1)">&#10094;</a>
+        <a class="arrowRight" onclick="addSlide(1)">&#10095;</a>
       </div>
     </section>
   </section>
