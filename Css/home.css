@@ -48,10 +48,9 @@ body > header > nav {
 }
 
 #photos{
-    float: left;
     display: flex;
     flex-direction: column;
-    width: 40vw;
+    width: 50vw;
 }
 
 
@@ -89,20 +88,21 @@ body > header > nav {
 .arrowLeft, .arrowRight {
     cursor: pointer;
     position: absolute;
-    top: 50%;
+    float: left;
+    top: 40vh;
     width: auto;
     padding: 16px;
     margin-top: -22px;
     color: white;
     font-weight: bold;
-    font-size: 18px;
+    font-size: 30px;
     transition: 0.6s ease;
     border-radius: 0 3px 3px 0;
     user-select: none;
   }
   
 .arrowRight {
-    right: 0;
+    left: 42vw;
     border-radius: 3px 0 0 3px;
 }
 
