@@ -30,6 +30,6 @@ function draw_best_offers($homes){
             </div>
         </div>
     </section>
-    <button  type="button">See All</button>         
+    <button onclick="location.href = 'discover.php'" type="button">See All</button>         
 </div>
 <?php } ?>
