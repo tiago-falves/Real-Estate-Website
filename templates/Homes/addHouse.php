@@ -30,7 +30,7 @@ if(isset($_GET['id'])){
   </header>
   <img src= '../Images/<?php echo $housePicture['path'];?>' alt="Casa"> <?php //echo $//housePicture; ?>
   <section>
-      <!-- Mudar este form todo -->
+      <!--TODO Mudar este form todo -->
     <form action="../templates/user/upload.php" method="post" enctype="multipart/form-data">
       Select image to upload:
       <input type="hidden" name="username" value="<?php ?>">

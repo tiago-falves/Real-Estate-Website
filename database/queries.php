@@ -88,8 +88,6 @@
         $statement->execute(array($type));
         return $statement->fetch();
     }
-
-
     
     function getHomeFromTitle($title){
         $db = Database::instance()->db();
@@ -167,6 +165,22 @@
         $statement->execute(array($id));
         return $statement->fetchAll();
     }
+    
+    function getPendingReservationsFromOwner($owner){
+        $db = Database::instance()->db();
+
+        $user = getUserFromUserName($owner);
+
+        $statement = $db->prepare("SELECT Reservation.id AS RESERVATION_ID, Reservation.home AS HOME_ID, title, start_date, end_date
+                                    FROM Reservation, Home
+                                    WHERE Home.owner = ? AND Home.id = Reservation.home AND Reservation.approved = 'PENDING'
+                                    ORDER BY Reservation.start_date DESC");
+
+        $statement->execute(array($user['id']));
+
+        return $statement->fetchAll();
+    }
+
     function getReservationOwner($id){
         $db = Database::instance()->db();
         $statement = $db->prepare('SELECT home.owner FROM Reservation,Home WHERE reservation.id  = ? AND reservation.home = home.id');
@@ -183,11 +197,23 @@
 
     function getHouseComments($id){
         $db = Database::instance()->db();
-        $statement = $db->prepare('SELECT Comment.id, Comment.title, date, hour, content, commenter_id FROM comment,home WHERE Comment.home_id = home.id AND home .id = ?');
+        $statement = $db->prepare('SELECT Comment.id, Comment.title, date, hour, content, commenter_id FROM Comment,Home WHERE Comment.home_id = home.id AND home.id = ?');
         $statement->execute(array($id));
         return $statement->fetchAll();
     }
 
+    function authorizedToAccept($userId, $reservation){
+        $db = Database::instance()->db();
+
+        $statement = $db->prepare("SELECT Reservation.id AS RESERVATION_ID, Reservation.home AS HOME_ID, title, start_date, end_date
+                                    FROM Reservation, Home
+                                    WHERE Home.owner = ? AND Home.id = Reservation.home AND Reservation.approved = 'PENDING'
+                                    ORDER BY Reservation.start_date DESC");
+
+        $statement->execute(array($userId));
+
+        return $statement->fetchAll();
+    }
     
     function checkUserCredentials($user_name, $password){
         $user = getUserFromUserName($user_name);

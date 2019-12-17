@@ -19,24 +19,31 @@
         <header>
             <h1> <a href="main_page.php">Invicta</a></h1>
             <nav id="menu">
-                <div class="wrapper-dropdown">
-                    <span>Actions</span>
-                    <ul class="dropdown">
-                        <li><a href="rent.php">Rent</a></li>
-                        <li><a href="discover.php">Discover?</a></li>  
-                        <?php
-                            if(isset($_SESSION['username'])){     
-                                echo ('<li><a href="profile.php">Profile</a></li>');
-                                echo ('<li><a href="editProfile.php">Edit Profile</a></li>');
-                            }
-                        ?>
-                    </ul>
-                </div>
-            </nav>       
-            <div id="signup">
+            <div class="wrapper-dropdown">
+                <span>Actions</span>
+                <ul class="dropdown">
+                    <li><a href="rent.php">Rent</a></li>
+                    <li><a href="discover.php">Discover?</a></li>  
+                    <?php
+                        if(isset($_SESSION['username'])){     
+                            echo ('<li><a href="profile.php">Profile</a></li>');
+                            echo ('<li><a href="editProfile.php">Edit Profile</a></li>');
+                        }
+                    ?>
+                </ul>
+            </div>
+            </nav>     
+                <div id="signup">
                 <?php
-                    if(isset($_SESSION['username'])){
-                        echo ('<li><a href="../Actions/action_logout.php">Log out</a></li>');
+                    if(isset($_SESSION['username'])){ ?>
+                        <a id="notificationsButton">No notifications</a>
+                        <ul id="notificationsList" hidden>
+                            <li><a href="rent.php">Rent</a></li>
+                            <li><a href="discover.php">Discover?</a></li>  
+                        </ul>
+                        <script src="../Scripts/notifications.js"> </script>
+                        <a href="../Actions/action_logout.php">Log out</a>
+                    <?php
                     }
                     else{
                         echo ('<a href="register.php">Sign Up</a>');

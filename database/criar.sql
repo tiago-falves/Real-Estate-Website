@@ -60,7 +60,12 @@ CREATE TABLE Reservation(
     start_date DATE NOT NULL,
     end_date DATE NOT NULL,
     userID INTEGER REFERENCES Person(id),
-    home INTEGER REFERENCES Home(id)
+    home INTEGER REFERENCES Home(id),
+    approved TEXT DEFAULT 'PENDING',
+    CONSTRAINT approved_type CHECK (
+        approved = 'PENDING' OR
+        approved = 'ACCEPTED'
+        )
     );
 
 CREATE TABLE Photo(

@@ -38,7 +38,7 @@
     }
     function insertReservation($start_date, $end_date, $userId, $home){
         $db = Database::instance()->db();
-        $statement = $db->prepare('INSERT INTO Reservation Values(NULL,?,?,?,?)');
+        $statement = $db->prepare('INSERT INTO Reservation (start_date, end_date, userID, home) Values(?,?,?,?)');
         $statement->execute(array($start_date, $end_date, $userId, $home));
     }
 
@@ -78,5 +78,17 @@
         error_log("User-Pass: ".$username."-".$password);
         $stmt->execute(array(password_hash($password, PASSWORD_DEFAULT, $options)));
     
+    }
+
+    function acceptReservation($id){
+        $db = Database::instance()->db();
+        $stmt = $db->prepare("UPDATE Reservation SET approved = 'ACCEPTED' WHERE id = ?");
+        $stmt->execute(array($id));
+    }
+    
+    function refuseReservation($id){
+        $db = Database::instance()->db();
+        $stmt = $db->prepare("DELETE FROM Reservation WHERE id = ?");
+        $stmt->execute(array($id));
     }
 ?>
