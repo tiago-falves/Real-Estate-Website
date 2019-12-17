@@ -7,9 +7,18 @@ body > header > nav {
     grid-column: 2;
     grid-row: 1;
 }
-
+.PageContent {
+    display: inline-flex;  
+    min-height: 80vh;
+}
 #photos{
-    padding-top: 12.5vh;
+    padding-left: 2vw;
+}
+
+#photos > header{
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 3vh;
 }
 
 #AllHouseInfo{
@@ -20,9 +29,6 @@ body > header > nav {
 
 
 #Informations{
-    
-    padding-top: 12.5vh;
-    float: right;
     display: grid;
     grid-template-columns: [left] auto [middle] auto [right] ;
     grid-template-rows: [top] auto [middle] auto [end];
@@ -48,25 +54,9 @@ body > header > nav {
 }
 
 #photos{
-    float: left;
     display: flex;
     flex-direction: column;
-    width: 40vw;
-}
-
-
-
-#BigPhoto{
-    width: 100%;
-}
-
-#SmallerPhotos{
-    display: flex;
-    flex-direction: row;
-}
-#SmallerPhotos img{
-    width: 25%;
-  
+    width: 50vw;
 }
 
 
@@ -89,20 +79,21 @@ body > header > nav {
 .arrowLeft, .arrowRight {
     cursor: pointer;
     position: absolute;
-    top: 50%;
+    float: left;
+    top: 40vh;
     width: auto;
     padding: 16px;
     margin-top: -22px;
     color: white;
     font-weight: bold;
-    font-size: 18px;
+    font-size: 30px;
     transition: 0.6s ease;
     border-radius: 0 3px 3px 0;
     user-select: none;
   }
   
 .arrowRight {
-    right: 0;
+    left: 42vw;
     border-radius: 3px 0 0 3px;
 }
 
@@ -113,4 +104,19 @@ body > header > nav {
 #HomeImages{
     width: 40vw;
     margin-left: 5vw; 
+}
+
+.slideShow > .imageZoomContainer, .slideShow > .imageZoomContainer > img{
+    height: 34vw;
+    width: 45vw;
+}
+.slideShow > .imageZoomContainer > img:hover{
+    height: 34vw;
+    width: 45vw;
+}
+
+/*Edit house and add house styling*/
+
+#editHouse{
+    display: inline-flex;
 }

@@ -55,15 +55,18 @@ function drawHomePhotos($house,$images,$img) { ?>
     <header>
       <h2><a href="item.php"><?php echo $house['title'] ?></a></h2>
     </header>
-    <section id = "HomeImages">
-      <img id = "BigPhoto" src="../Images/<?php echo $img['path'] ?>" alt="House1">
-      <div id = "SmallerPhotos">
+      <div class="slideShow">
+        <div class= "imageZoomContainer">
+          <img class="cover" id = "Slide" src="../Images/<?php echo $img['path'] ?>" alt="House1">
+        </div>
         <?php foreach ($images as $image ){?>
-          <img src="../Images/<?php echo $image['path'] ?>" alt="House1">
-        <?php }?>
-      </div>         
-      <a class="arrowLeft" onclick="plusSlides(-1)">&#10094;</a>
-      <a class="arrowRight" onclick="plusSlides(1)">&#10095;</a>
+          <div class= "imageZoomContainer">
+              <img class="cover" id= "Slide" src="../Images/<?php echo $image['path'] ?>" alt="House1">
+          </div>
+        <?php }?>         
+        <a class="arrowLeft" onclick="addSlide(-1)">&#10094;</a>
+        <a class="arrowRight" onclick="addSlide(1)">&#10095;</a>
+      </div>
     </section>
   </section>
 <?php } 

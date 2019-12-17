@@ -30,3 +30,11 @@
         font-size: 2.5vw;
     }
 }
+
+
+@media (max-width: 50em){
+    .loginRegister{
+        width: 80vw;
+        min-width: 80vw;
+    }
+}
