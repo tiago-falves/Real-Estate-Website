@@ -22,8 +22,8 @@
             <div class="wrapper-dropdown">
                 <span>Actions</span>
                 <ul class="dropdown">
-                    <li><a href="rent.php">Rent</a></li>
-                    <li><a href="discover.php">Discover?</a></li>  
+                    <!-- <li><a href="rent.php">Rent</a></li> -->
+                    <li><a href="discover.php">Discover</a></li>  
                     <?php
                         if(isset($_SESSION['username'])){     
                             echo ('<li><a href="profile.php">Profile</a></li>');
@@ -38,8 +38,8 @@
                     if(isset($_SESSION['username'])){ ?>
                         <a id="notificationsButton">No notifications</a>
                         <ul id="notificationsList" hidden>
-                            <li><a href="rent.php">Rent</a></li>
-                            <li><a href="discover.php">Discover?</a></li>  
+                            <!-- <li><a href="rent.php">Rent</a></li> -->
+                            <li><a href="discover.php">Discover</a></li>  
                         </ul>
                         <script src="../Scripts/notifications.js"> </script>
                         <a href="../Actions/action_logout.php">Log out</a>

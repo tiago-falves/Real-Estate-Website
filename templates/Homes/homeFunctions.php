@@ -41,11 +41,12 @@ function draw_homes($homes) {?>
         <span  class="Owner"> <a href="profile.php?id=<?php echo $home['owner'];?>">Owner:  <?php echo $owner['userName']?></a></span>
         <?php
       // echo( $owner);
-       
+      if(isset($_SESSION['username'])){       
        if($_SESSION['username'] == $owner['userName'] ) { ?>
           <button onclick="location.href = 'addHouse.php?id=<?php echo $home['id']; ?>'" type="button">Edit house</button>
           <button onclick="location.href = '../Actions/action_remove_house.php?id=<?php echo $home['id']; ?>'" type="button">Remove House</button>
-        <?php } ?>
+        <?php }
+        } ?>
     </section>
   </section>   
 <?php } 
