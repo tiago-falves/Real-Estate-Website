@@ -3,28 +3,20 @@
    
     <video id="vidHTML5" src="https://media.egorealestate-cdn.com/ORIGINAL/f84e/de80e115-57d9-46d8-b4e7-fa58e0fef84e.mp4" autoplay="" loop="" muted="" preload="auto" poster="https://media.egorealestate-cdn.com/ORIGINAL/d4b7/aae094cb-8149-461d-bc9c-dbe3a072d4b7.jpg"></video> 
     
-    <!-- TO DO: Fazer com que conforme o butao clicado ele filtre os resultados de pesquisa -->
-    
-    <section id="SearchText">
+    <form method="post" action="../Imobiliaria/searchResults.php" id="SearchText">
         <ul id="Filters">
-            <li><a href="">For Sale</a></li>
-            <li><a href="">Rent</a></li>
-            <li><a href="">Zaaaaaas</a></li>
+            <li id="title" selected="true">Title</li>
+            <li id="rating" selected="false">Rating</li>
+            <li id="location" selected="false">Location</li>
+            <li id="price" selected="false">Price</li>
         </ul>
-        <!-- <form method="post" action="test1.php">
-            <select name="keywords" >
-                <option value="Title">Title</option>
-                <option value="Rating">Rating</option>
-                <option value="Price">Price</option>
-            </select>   
-            <input type="submit">
-        </form> -->
         
         <section id = "SearchBar">
-            <input type="search" name="searchHouses" value="Location, Name, Postal Code or Property ID  ">
-            <a href= "discover.php"><img src="../Images/search.png" alt="Search Logo"></a>  
-            
+            <input id="searchType" type="hidden" name="searchType" value="title" />
+            <input type="search" name="searchHouses" value="Search term">
+            <input type="image" name="submit" src="../Images/search.png" alt="Search Logo" />
         </section>
-    </section>
+    </form>
+    <script src="../Scripts/search.js"></script>
  
 </div>

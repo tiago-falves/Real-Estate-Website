@@ -67,11 +67,25 @@
         return $statement->fetch();
     }
 
+    function getPremiumHouses($rating){
+        $db = Database::instance()->db();
+        $statement = $db->prepare('SELECT * FROM Home Where rating > ? ORDER BY rating DESC');
+        $statement->execute(array($rating));
+        return $statement->fetchAll();
+    }
+
     function getHouseBetweenPrices($smallerPrice,$higherPrice){
         $db = Database::instance()->db();
         $statement = $db->prepare('SELECT * FROM Home Where price > ? AND price < ? ORDER BY rating DESC');
         $statement->execute(array($smallerPrice,$higherPrice));
         return $statement->fetch();
+    }
+
+    function getHousesUnderPrice($minPrice){
+        $db = Database::instance()->db();
+        $statement = $db->prepare('SELECT * FROM Home Where price < ? ORDER BY rating DESC');
+        $statement->execute(array($minPrice));
+        return $statement->fetchAll();
     }
 
     function getHouseByLocation($location){
@@ -80,7 +94,21 @@
         $statement->execute(array($location));
         return $statement->fetch();
     }
+    
+    function getHousesByLocation($location){
+        $db = Database::instance()->db();
+        $statement = $db->prepare('SELECT * from  Home, Location where Location.id = Home.location AND Location.name = ? ORDER BY rating DESC');
+        $statement->execute(array($location));
+        return $statement->fetchAll();
+    }
    
+    function getHousesBySimilarTitles($baseTitle){
+        $patternTitle = '%'.$baseTitle.'%';
+        $db = Database::instance()->db();
+        $statement = $db->prepare('SELECT * from  Home where title LIKE ? ORDER BY rating DESC');
+        $statement->execute(array($patternTitle));
+        return $statement->fetchAll();
+    }
 
     function getHouseByType($type){
         $db = Database::instance()->db();
