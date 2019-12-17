@@ -22,7 +22,6 @@ let setNotificationState = function(state, reservation){
 }
 
 let notificationsRequestReponse = function(response){
-    console.log(response);
     if(response.length){
         notificationsElement.innerHTML = "";
 

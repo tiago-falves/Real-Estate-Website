@@ -3,7 +3,6 @@
  include_once('../session/session.php');
 
   $username = $_SESSION['username'];
-  error_log($username);
 
   $data = array();
   $query_result = getPendingReservationsFromOwner($username);

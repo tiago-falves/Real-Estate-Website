@@ -129,7 +129,7 @@ body > header > nav > ul> *:hover{
     font-size: 2vh;
 }
 
-#SearchText ul li:hover{
+#SearchText ul li[selected="true"]{
     background-color: rgba(255, 255, 255, 0.6);
     color: #3b3838;
 }
@@ -145,7 +145,7 @@ body > header > nav > ul> *:hover{
     color: #606060;
 }
 
-#SearchBar img{
+#SearchBar input[type=image]{
     width: 5.5vh;
     height: 5.5vh;
     padding: 0em;
