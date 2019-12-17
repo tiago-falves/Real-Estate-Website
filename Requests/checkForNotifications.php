@@ -12,7 +12,7 @@
   else{ error_log("True");
     $index = 0;
     foreach($query_result as $reservation){
-        array_push($data, array($reservation['RESERVATION_ID'], $reservation['HOME_ID'], $reservation['start_date'], $reservation['end_date']));
+        array_push($data, array($reservation['RESERVATION_ID'], $reservation['HOME_ID'], $reservation['title'], $reservation['start_date'], $reservation['end_date']));
     }
   }
   header('Content-type: application/json');

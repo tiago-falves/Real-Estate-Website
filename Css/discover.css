@@ -1,36 +1,46 @@
+#ListHouses > h2,#ListHouses > a{
+    text-align: center;
+}
+
 #ListHouses{
-    background: lightgrey;
+    background: #ebebeb;
+    display: flex;
+    flex-direction: column;
+    
 }
 
 #ListHouses > .House{
+    display: flex;
     background-color: #fff;
-    margin: 0 10px 10px 0;
-    border-radius: 3px;
-    padding: 0 0 0 225px;
-    position: relative;
-    height: 220px;
-    border: 1px solid #e6e6e6;
+    margin:auto;
+    margin-top: 2vh;
+    margin-bottom: 2vh;
+    width: 80%;
+    box-shadow: darkgray;
+} 
+
+#HouseInfo{
+    padding-left: 2vw;
 }
+
+/* padding: 0 0 0 225px; */
 
 #ListHouses > section > a > img {
-    width: 360px;
-    height: 270px;
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    margin: -135px 0 0 -180px;
+    max-width: 90%;
+    margin: 1em;     
 }
 
+#ListHouses > section > a {
+    width: 30vw;
+    height: 25vw;      
+}
 
-
-#ListHouses > section > a{
+/* #ListHouses > section > a{
     position: absolute;
     top: 0;
     left: 0;
     width: 210px;
     height: 220px;
-    overflow: hidden;
-    border-top-left-radius: 3px;
-    border-bottom-left-radius: 3px;
+ 
     z-index: 99;
-}
+}  */

@@ -1,24 +1,31 @@
 
 .loginRegister{
-
-    margin: 2em auto;
-    width: 30em;
+    width: 70vw;
     border: 1px;
     color: white;
     text-align: center;
+    margin: auto;
+    margin-top: 5vh;
     background-image: url("../Images/viver-no-porto-ponte-pequena-2.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    opacity: 0.7;
 }
 
 .loginRegister header {
     color: white;
-    padding: 2em 0;
+    margin: auto;
     text-align: center;
     font-size: x-large;
     text-transform: uppercase;
-
+    background-color: rgba(68, 68, 68, 0.4);
+    padding: 0.01vh;
   }
 
 .loginRegister form {
+  font-size: 2.5vh;
+  padding-top: 5vh;
+  min-height: 40vh;
   text-shadow: 1px 1px black, -1px -1px black, -1px 1px black, 1px -1px black;
 }
 
@@ -56,12 +63,17 @@ input[type="submit"], input[type="button"] {
 
   margin-bottom: 1em;
 }
-
+.loginRegister footer{
+  display: block;
+  background-color: rgb(161, 158, 158);
+}
 .loginRegister footer p{
-    width: 100%;
-    margin: 0;
-    padding-bottom: 1em;
-    color: black;
-    justify-content: space-around;
-    text-shadow: 1px 1px white, -1px 1px white, 1px -1px white, -1px -1px white;
-  }
+  margin: 0;
+  padding-bottom: 1em;
+  color: black;
+  text-align: center;
+}
+
+.loginRegisterWrapper{
+  min-height: 78vh;
+}

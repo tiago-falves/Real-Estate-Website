@@ -8,9 +8,21 @@ body > header > nav {
     grid-row: 1;
 }
 
+#photos{
+    padding-top: 12.5vh;
+}
+
+#AllHouseInfo{
+    display: grid;
+    grid-template-columns: [left] auto [middle] auto [right] ;
+    grid-template-rows: [top] auto [middle] auto [end];
+}
 
 
 #Informations{
+    
+    padding-top: 12.5vh;
+    float: right;
     display: grid;
     grid-template-columns: [left] auto [middle] auto [right] ;
     grid-template-rows: [top] auto [middle] auto [end];
@@ -36,11 +48,10 @@ body > header > nav {
 }
 
 #photos{
-    margin: auto;
+    float: left;
     display: flex;
     flex-direction: column;
-    margin: auto;
-    width: 100%;
+    width: 40vw;
 }
 
 
@@ -73,3 +84,33 @@ body > header > nav {
 #photos section:nth-child(2){
     grid-area: middle / left / end / first;
 } */
+
+
+.arrowLeft, .arrowRight {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    padding: 16px;
+    margin-top: -22px;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+  }
+  
+.arrowRight {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+}
+
+.arrowLeft:hover, .arrowRight:hover {
+    background-color: rgba(0,0,0,0.8);  
+}
+
+#HomeImages{
+    width: 40vw;
+    margin-left: 5vw; 
+}

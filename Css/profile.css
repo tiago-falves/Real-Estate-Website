@@ -1,14 +1,12 @@
 
 body{
     background-color: #ebebeb;
-  
-
 }
 
 #profile{
     display: grid;
     grid-template-columns: [left] 1fr [middle] 3fr [right] ;
-    grid-template-rows: [top] auto [name] auto [stars] auto [middle] auto [bottom];
+    grid-template-rows: [top] auto [name] auto [stars] auto [middle] auto [middleBottom] auto [bottom];
     text-align: left;
 }
 
@@ -18,7 +16,7 @@ body{
 
 
 #profile > img{
-    width: 30em;
+    width: 30vw;
     margin: 1em;
 
     border-radius: 50%;
@@ -39,27 +37,41 @@ body{
     width: 100%;
 }
 
+#profile > header {
+    margin: auto;
+}
 #profile > article {
     grid-area: stars / middle / middle / end;
 }
 
 #rating {
     grid-area: name / middle / stars / end;
+    margin: 0em 1em;
 }
 
 #profile > form{
-    grid-area: name / middle / stars / end;
     display: flex;
     flex-direction: column;
-    width: 50%;
+    width: 70%;
+    margin:auto;
+}
+#photoUpload{
+    padding-top: 10vh;
+    grid-column: 1 / span 1;
+    grid-row: 2 / span 1;
 }
 #profile > form input , #profile > form textarea{
     margin-bottom: 2em;
     padding: 1em;
 }
 
+#profile > section:nth-child(3){
+    grid-column: 1 / span 1;
+    grid-row: 2 / span 1;
+    padding-top: 50vh;
+}
 #comments {
-    grid-area: middle / left / bottom / middle;
+    grid-area: middle / left / middlebottom / middle;
     margin: 1em;
 }
 
@@ -68,27 +80,60 @@ body{
     flex-wrap: wrap;
     flex-direction: column;
     /* flex-grow: 1 ; */
-
 }
+
+
 
 #RecentVisits{
-    grid-area: middle / middle / bottom / end;
-    
-
+    grid-area: middle / middle / middleBottom / end; 
 }
 
-#RecentVisits > section{
-    display: grid;
-    grid-template-columns: [begin] 1fr [mid] 3fr [end] ;
-    grid-template-rows: [begin] auto [mid] auto [end] ;
-    position: relative;
-    
+footer{
+    grid-area: middleBottom / left / bottom / right; 
 }
 
-#RecentVisits > section >header{
+
+
+/* #RecentVisits > section >header{
     position: absolute;
+} */
+#Reservations > tbody  td:nth-child(1) > a > img{
+    max-width: 3em;
+    height: auto;
+    border-radius: 50%;
+
 }
 
-#HomesProfile{
+#Reservations table{
+    border: 1px solid black;
+    width: 100%;
+}
+
+
+
+#ListHouses{
+    background: #ebebeb;
+    display: flex;
+    flex-direction: column;
+}
+
+#ListHouses > .House{
+    display: flex;  
+    margin-bottom: 1em;
     width: 50%;
+    border: 1px solid black;
+} 
+
+
+/* padding: 0 0 0 225px; */
+
+#ListHouses > section > a > img {
+    max-width: 90%;
+    margin: 1em;
+ 
+      
+}
+
+#ListHouses > section > a {
+        width: 50%;      
 }

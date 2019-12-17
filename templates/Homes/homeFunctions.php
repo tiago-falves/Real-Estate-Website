@@ -1,4 +1,7 @@
-<?php function draw_homes($homes) {?>
+<?php
+include_once("../session/session.php");
+
+function draw_homes($homes) {?>
   
   <div id="ListHouses">
     <h2>Homes</h2>
@@ -21,20 +24,29 @@
     $firstPath['path'] = "noProfile.png";
   }
   $owner = getUsernameFromOwner($home);
+  
  
 ?>
   <section class = House>
-    <header>
-        <h3><?php echo $home['title']?></h3>
-        <h4>Price: <?php echo $home['price']?></h4>
-    </header>
-    <p>Bedrooms: <?php echo $home['bedrooms']?></p>
-    <p>Rating: <?php echo $home['rating'] //Adicionar umas estrelinhas giras?></p>
-    <footer>
-      <span  class="Owner"> <a href="profile.php?id=<?php echo $home['owner'];?>"> <?php echo $owner['userName']?></a></span>
-      <button onclick="myFunction()" id="seeMore2">More Info</button>
-    </footer>
-    <a href="home.php?id=<?php echo $id; ?>"><img src="../Images/<?=$firstPath['path'] ?>" alt="Casa 1"></a>
+    <div class="imageZoomContainer">
+      <a href="home.php?id=<?php echo $id; ?>"><img class= "cover" src="../Images/<?=$firstPath['path'] ?>" alt="Casa 1"></a>
+    </div>
+    <section id = HouseInfo>
+      <header>
+          <h3><?php echo $home['title']?></h3>
+          <h4>Price: <?php echo $home['price']?></h4>
+      </header>
+      <p>Bedrooms: <?php echo $home['bedrooms']?></p>
+      <p>Rating: <?php echo $home['rating'] //Adicionar umas estrelinhas giras?></p>
+        <span  class="Owner"> <a href="profile.php?id=<?php echo $home['owner'];?>">Owner:  <?php echo $owner['userName']?></a></span>
+        <?php
+      // echo( $owner);
+       
+       if($_SESSION['username'] == $owner['userName'] ) { ?>
+          <button onclick="location.href = 'addHouse.php?id=<?php echo $home['id']; ?>'" type="button">Edit house</button>
+          <button onclick="location.href = '../Actions/action_remove_house.php?id=<?php echo $home['id']; ?>'" type="button">Remove House</button>
+        <?php } ?>
+    </section>
   </section>   
 <?php } 
 
@@ -49,7 +61,9 @@ function drawHomePhotos($house,$images,$img) { ?>
         <?php foreach ($images as $image ){?>
           <img src="../Images/<?php echo $image['path'] ?>" alt="House1">
         <?php }?>
-      </div>
+      </div>         
+      <a class="arrowLeft" onclick="plusSlides(-1)">&#10094;</a>
+      <a class="arrowRight" onclick="plusSlides(1)">&#10095;</a>
     </section>
   </section>
 <?php } 
@@ -67,7 +81,7 @@ function drawCharacteristics($characetristics){?>
 
 function draw_main_home($homes,$id){ ?>
   <section class = "Home">
-    <?php $home = getHomeFromId($id);
+    <?php $home = $homes[$id];
     $location = getLocationFromId($home['location']);
     $images = getPathsFromHouse($home['id']);?>
     <header>

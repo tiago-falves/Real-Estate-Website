@@ -5,7 +5,7 @@
   include_once('../database/queries.php');
 
   $homes = getAllHouses();
-
+  
   draw_best_offers($homes);
   include('../templates/common/Footer.php');  
 ?>

@@ -6,7 +6,7 @@ DROP TABLE IF EXISTS Location;
 DROP TABLE IF EXISTS Reservation;
 DROP TABLE IF EXISTS Photo;
 DROP TABLE IF EXISTS Comment;
-DROP TABLE IF EXISTS Reply;
+-- DROP TABLE IF EXISTS Reply;
 DROP TABLE IF EXISTS Message;
 
 CREATE TABLE Image(
@@ -36,7 +36,7 @@ CREATE TABLE Home(
     address TEXT NOT NULL,
     location INTEGER REFERENCES Location,
     owner INTEGER REFERENCES Person,
-    characteristics TEXT,
+    characteristics TEXT NOT NULL,
     CONSTRAINT type_name CHECK (
         type = 'House'
         OR type = 'Apartment'
@@ -79,21 +79,30 @@ CREATE TABLE Photo(
 
 CREATE TABLE Comment(
     id INTEGER PRIMARY KEY,
+    title TEXT NOT NULL,
     date DATE NOT NULL,
     hour INTEGER NOT NULL,
     content TEXT NOT NULL,
     commenter_id INTEGER REFERENCES Person(id),
-    home_id INTEGER REFERENCES Home(id)
+    home_id INTEGER REFERENCES Home(id),
+    rating INTEGER NOT NULL,
+    CONSTRAINT rating CHECK (
+        rating = 1 OR
+        rating = 2 OR
+        rating = 3 OR
+        rating = 4 OR
+        rating = 5
+        )
     );
 
-CREATE TABLE Reply(
-    id INTEGER PRIMARY KEY,
-    date DATE NOT NULL,
-    hour INTEGER NOT NULL,
-    content TEXT NOT NULL,
-    comment INTEGER REFERENCES comment(id),
-    userID INTEGER REFERENCES Person
-    );
+-- CREATE TABLE Reply(
+--     id INTEGER PRIMARY KEY,
+--     date DATE NOT NULL,
+--     hour INTEGER NOT NULL,
+--     content TEXT NOT NULL,
+--     comment INTEGER REFERENCES comment(id),
+--     userID INTEGER REFERENCES Person
+--     );
 
 CREATE TABLE Message(
     id INTEGER PRIMARY KEY,
@@ -138,8 +147,13 @@ INSERT INTO Photo(id,approved,image,uploader_id,home) VALUES (11,1,1,1,6);
 INSERT INTO Photo(id,approved,image,uploader_id,home) VALUES (12,1,2,1,6);
 INSERT INTO Photo(id,approved,image,uploader_id,home) VALUES (13,1,1,1,6);
 
-INSERT INTO Comment(id,date,hour,content,commenter_id,home_id) VALUES (1,20190423,1200,'Gosto de sopa',1,1);
-INSERT INTO Reply(id,date,hour,content,comment,userID) VALUES (1,20190423,1200,'Gosto de sopa',1,1);
+INSERT INTO Comment(id,title,date,hour,content,commenter_id,home_id,rating) VALUES (NULL,'Fantastico!',20190423,1200,'Gosto de sopa',1,1,5);
+INSERT INTO Comment(id,title,date,hour,content,commenter_id,home_id,rating) VALUES (NULL,'Fantastico!',20190425,1200,'Fantastico',2,6,4);
+INSERT INTO Comment(id,title,date,hour,content,commenter_id,home_id,rating) VALUES (NULL,'Fantastico!',20190423,1200,'Gosto de sopa',1,6,5);
+INSERT INTO Comment(id,title,date,hour,content,commenter_id,home_id,rating) VALUES (NULL,'Fantastico!',20190423,1200,'ZAAAAAAAAAAAAAAAAAAAS',2,6,3);
+
+
+-- INSERT INTO Reply(id,date,hour,content,comment,userID) VALUES (1,20190423,1200,'Gosto de sopa',1,1);
 INSERT INTO Message(id,date,hour,content,senderID,receiverID) VALUES (1,20190423,1200,'Gosto de sopa',1,2);
 INSERT INTO Image(id,path) VALUES (1,'restivo.jpg');
 INSERT INTO Image(id,path) VALUES (2,'casa.jpeg');
@@ -153,7 +167,6 @@ INSERT INTO HOME (id,title,price,description,rating,type,bedrooms,address,locati
 INSERT INTO HOME (id,title,price,description,rating,type,bedrooms,address,location,owner,characteristics) VALUES (NULL,"Porto",2000,"xxx",4.8,"House","T2","Rua zas",1,2,"Bathroom,Cinema");
 INSERT INTO HOME (id,title,price,description,rating,type,bedrooms,address,location,owner,characteristics) VALUES (NULL,"Expensive 3 Photos",5000,"xxx",4.9,"House","T2","Rua zas",1,2,"Bathroom,Cinema");
 INSERT INTO HOME (id,title,price,description,rating,type,bedrooms,address,location,owner,characteristics) VALUES (NULL,"High rating",5000,"xxx",5.0,"House","T2","Rua zas",1,2,"Bathroom,Cinema");
-
 
 
 

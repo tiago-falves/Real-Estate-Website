@@ -1,15 +1,52 @@
 //TODO: toggle icon element
-let notificationsElement = document.getElementById("notifications");
+let notificationsButtonElement = document.getElementById("notificationsButton");
+let notificationsElement = document.getElementById("notificationsList");
+
+let setNotificationState = function(state, reservation){
+    let request = new XMLHttpRequest();
+
+    request.open("post", "../Requests/setReservationState.php", true);
+    request.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+    request.send(encodeForAjax({reservation: reservation, state: state}));
+
+    request.onreadystatechange = function() {
+        if (!(this.readyState == 4 && this.status == 200)) {
+            console.log("Request wasn't accepted: code " + this.status);
+        }
+    };
+}
 
 let notificationsRequestReponse = function(response){
     console.log(response);
     if(response.length){
-        for(let i = 0; i <= response.length && i <= 5; ++i){
-            let reservationElement = document.createElement('a');
-            reservationElement.setAttribute("href","nonMatchingPasswords");//TODO: href for the reservation
+        notificationsElement.innerHTML = "";
+
+        for(let i = 0; i < response.length && i < 5; ++i){
+            let reservationElement = document.createElement('div');
+            reservationElement.setAttribute("class","notification");
+            reservationElement.reservationID = response[0];
+
+            let acceptFunction = function(){
+                setNotificationState("ACCEPTED",this.reservationID);
+            }
+
+            let refuseFunction = function(){
+                setNotificationState("REFUSED",this.reservationID);
+            }
     
-            let reservationNode = document.createTextNode("The passwords must match");
-            reservationElement.appendChild(reservationNode);
+            let acceptElement = document.createElement('button');
+            acceptElement.innerHTML = "Accept";
+            acceptElement.onclick = acceptFunction.bind(reservationElement);
+
+            let refuseElement = document.createElement('button');
+            refuseElement.innerHTML = "Refuse";
+            refuseElement.onclick = refuseFunction.bind(reservationElement);
+
+            let notificationNode = document.createTextNode("" + response[2] + "," + response[3] + "," + response[4]);
+            
+            reservationElement.appendChild(notificationNode);
+            reservationElement.appendChild(acceptElement);
+            reservationElement.appendChild(refuseElement);
 
             notificationsElement.appendChild(reservationElement);
         }
@@ -31,49 +68,12 @@ let updateNotifications = function(event){
     };
 }
 
-//TODO: click handler -> toggle dialogue
-//TODO: click handler -> check notification
+setInterval(updateNotifications, 10000);
 
-let clickHandler = function(event){
-
+let notifsClickHandler = function(event){
+    notificationsElement.hidden = !notificationsElement.hidden;
 }
 
-let passwordHandler = function(event){
-    let password = passwordField.value;
-    let confirm_password = confirmPasswordField.value;
+notificationsButtonElement.onclick = notifsClickHandler;
 
-    if(password != confirm_password){
-        if((password != "" || confirm_password != "") && !nonMatchingPasswords){
-            let nonMatchingPassElement = document.createElement('p');
-            nonMatchingPassElement.setAttribute("id","nonMatchingPasswords");
-    
-            let passwordnode = document.createTextNode("The passwords must match");
-            nonMatchingPassElement.appendChild(passwordnode);
-
-            warningElement.appendChild(nonMatchingPassElement);
-
-            nonMatchingPasswords = true;
-        }
-    }
-    else{
-        if(nonMatchingPasswords){
-            let children = warningElement.children; 
-            for(let i = 0; i < children.length; ++i){
-                if(children[i].id == "nonMatchingPasswords"){
-                    warningElement.removeChild(children[i]);
-                    break;
-                }
-            }
-        }
-        nonMatchingPasswords = false;
-    }
-}
-
-passwordField.oninput = passwordHandler;
-confirmPasswordField.oninput = passwordHandler;
-
-registerForm.onsubmit = function(event){
-    if(nonMatchingPasswords || repeatedUser){
-        event.preventDefault();
-    }
-}
+console.log("Hello");
