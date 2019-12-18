@@ -289,5 +289,6 @@ footer h3{
 
 ul#notificationsList{
     background: #f1f1f1;
+    color: #555;
     list-style-type: none;
 }

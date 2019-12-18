@@ -75,8 +75,8 @@
         $db = Database::instance()->db();
         $stmt = $db->prepare('UPDATE Person SET password_hash = ?');
         $options = ['cost' => 8];
-        error_log("User-Pass: ".$username."-".$password);
-        $stmt->execute(array(password_hash($password, PASSWORD_DEFAULT, $options)));
+        error_log("User-Pass: ".$username."-".$newPassword);
+        $stmt->execute(array(password_hash($newPassword, PASSWORD_DEFAULT, $options)));
     
     }
 

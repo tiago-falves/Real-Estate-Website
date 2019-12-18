@@ -10,12 +10,18 @@
   $username = $_POST['username'];
   $password = $_POST['password'];
 
+  $successfullyEnded = true;
+
   if (checkUserCredentials($_POST['username'], $_POST['password'])) {
     $_SESSION['username'] = $username;
     $_SESSION['success_messages'][] = "Login Successful!";
   } else {
-      echo("Para de tentar entrar no site oh boi");
       $_SESSION['error_messages'][] = "Login Failed!";
+      $successfullyEnded = false;
+  }
+
+  if($successfullyEnded){
+    clearMessages();
   }
 
   header('Location: ' . $_SERVER['HTTP_REFERER']);

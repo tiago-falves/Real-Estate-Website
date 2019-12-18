@@ -1,6 +1,6 @@
 <section id="photos">
   <header>
-    <h2><a href="item.php"><?php echo $house['title'] ?></a></h2>
+    <h2><a href="item.php"><?php echo treatOutput($house['title']) ?></a></h2>
   </header>
   <section id = "HomeImages">
     <img id = "BigPhoto" src="../Images/<?php echo $img['path'] ?>" alt="House1">

@@ -3,13 +3,16 @@
   include_once('../database/database.php');
   include_once('../database/inserts.php');
   
-  $username = $_SESSION['username'];
+  if(!isset($_SESSION['username'])){
+    die(header('Location: ../Imobiliaria/login.php'));
+  }
 
-//   $user = getUserFromUserName($username);
+  $username = $_SESSION['username'];
   
   $title = $_POST['Title'];
   $rating = $_POST['Rating'];
   $content = $_POST['comment'];
+
   date_default_timezone_set('Europe/Lisbon');
   $date = date('Ymd', time());
   $hour = date('hi', time());

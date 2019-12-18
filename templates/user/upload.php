@@ -1,6 +1,10 @@
 <?php
 include("../../database/database.php");
 
+if(!isset($_SESSION['username'])){
+    die(header('Location: login.php'));
+}
+
 function insertUserPhoto($id, $image) {
     $db = Database::instance()->db();
     $stmt = $db->prepare('INSERT INTO Image  VALUES (NULL, ?, 1, ?, "", 1, "", 0)');
