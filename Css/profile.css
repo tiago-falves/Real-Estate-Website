@@ -8,7 +8,7 @@ body{
     grid-template-columns: [left] 1fr [middle] 2fr [right] ;
     grid-template-rows: [top] auto  [middle] auto [bottom];
     text-align: left;
-    border: black solid 2px;
+    border: black solid 1px;
     width: 80%;
     height: 80%;
     margin: auto;
@@ -25,7 +25,7 @@ body{
 }
 
 
-#profile > img{
+#profile > img, #Editprofile > img{
     width: 30em;
     margin: 1em;
     border-radius: 50%;
@@ -53,21 +53,33 @@ body{
     width: 100%;
 }
 
+#Editprofile{
+    display: flexbox;
+    flex-direction: row;
+    width: 90%;
+    margin: auto;
+    text-align: center;
+}
 
 
 
-#profile > form{
+
+
+#Editprofile > form{
     display: flex;
     flex-direction: column;
-    width: 70%;
-    margin:auto;
+    width: 80%;
+    margin: auto;
+    
 }
 #photoUpload{
     padding-top: 10vh;
+    grid-area: left / top / middle / bottom;
+
     /* grid-column: 1 / span 1;
     grid-row: 2 / span 1; */
 }
-#profile > form input , #profile > form textarea{
+#Editprofile > form input , #Editprofile > form textarea{
     margin-bottom: 2em;
     padding: 1em;
 }
@@ -77,10 +89,7 @@ body{
     grid-row: 2 / span 1; */
     padding-top: 50vh;
 }
-#comments {
-    /* grid-area: middle / left / middlebottom / middle; */
-    margin: 1em;
-}
+
 
 .SmallerPhotosCollumn {
     display: flex;
@@ -88,8 +97,6 @@ body{
     flex-direction: column;
     /* flex-grow: 1 ; */
 }
-
-
 
 
 #Reservations {
@@ -145,3 +152,5 @@ body{
     grid-area: middle / left / bottom / middle;
     max-height: 2em;
 }
+
+

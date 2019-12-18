@@ -10,7 +10,7 @@ if($profilePicture == false){
    $profilePicture = array("path" =>"noProfile.png");
 } ?>
 
-<div id = "profile">
+<div id = "Editprofile">
     <header>
         <h1>Edit Profile</h1>
         <h2><?php echo $_SESSION['username']; ?></h2>
