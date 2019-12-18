@@ -18,6 +18,8 @@
       $bigPhoto['path'] = "noProfile.png";
     }
     drawHomePhotos($house,$images,$bigPhoto);
+    ?>
+    <section id = Infos><?php
 
     $comments = getHouseComments($idHouse);
   
@@ -27,6 +29,8 @@
   <div class="box">
     <a class="popupButton" href="#commentsPopup">Comments</a>
   </div>
+  
+</section>
 </div>
 <script>
   var curSlide = 1;

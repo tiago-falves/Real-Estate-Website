@@ -8,11 +8,12 @@ body > header > nav {
     grid-row: 1;
 }
 .PageContent {
-    display: block;  
+    display: flex;  
+    flex-direction: row;
     min-height: 80vh;
 }
 #photos{
-    margin: auto;
+    
 }
 #photos > header{
     margin-left: auto;
@@ -20,20 +21,15 @@ body > header > nav {
     font-size: 3vh;
 }
 
-#AllHouseInfo{
-    display: grid;
-    grid-template-columns: [left] auto [middle] auto [right] ;
-    grid-template-rows: [top] auto [middle] auto [end];
-}
+
 
 
 #Informations{
-    display: grid;
-    margin: 3vw;
-    grid-template-columns: [left] auto [middle] auto [right] ;
-    grid-template-rows: [top] auto [middle] auto [end];
-    font-size: large;
+    display: flex;
+    flex-direction: column;
+    
     padding: 1em;
+    padding-top: 4em;
     margin: 1em;
 }
 
@@ -43,31 +39,28 @@ body > header > nav {
 }
 
 #Characteristics{
-    grid-area: middle / left /end /middle;
-    flex-wrap: wrap;
-    padding: 1em;
+    margin-left: 2em;
+    margin-bottom: 1em;
+
+}
+#Infos > div{
     margin: 1em;
+    margin-left: 2em;
 }
 
-#Informations > img{
-    grid-area: middle / middle /end /right;
-}
 
-#Informations > form{
-    grid-area: top / middle /middle /right;
-    margin: auto;
-    margin-right: 2vw;;
-}
+
 
 #Informations > p > a{
-    margin: 5vh;
-    width: 15vw;
+   
     background: #696969;
     text-align: center;
-    padding: 1vw;
+    padding: 0.5em;
     color: white;
-    font-size: 2vw;
+    font-size: 1em;
     cursor: pointer;
+    margin: 1em;
+    margin-left: 2em;
 }
 
 #photos{
