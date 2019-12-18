@@ -5,27 +5,43 @@ body{
 
 #profile{
     display: grid;
-    grid-template-columns: [left] 1fr [middle] 3fr [right] ;
-    grid-template-rows: [top] auto [name] auto [stars] auto [middle] auto [middleBottom] auto [bottom];
+    grid-template-columns: [left] 1fr [middle] 2fr [right] ;
+    grid-template-rows: [top] auto  [middle] auto [bottom];
     text-align: left;
+    border: black solid 1px;
+    width: 80%;
+    height: 80%;
+    margin: auto;
 }
 
 #profile > *{
     margin: 1em;
+    
+}
+
+#rating{
+    padding-top: 1em;
+    padding-bottom: 1em;
 }
 
 
-#profile > img{
-    width: 30vw;
+#profile > img, #Editprofile > img{
+    width: 30em;
     margin: 1em;
-
     border-radius: 50%;
-
     grid-area: top / left / middle / middle;
 }
 
+#ProfileInformation{
 
-#RecentVisits img{
+    grid-area: middle / left / middle / middle;
+}
+
+
+#ListHouses{
+    grid-area: top / middle / middle / right;
+}
+#ListHouses img{
     width: 20em;
 }
 
@@ -37,43 +53,43 @@ body{
     width: 100%;
 }
 
-#profile > header {
+#Editprofile{
+    display: flexbox;
+    flex-direction: row;
+    width: 90%;
     margin: auto;
-}
-#profile > article {
-    grid-area: stars / middle / middle / end;
+    text-align: center;
 }
 
-#rating {
-    grid-area: name / middle / stars / end;
-    margin: 0em 1em;
-}
 
-#profile > form{
+
+
+
+#Editprofile > form{
     display: flex;
     flex-direction: column;
-    width: 70%;
-    margin:auto;
+    width: 80%;
+    margin: auto;
+    
 }
 #photoUpload{
     padding-top: 10vh;
-    grid-column: 1 / span 1;
-    grid-row: 2 / span 1;
+    grid-area: left / top / middle / bottom;
+
+    /* grid-column: 1 / span 1;
+    grid-row: 2 / span 1; */
 }
-#profile > form input , #profile > form textarea{
+#Editprofile > form input , #Editprofile > form textarea{
     margin-bottom: 2em;
     padding: 1em;
 }
 
 #profile > section:nth-child(3){
-    grid-column: 1 / span 1;
-    grid-row: 2 / span 1;
+    /* grid-column: 1 / span 1;
+    grid-row: 2 / span 1; */
     padding-top: 50vh;
 }
-#comments {
-    grid-area: middle / left / middlebottom / middle;
-    margin: 1em;
-}
+
 
 .SmallerPhotosCollumn {
     display: flex;
@@ -83,20 +99,10 @@ body{
 }
 
 
-
-#RecentVisits{
-    grid-area: middle / middle / middleBottom / end; 
-}
-
-footer{
-    grid-area: middleBottom / left / bottom / right; 
-}
-
-
-
-/* #RecentVisits > section >header{
-    position: absolute;
-} */
+#Reservations {
+    grid-area: middle / middle / bottom / right;
+    padding-top: 2em;
+} 
 #Reservations > tbody  td:nth-child(1) > a > img{
     max-width: 3em;
     height: auto;
@@ -112,15 +118,18 @@ footer{
 
 
 #ListHouses{
+    padding-top:1em ;
     background: #ebebeb;
+    grid-area: middle / left / bottom / middle;
     display: flex;
     flex-direction: column;
+    max-width: 50;
 }
 
 #ListHouses > .House{
     display: flex;  
     margin-bottom: 1em;
-    width: 50%;
+    /* width: 50%; */
     border: 1px solid black;
 } 
 
@@ -128,12 +137,20 @@ footer{
 /* padding: 0 0 0 225px; */
 
 #ListHouses > section > a > img {
-    max-width: 90%;
+    max-width: 100%;
+    max-height: 100%;
     margin: 1em;
  
       
 }
 
 #ListHouses > section > a {
-        width: 50%;      
+    width: 50%;      
+} 
+
+#profile > button{
+    grid-area: middle / left / bottom / middle;
+    max-height: 2em;
 }
+
+

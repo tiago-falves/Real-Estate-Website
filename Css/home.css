@@ -60,20 +60,6 @@ body > header > nav {
 }
 
 
-/* #photos section{
-
-    display: grid;
-    grid-template-columns: [left] auto [first] auto [second] auto [third] auto [fourth] auto [right];
-    grid-template-rows: [top] auto [middle] auto [end];
-}
-
-#photos section:first-child{
-    grid-area: top / left / middle / right;
-}
-
-#photos section:nth-child(2){
-    grid-area: middle / left / end / first;
-} */
 
 
 .arrowLeft, .arrowRight {
@@ -118,5 +104,24 @@ body > header > nav {
 /*Edit house and add house styling*/
 
 #editHouse{
-    display: inline-flex;
+    width: 80%;
+    margin: auto;
+    text-align: center;
+}
+
+#editHouse form{
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    margin: auto;
+    text-align: center;
+}
+
+
+#editHouse input, #editHouse select{
+    padding-top: 0.5em;
+    
+    margin-top: 1em;
+    margin-bottom: 1em;
+    width: 100%;
 }
