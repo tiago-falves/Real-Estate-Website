@@ -1,7 +1,7 @@
 
 <?php  include_once('../session/session.php');  
 
-function draw_comments($comments){
+function draw_comments($comments,$houseId){
     ?>
     <section id="comments">
                 
@@ -21,7 +21,7 @@ function draw_comments($comments){
                         </article>
                     <?php } 
             if(isset($_SESSION['username'])){
-                addOpinion($comments);  
+                addOpinion($houseId);  
             }?>
                 </div>
             </div>
@@ -29,9 +29,9 @@ function draw_comments($comments){
     </section>
 <?php }
 
-function addOpinion(){ ?>
+function addOpinion($houseId){ ?>
 
-    <form id="addOpinion" method="post" action="../Actions/action_add_comment.php">
+    <form id="addOpinion" method="post" action="../Actions/action_add_comment.php?id=<?php echo $houseId;?>">
         <h2>Add your voice...</h2>
         <!-- <label>Username 
             <input type="text" name="username">

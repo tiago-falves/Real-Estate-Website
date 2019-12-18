@@ -2,14 +2,17 @@
   include_once('../session/session.php');
   include_once('../database/database.php');
   include_once('../database/inserts.php');
+  include_once('../database/queries.php');
   
   if(!isset($_SESSION['username'])){
     die(header('Location: ../Imobiliaria/login.php'));
   }
 
   $username = $_SESSION['username'];
+  $user = getUserFromUserName($username);
   
   $title = $_POST['Title'];
+  $houseId = $_GET['id'];
   $rating = $_POST['Rating'];
   $content = $_POST['comment'];
 
@@ -18,7 +21,7 @@
   $hour = date('hi', time());
   
   try {
-    insertComment($title,$date,$hour,$content,$userId,$houseId,$rating);
+    insertComment($title,$date,$hour,$content,$user['id'],$houseId,$rating);
     $_SESSION['success_messages'][] = 'Comment added successfully!';
     clearMessages();
     

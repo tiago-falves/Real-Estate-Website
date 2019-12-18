@@ -22,7 +22,7 @@
 
   
   
-  <?php  draw_comments($comments);
+  <?php  draw_comments($comments,$house['id']);
     include_once("../templates/messages.php");?>
 
 </section>
