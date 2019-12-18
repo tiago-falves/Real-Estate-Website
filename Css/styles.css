@@ -292,3 +292,63 @@ ul#notificationsList{
     color: #555;
     list-style-type: none;
 }
+
+
+.box {
+    margin: 3vw;
+    width: 15vw;
+    background: #696969;
+    text-align: center;
+    padding: 1vw;
+}
+  
+.popupButton {
+    color: white;
+    font-size: 2vw;
+    cursor: pointer;
+}
+
+.overlay {
+    background: rgba(0, 0, 0, 0.7);
+    transition: opacity 500ms;
+    visibility: hidden;
+    opacity: 0;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+.overlay:target {
+    visibility: visible;
+    opacity: 1;
+}
+
+.popup {
+    margin: 15vh auto;
+    padding: 1vw;
+    background: #f1f1f1;
+    width: 40%;
+    position: relative;
+    transition: all 5s ease-in-out;
+}
+
+.popup h2 {
+    color: #696969;
+}
+.popup .close {
+    position: absolute;
+    top: 2vw;
+    right: 3vw;
+    transition: all 200ms;
+    font-size: 3vw;
+    font-weight: bold;
+    color: #696969;
+}
+.popup .close:hover {
+    color: #f1f1f1;
+}
+.popup .content {
+    max-height: 70vh;
+    overflow: auto;
+}

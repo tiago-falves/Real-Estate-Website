@@ -29,9 +29,7 @@
 #comments input{
     background-color: #edeff0
 }
-/*#comments > input{ PORQUE QUE ISTO NAO FUNCIONA?
-    background-color: black;
-}*/
+
 #comments input[type=submit]{
     background-color: black;
     color: white;

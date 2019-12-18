@@ -6,7 +6,7 @@
     background: #ebebeb;
     display: flex;
     flex-direction: column;
-    
+    min-height: 80vh;;
 }
 
 #ListHouses > .House{

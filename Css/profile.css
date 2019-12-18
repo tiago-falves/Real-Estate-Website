@@ -26,7 +26,8 @@ body{
 
 
 #profile > img, #Editprofile > img{
-    width: 30em;
+    width: 30vw;
+    max-width: 20em;
     margin: 1em;
     border-radius: 50%;
     grid-area: top / left / middle / middle;

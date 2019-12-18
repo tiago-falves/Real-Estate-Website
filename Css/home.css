@@ -14,7 +14,6 @@ body > header > nav {
 #photos{
     margin: auto;
 }
-
 #photos > header{
     margin-left: auto;
     margin-right: auto;
@@ -30,11 +29,15 @@ body > header > nav {
 
 #Informations{
     display: grid;
+    margin: 3vw;
     grid-template-columns: [left] auto [middle] auto [right] ;
     grid-template-rows: [top] auto [middle] auto [end];
+    font-size: large;
+    padding: 1em;
+    margin: 1em;
 }
 
-#Description{
+.Description{
     padding: 1em;
     margin: 1em;
 }
@@ -42,6 +45,8 @@ body > header > nav {
 #Characteristics{
     grid-area: middle / left /end /middle;
     flex-wrap: wrap;
+    padding: 1em;
+    margin: 1em;
 }
 
 #Informations > img{
@@ -50,7 +55,19 @@ body > header > nav {
 
 #Informations > form{
     grid-area: top / middle /middle /right;
-    margin: 1em;
+    margin: auto;
+    margin-right: 2vw;;
+}
+
+#Informations > p > a{
+    margin: 5vh;
+    width: 15vw;
+    background: #696969;
+    text-align: center;
+    padding: 1vw;
+    color: white;
+    font-size: 2vw;
+    cursor: pointer;
 }
 
 #photos{
@@ -68,19 +85,17 @@ body > header > nav {
     float: left;
     top: 40vh;
     width: auto;
-    padding: 16px;
+    padding: 1vw;
     margin-top: -22px;
     color: white;
     font-weight: bold;
     font-size: 30px;
     transition: 0.6s ease;
-    border-radius: 0 3px 3px 0;
     user-select: none;
 }
   
 .arrowRight {
-    margin-left:0;
-    border-radius: 3px 0 0 3px;
+    margin-left: 42vw; 
 }
 
 .arrowLeft:hover, .arrowRight:hover {
@@ -121,4 +136,11 @@ body > header > nav {
     margin-top: 1em;
     margin-bottom: 1em;
     width: 100%;
+}
+
+
+#editHouse > img{
+    width: 30vw;
+    max-width: 20em;
+    margin: 1em;
 }

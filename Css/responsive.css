@@ -29,6 +29,17 @@
     footer nav{
         font-size: 2.5vw;
     }
+
+    header > #signup{
+        display: flex;
+        font-size: 2.6vw;
+    }
+    #editHouse{
+        width: 100%;
+    }
+    #Informations {
+        display: block;
+    }
 }
 
 
@@ -36,5 +47,8 @@
     .loginRegister{
         width: 80vw;
         min-width: 80vw;
+    }
+    .popup {
+        width: 80%;
     }
 }

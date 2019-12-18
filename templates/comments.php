@@ -3,23 +3,30 @@
 
 function draw_comments($comments){
     ?>
-<section id="comments">
-            
-    <h2><?php echo sizeof($comments); ?> comments</h2>
-
-    <?php foreach($comments as $comment){
-        $commenter = getUserFromId($comment['commenter_id']); ?>
-        <article class="comment">
-            <header><h3><?php echo treatOutput($comment['title']); ?></h3></header>
-            <span class="user"><?php echo treatOutput($commenter['userName']); ?></span>
-            <span class="date"><?php echo $comment['date'] ?></span>
-            <p><?php echo treatOutput($comment['content']) ?></p>
-        </article>
-    <?php } 
-    if(isset($_SESSION['username'])){
-        addOpinion($comments);  
-     }?>
-</section>
+    <section id="comments">
+                
+        <h2><?php echo sizeof($comments); ?> comments</h2>
+        <div id="commentsPopup" class="overlay">
+            <div class="popup">
+                <h2>Comments</h2>
+                <a class="close" href="#">&times;</a>
+                <div class="content">
+                    <?php foreach($comments as $comment){
+                        $commenter = getUserFromId($comment['commenter_id']); ?>
+                        <article class="comment">
+                            <header><h3><?php echo treatOutput($comment['title']); ?></h3></header>
+                            <span class="user"><?php echo treatOutput($commenter['userName']); ?></span>
+                            <span class="date"><?php echo $comment['date'] ?></span>
+                            <p><?php echo treatOutput($comment['content']) ?></p>
+                        </article>
+                    <?php } 
+            if(isset($_SESSION['username'])){
+                addOpinion($comments);  
+            }?>
+                </div>
+            </div>
+        </div>
+    </section>
 <?php }
 
 function addOpinion(){ ?>

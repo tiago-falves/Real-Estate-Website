@@ -22,7 +22,11 @@
     $comments = getHouseComments($idHouse);
   
     include_once("../templates/Homes/Informations.php");
-  ?>
+    
+  ?>  
+  <div class="box">
+    <a class="popupButton" href="#commentsPopup">Comments</a>
+  </div>
 </div>
 <script>
   var curSlide = 1;
