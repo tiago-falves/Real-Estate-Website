@@ -10,10 +10,10 @@ function draw_comments($comments){
     <?php foreach($comments as $comment){
         $commenter = getUserFromId($comment['commenter_id']); ?>
         <article class="comment">
-            <header><h3><?php echo $comment['title'] ?></h3></header>
-            <span class="user"><?php echo $commenter['userName'] ?></span>
+            <header><h3><?php echo treatOutput($comment['title']); ?></h3></header>
+            <span class="user"><?php echo treatOutput($commenter['userName']); ?></span>
             <span class="date"><?php echo $comment['date'] ?></span>
-            <p><?php echo $comment['content'] ?></p>
+            <p><?php echo treatOutput($comment['content']) ?></p>
         </article>
     <?php } 
     if(isset($_SESSION['username'])){

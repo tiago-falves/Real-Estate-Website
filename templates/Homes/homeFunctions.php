@@ -33,19 +33,20 @@ function draw_homes($homes) {?>
     </div>
     <section id = HouseInfo>
       <header>
-          <h3><?php echo $home['title']?></h3>
-          <h4>Price: <?php echo $home['price']?></h4>
+          <h3><?php echo treatOutput($home['title'])?></h3>
+          <h4>Price: <?php echo treatOutput($home['price'])?></h4>
       </header>
       <p>Bedrooms: <?php echo $home['bedrooms']?></p>
       <p>Rating: <?php echo $home['rating'] //Adicionar umas estrelinhas giras?></p>
         <span  class="Owner"> <a href="profile.php?id=<?php echo $home['owner'];?>">Owner:  <?php echo $owner['userName']?></a></span>
         <?php
       // echo( $owner);
-       
+      if(isset($_SESSION['username'])){       
        if($_SESSION['username'] == $owner['userName'] ) { ?>
           <button onclick="location.href = 'addHouse.php?id=<?php echo $home['id']; ?>'" type="button">Edit house</button>
-          <button onclick="location.href = '../Actions/action_remove_house.php?id=<?php echo $home['id']; ?>'" type="button">Remove House</button>
-        <?php } ?>
+          <button onclick="location.href = '../Actions/action_remove_house.php?id=<?php echo $home['id']; ?>&csrf=<?php echo $_SESSION['csrf']?>'" type="button">Remove House</button>
+        <?php }
+        } ?>
     </section>
   </section>   
 <?php } 
@@ -53,7 +54,7 @@ function draw_homes($homes) {?>
 function drawHomePhotos($house,$images,$img) { ?>
   <section id="photos">
     <header>
-      <h2><a href="item.php"><?php echo $house['title'] ?></a></h2>
+      <h2><a href="item.php"><?php echo treatOutput($house['title']) ?></a></h2>
     </header>
       <div class="slideShow">
         <div class= "imageZoomContainer">

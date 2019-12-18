@@ -1,5 +1,5 @@
 <?php
- include_once('../database/queries.php');
+   include_once('../database/queries.php');
  include_once('../database/inserts.php');
  include_once('../session/session.php');
 

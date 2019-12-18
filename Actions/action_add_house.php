@@ -3,9 +3,14 @@
   include_once('../database/database.php');
   include_once('../database/inserts.php');
   include_once('../database/queries.php');
+  
+  if(!isset($_SESSION['username'])){
+    die(header('Location: ../Imobiliaria/login.php'));
+  }
 
   $username = $_SESSION['username'];
 
+  $successfullyEnded = true;
   
   $user = getUserFromUserName($username);
   
@@ -23,9 +28,9 @@
     insertLocation($location_name);
     $location = getLocationFromName($location_name);
   }
+  
+  $successfullyEnded = true;
  
-  //QUESTION: É suposto ter o PDO Date?
-  //Editing house
   if(isset($_GET['id'])){
 
     try {
@@ -36,6 +41,7 @@
 
       die($e->getMessage());
       $_SESSION['error_messages'][] = 'Failed to edit Home!';
+      $successfullyEnded = false;
     }    
   }else{
     //Adding house
@@ -47,7 +53,12 @@
 
       die($e->getMessage());
       $_SESSION['error_messages'][] = 'Failed to add Home!';
+      $successfullyEnded = false;
     }
+  }
+
+  if($successfullyEnded){
+    clearMessages();
   }
 
   header('Location: ' . $_SERVER['HTTP_REFERER']);

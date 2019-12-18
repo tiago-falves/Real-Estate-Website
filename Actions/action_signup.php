@@ -30,6 +30,8 @@
     header('Location: ../Imobiliaria/register.php');
   }
 
+  clearMessages();
+
   header('Location: ' . $_SERVER['HTTP_REFERER']);
 
 ?>

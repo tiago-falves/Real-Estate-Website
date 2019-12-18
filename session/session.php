@@ -28,4 +28,31 @@ function getErrorMessages() {
       $_SESSION['csrf'] = generate_random_token();
   }
 
+  function checkInput($input){
+    if(is_string($input)){
+      return preg_match("/^[a-zA-Z0-9]+$/", $input);
+    }
+    else {
+      return true;
+    }
+  }
+
+  function treatDatabaseInput($input){
+    if(is_string($input)){
+      return preg_replace ("/[^a-zA-Z0-9\s]/", '', $input);
+    }
+    else {
+      return $input;
+    }
+  }
+
+  function treatOutput($output){
+    if(is_string($output)){
+      return htmlspecialchars($output);
+    }
+    else {
+      return $output;
+    }
+  }
+
 ?>

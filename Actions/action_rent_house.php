@@ -13,15 +13,33 @@
     
     //Gets all variables sent by the other page
     $idHouse = $_GET['id']; 
+    if($_SESSION['csrf'] != $_GET['csrf']){
+       $_SESSION['error_messages'][] = "Invalid session token!";
+       die(header('Location: ' . $_SERVER['HTTP_REFERER']));
+    }
+
+
     $start_date = $_POST['start_date']; 
     $end_date = $_POST['end_date']; 
     
-    //Gets all the reservations of this house
-    $reservations = getHouseReservations($idHouse);
     $canRent = true;
 
+    //The owner of a house cannot rent their own house
+    $house = getHomeFromId($idHouse);
+    if($house == false){
+        $_SESSION['error_messages'][] = "The House does not exist!";
+        die(header('Location: ' . $_SERVER['HTTP_REFERER']));
+    }
+    if($house['owner'] == $profile['id']){
+        $_SESSION['error_messages'][] = "The owner cannot rent their own house!";
+        die(header('Location: ' . $_SERVER['HTTP_REFERER']));
+    }
+    
+    //Gets all the reservations of this house
+    $reservations = getHouseReservations($idHouse);
+
     //The start date has to be smaller than the end date
-    if($start_date > $end_date){
+    if($start_date > $end_date && $canRent){
       $_SESSION['error_messages'][] = "Invalid Dates";
       $canRent =false;
     }   
@@ -41,6 +59,7 @@
         //Inserts the Reservation in the database
         insertReservation($start_date,$end_date,$profile['id'],$idHouse);
         $_SESSION['success_messages'][] = 'House rented succssessfully!';
+        clearMessages();
     }
 
     header('Location: ' . $_SERVER['HTTP_REFERER']);
